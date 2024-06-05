@@ -100,8 +100,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     columnsToToggle.forEach(column => {
                         column.classList.toggle('hidden');
                     });
-                    // Modifica il testo del pulsante in base allo stato delle colonne
-                    const buttonText = table.classList.contains('hidden') ? 'Mostra colonne dei punteggi dettagliati' : 'Nascondi colonne dei punteggi dettagliati';
+                    // Verifica lo stato di una colonna specifica per determinare il testo del pulsante
+                    const isHidden = table.querySelector('.pole.hidden');
+                    const buttonText = isHidden ? 'Mostra colonne dei punteggi dettagliati' : 'Nascondi colonne dei punteggi dettagliati';
                     toggleColumnsButton.textContent = buttonText;
                 });
 
