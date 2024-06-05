@@ -57,33 +57,33 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 data.forEach(item => {
                     html += `<tr>
-                                <td>${item.posizione}</td>
-                                <td>${item.pilota}</td>
-                                <td class="pole hidden">${item.pole_wg}</td>
-                                <td class="gara hidden">${item.gara_wg}</td>
-                                <td class="gv hidden">${item.gv_wg}</td>
-                                <td class="totale">${item.tot_wg}</td>
-                                <td class="pole hidden">${item.pole_atl}</td>
-                                <td class="gara hidden">${item.gara_atl}</td>
-                                <td class="gv hidden">${item.gv_atl}</td>
-                                <td class="totale">${item.tot_atl}</td>
-                                <td class="pole hidden">${item.pole_fuj}</td>
-                                <td class="gara hidden">${item.gara_fuj}</td>
-                                <td class="gv hidden">${item.gv_fuj}</td>
-                                <td class="totale">${item.tot_fuj}</td>
-                                <td class="pole hidden">${item.pole_aut}</td>
-                                <td class="gara hidden">${item.gara_aut}</td>
-                                <td class="gv hidden">${item.gv_aut}</td>
-                                <td class="totale">${item.tot_aut}</td>
-                                <td class="pole hidden">${item.pole_spa}</td>
-                                <td class="gara hidden">${item.gara_spa}</td>
-                                <td class="gv hidden">${item.gv_spa}</td>
-                                <td class="totale">${item.tot_spa}</td>
-                                <td class="pole hidden">${item.pole_rb}</td>
-                                <td class="gara hidden">${item.gara_rb}</td>
-                                <td class="gv hidden">${item.gv_rb}</td>
-                                <td class="totale">${item.tot_rb}</td>
-                                <td class="totalone">${item.totale}</td>
+                                <td>${item.posizione || ''}</td>
+                                <td>${item.pilota || ''}</td>
+                                <td class="pole hidden">${item.pole_wg || ''}</td>
+                                <td class="gara hidden">${item.gara_wg || ''}</td>
+                                <td class="gv hidden">${item.gv_wg || ''}</td>
+                                <td class="totale">${item.tot_wg || ''}</td>
+                                <td class="pole hidden">${item.pole_atl || ''}</td>
+                                <td class="gara hidden">${item.gara_atl || ''}</td>
+                                <td class="gv hidden">${item.gv_atl || ''}</td>
+                                <td class="totale">${item.tot_atl || ''}</td>
+                                <td class="pole hidden">${item.pole_fuj || ''}</td>
+                                <td class="gara hidden">${item.gara_fuj || ''}</td>
+                                <td class="gv hidden">${item.gv_fuj || ''}</td>
+                                <td class="totale">${item.tot_fuj || ''}</td>
+                                <td class="pole hidden">${item.pole_aut || ''}</td>
+                                <td class="gara hidden">${item.gara_aut || ''}</td>
+                                <td class="gv hidden">${item.gv_aut || ''}</td>
+                                <td class="totale">${item.tot_aut || ''}</td>
+                                <td class="pole hidden">${item.pole_spa || ''}</td>
+                                <td class="gara hidden">${item.gara_spa || ''}</td>
+                                <td class="gv hidden">${item.gv_spa || ''}</td>
+                                <td class="totale">${item.tot_spa || ''}</td>
+                                <td class="pole hidden">${item.pole_rb || ''}</td>
+                                <td class="gara hidden">${item.gara_rb || ''}</td>
+                                <td class="gv hidden">${item.gv_rb || ''}</td>
+                                <td class="totale">${item.tot_rb || ''}</td>
+                                <td class="totalone">${item.totale || ''}</td>
                             </tr>`;
                 });
 
