@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 html += `<button id="toggleColumnsButton${index + 1}" class="toggleColumnsButton">Mostra colonne dei punteggi dettagliati</button>`;
                 html += `<div style="margin-bottom: 5px;"></div>`;
                 // Genera la tabella
-                html += `<table id="table${index + 1}"><thead><tr>
+                html += `<div class="table-container"><table id="table${index + 1}"><thead><tr>
                             <th>Posizione</th>
                             <th>Pilota</th>
                             <th class="pole hidden">Pole WG</th>
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </tr>`;
                 });
 
-                html += `</tbody></table>`;
+                html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
                 container.innerHTML = html;
 
                 // Aggiungi l'evento click al pulsante per nascondere/mostrare le colonne

@@ -28,6 +28,11 @@ h1 {
     padding: 5px 0;
     border-bottom: 1px solid #eee;
 }
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
 /* Stile per la tabella */
 table {
     border-collapse: collapse; /* Unisce i bordi delle celle */
