@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     const classifiche = ['classifica1.json', 'classifica2.json', 'classifica3.json', 'classifica4.json', 'classifica5.json'];
-
+        
     classifiche.forEach((classifica, index) => {
-        fetch(classifica)
+        const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+        const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
+
+        fetch(urlWithTimestamp)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Errore nel caricamento della classifica: ' + response.statusText);
@@ -12,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(data => {
                 let container = document.getElementById(`classifica${index + 1}`);
                 let html = '';
-                
                 
                 // Genera la sezione "Lobby" per gli indici da 1 a 4
                 if (index < 4) {
@@ -99,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         column.classList.toggle('hidden');
                     });
                     // Modifica il testo del pulsante in base allo stato delle colonne
-                    const buttonText = table.classList.contains('hidden') ? 'Mostra/Nascondi colonne' : 'Mostra/Nascondi colonne';
+                    const buttonText = table.classList.contains('hidden') ? 'Mostra colonne dei punteggi dettagliati' : 'Nascondi colonne dei punteggi dettagliati';
                     toggleColumnsButton.textContent = buttonText;
                 });
 
