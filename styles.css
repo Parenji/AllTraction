@@ -1,7 +1,30 @@
 body {
+    background-color: black;
+    color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+}
+
+/* Stile per il container del titolo */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Stile per le immagini del logo */
+.title-container .logo {
+    width: auto;
+    height: 50px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+    margin: 0 10px; /* Spaziatura tra il logo e il titolo */
+}
+
+/* Stile del titolo */
+.title-container h1 {
+    margin: 0;
+    font-size: 2em;
 }
 
 h1 {
@@ -35,8 +58,11 @@ h1 {
 
 /* Stile per la tabella */
 table {
-    border-collapse: collapse; /* Unisce i bordi delle celle */
-    width: 100%; /* Occupa tutto lo spazio disponibile */
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+    margin-bottom: 20px;
 }
 
 /* Stile per le celle della tabella */

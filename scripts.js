@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Genera la tabella
                 html += `<div class="table-container"><table id="table${index + 1}"><thead><tr>
                             <th>Posizione</th>
-                            <th>Pilota</th>
+                            <th>ID Pilota PSN</th>
+                            <th>ID Pilota GT7</th>
                             <th class="pole hidden">Pole WG</th>
                             <th class="gara hidden">Gara WG</th>
                             <th class="gv hidden">GV WG</th>
@@ -60,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 data.forEach(item => {
                     html += `<tr>
                                 <td>${item.posizione || ''}</td>
-                                <td>${item.pilota || ''}</td>
+                                <td>${item.id_psn || ''}</td>
+                                <td>${item.id_gt7 || ''}</td>
                                 <td class="pole hidden">${item.pole_wg || ''}</td>
                                 <td class="gara hidden">${item.gara_wg || ''}</td>
                                 <td class="gv hidden">${item.gv_wg || ''}</td>
