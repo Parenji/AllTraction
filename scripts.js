@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let html = "";
 
         // Genera la sezione "Lobby" per gli indici da 1 a 4
-        if (index < 4) {
-          html += `<h2>Lobby ${index + 1}</h2>`;
-        } else {
-          // Genera la sezione "Classifica Generale" per l'indice 5
-          html += `<h2>Classifica Generale</h2>`;
-        }
+        // if (index < 4) {
+        //   html += `<h2>Lobby ${index + 1}</h2>`;
+        // } else {
+        //   // Genera la sezione "Classifica Generale" per l'indice 5
+        //   html += `<h2>Classifica Generale</h2>`;
+        // }
         // Genera il pulsante per nascondere/mostrare le colonne
         html += `<button id="toggleColumnsButton${
           index + 1
@@ -153,5 +153,18 @@ document.addEventListener("DOMContentLoaded", function () {
         let container = document.getElementById(`classifica${index + 1}`);
         container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
       });
+  });
+  // Aggiungi l'evento click per le sezioni delle tendine
+  const accordions = document.querySelectorAll(".accordion");
+  accordions.forEach((accordion) => {
+    accordion.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
   });
 });

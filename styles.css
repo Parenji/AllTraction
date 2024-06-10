@@ -118,3 +118,61 @@ th {
 .pdf-button:hover {
   background-color: #4c2020;
 }
+
+/* Stile per le sezioni delle tendine */
+.accordion-container {
+    margin-bottom: 20px;
+}
+
+.accordion {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 18px;
+    border-radius: 5px; /* Aggiungi un bordo arrotondato */
+    margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
+}
+
+.accordion:hover,
+.accordion.active {
+    background-color: #555;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: black; /* Sfondo nero quando la tendina è aperta */
+}
+
+/* Stile del contenuto della tendina */
+.panel-content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive styling */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Mobile styling */
+@media (max-width: 768px) {
+    .accordion {
+        font-size: 20px;
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .pdf-button {
+        width: 100%;
+        box-sizing: border-box; /* Assicura che il padding sia incluso nella larghezza totale */
+    }
+}
