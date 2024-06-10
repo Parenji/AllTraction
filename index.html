@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Classifiche</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <div class="title-container">
-            <img src="Logotlm.png" alt="Logo" class="logo">
-            <h1>World Tour by Team Lion Motorsport - Classifiche ufficiali</h1>
-            <img src="Logotlm.png" alt="Logo" class="logo">
-        </div>
+      <div class="title-container">
+        <img src="Logotlm.png" alt="Logo" class="logo" />
+        <h1>World Tour by Team Lion Motorsport - Classifiche ufficiali</h1>
+        <img src="Logotlm.png" alt="Logo" class="logo" />
+      </div>
     </header>
+    <!-- Pulsante per scaricare il PDF -->
+    <div class="pdf-button-container">
+      <button class="pdf-button" onclick="window.location.href='lobby.pdf'">
+        -> PDF Lobby e Host Gara 2 <-
+      </button>
+    </div>
     <div class="table-container">
-        <table id="table1">
-            <div id="classifica1" class="classifica"></div>
-        </table>
-        <table id="table1">
-            <div id="classifica2" class="classifica"></div>
-        </table>
-        <table id="table1">
-            <div id="classifica3" class="classifica"></div>
-        </table>
-        <table id="table1">
-            <div id="classifica4" class="classifica"></div>
-        </table>
-        <table id="table1">
-            <div id="classifica5" class="classifica"></div>
-        </table>
+      <table id="table1">
+        <div id="classifica1" class="classifica"></div>
+      </table>
+      <table id="table1">
+        <div id="classifica2" class="classifica"></div>
+      </table>
+      <table id="table1">
+        <div id="classifica3" class="classifica"></div>
+      </table>
+      <table id="table1">
+        <div id="classifica4" class="classifica"></div>
+      </table>
+      <table id="table1">
+        <div id="classifica5" class="classifica"></div>
+      </table>
     </div>
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>
