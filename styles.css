@@ -112,6 +112,7 @@ th {
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+  margin: 5px; /* Aggiungi un margine attorno al pulsante */
 }
 
 .pdf-button:hover {
