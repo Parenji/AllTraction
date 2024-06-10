@@ -105,7 +105,7 @@ th {
 }
 
 .pdf-button {
-  background-color: #007bff;
+  background-color: #810101;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -115,5 +115,5 @@ th {
 }
 
 .pdf-button:hover {
-  background-color: #0056b3;
+  background-color: #4c2020;
 }
