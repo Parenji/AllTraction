@@ -37,36 +37,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }" class="toggleColumnsButton">Mostra colonne dei punteggi dettagliati</button>`;
         html += `<div style="margin-bottom: 5px;"></div>`;
         // Genera la tabella
-        html += `<div class="table-container"><table id="table${
+        html += `<div class="table-container1"><table id="table${
           index + 1
         }"><thead><tr>
-                            <th>Posizione</th>
-                            <th>ID Pilota PSN</th>
-                            <th>ID Pilota GT7</th>
+                            <th>Pos.</th>
+                            <th>ID PSN</th>
+                            <th>ID GT7</th>
+                            <th class="totalone">TOTALE</th>
                             <th class="pole hidden">Pole WG</th>
                             <th class="gara hidden">Gara WG</th>
                             <th class="gv hidden">GV WG</th>
-                            <th class="totale">TOT. Watkins Glen</th>
+                            <th class="totale">W. Glen</th>
                             <th class="pole hidden">Pole ATL</th>
                             <th class="gara hidden">Gara ATL</th>
                             <th class="gv hidden">GV ATL</th>
-                            <th class="totale">TOT. Road Atlanta</th>
+                            <th class="totale">R. Atlanta</th>
                             <th class="pole hidden">Pole FUJ</th>
                             <th class="gara hidden">Gara FUJ</th>
                             <th class="gv hidden">GV FUJ</th>
-                            <th class="totale">TOT. Fuji</th>
+                            <th class="totale">Fuji</th>
                             <th class="pole hidden">Pole AUT</th>
                             <th class="gara hidden">Gara AUT</th>
                             <th class="gv hidden">GV AUT</th>
-                            <th class="totale">TOT. Autopolis</th>
-                            <th class="pole hidden">Pole SPA</th>
-                            <th class="gara hidden">Gara SPA</th>
-                            <th class="gv hidden">GV SPA</th>
-                            <th class="totale">TOT. SPA</th>
+                            <th class="totale">Autopolis</th>
+                            <th class="pole hidden">Pole Spa</th>
+                            <th class="gara hidden">Gara Spa</th>
+                            <th class="gv hidden">GV Spa</th>
+                            <th class="totale">Spa</th>
                             <th class="pole hidden">Pole RB</th>
                             <th class="gara hidden">Gara RB</th>
                             <th class="gv hidden">GV RB</th>
-                            <th class="totale">TOT. Redbull</th>
+                            <th class="totale">Red Bull</th>
                             <th class="totalone">TOTALE</th>
                         </tr></thead><tbody>`;
 
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.posizione || ""}</td>
                                 <td>${item.id_psn || ""}</td>
                                 <td>${item.id_gt7 || ""}</td>
+                                <td class="totalone">${item.totale || ""}</td>
                                 <td class="pole hidden">${
                                   item.pole_wg || ""
                                 }</td>

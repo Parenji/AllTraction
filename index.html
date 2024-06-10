@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>TLM Worldtour</title>
-    <link rel="icon" href="icon.png" >
+    <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <div class="title-container">
-        <img src="Logotlm.png" alt="Logo" class="logo" />
-        <h1>World Tour by Team Lion Motorsport</h1>
-        <img src="Logotlm.png" alt="Logo" class="logo" />
-      </div>
+        <div class="title-container">
+            <img src="Logotlm.png" alt="Logo" class="logo" />
+            <h1>World Tour by Team Lion Motorsport</h1>
+            <img src="Logotlm.png" alt="Logo" class="logo" />
+        </div>
     </header>
     <!-- Pulsante per scaricare il PDF -->
     <div class="pdf-button-container">
-      <button class="pdf-button" onclick="window.location.href='lobby.pdf'">
-        PDF Lobby e Host Gara 2
-      </button>
-      <button class="pdf-button" onclick="window.location.href='info.pdf'">
-        PDF Info e opzioni stanza
-      </button>
+        <button class="pdf-button" onclick="window.location.href='lobby.pdf'">
+            PDF Lobby e Host Gara 2
+        </button>
+        <button class="pdf-button" onclick="window.location.href='info.pdf'">
+            PDF Info e opzioni stanza
+        </button>
     </div>
     <h2>Classifiche dopo Gara 1</h2>
     <!-- Sezioni delle tendine per le lobby -->
+    <!-- Sezioni delle tendine per le lobby -->
     <div class="accordion-container">
         <button class="accordion">Lobby 1</button>
-        <div class="panel" id="classifica1"></div>
+        <div class="panel">
+            <div class="panel-content table-container" id="classifica1"></div>
+        </div>
 
         <button class="accordion">Lobby 2</button>
-        <div class="panel" id="classifica2"></div>
+        <div class="panel">
+            <div class="panel-content table-container" id="classifica2"></div>
+        </div>
 
         <button class="accordion">Lobby 3</button>
-        <div class="panel" id="classifica3"></div>
+        <div class="panel">
+            <div class="panel-content table-container" id="classifica3"></div>
+        </div>
 
         <button class="accordion">Lobby 4</button>
-        <div class="panel" id="classifica4"></div>
+        <div class="panel">
+            <div class="panel-content table-container" id="classifica4"></div>
+        </div>
 
         <button class="accordion">Classifica Generale</button>
-        <div class="panel" id="classifica5"></div>
+        <div class="panel">
+            <div class="panel-content table-container" id="classifica5"></div>
+        </div>
     </div>
     <script src="scripts.js"></script>
-  </body>
+</body>
+
 </html>
