@@ -108,9 +108,9 @@ tr:nth-child(even) td.totalone {
     background-color: #555;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 12px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 0px;
     transition: background-color 0.3s ease;
 }
@@ -235,7 +235,7 @@ tr:nth-child(even) td.totalone {
         font-size: 76px;
         color: #810101;
         pointer-events: none;
-        opacity: 0.12;
+        opacity: 0.1;
     }
 
 
@@ -253,7 +253,7 @@ tr:nth-child(even) td.totalone {
     }
 
     table {
-        font-size: 14px;
+        font-size: 10px;
     }
     
 }
