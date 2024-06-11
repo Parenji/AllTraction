@@ -17,8 +17,8 @@ body {
 /* Stile per le immagini del logo */
 .title-container .logo {
   width: auto;
-  height: 50px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
-  margin: 0 10px; /* Spaziatura tra il logo e il titolo */
+  height: 60px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  margin: 0 5px; /* Spaziatura tra il logo e il titolo */
 }
 
 /* Stile del titolo */
@@ -193,8 +193,12 @@ tr:nth-child(even) td.totalone {
     }
 
     .pdf-button {
-        width: 100%;
-        box-sizing: border-box; /* Assicura che il padding sia incluso nella larghezza totale */
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      margin: 0px;
+      margin-bottom: 10px;
+      font-size: 18px;
     }
 }
 
@@ -213,6 +217,7 @@ tr:nth-child(even) td.totalone {
 
 /* Indicatore di scorrimento su mobile */
 @media (max-width: 768px) {
+
     .table-container {
         position: relative;
         overflow-x: auto;
