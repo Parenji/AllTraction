@@ -281,26 +281,35 @@ tr:nth-child(even) td.totalone {
   position: relative;
   z-index: 2;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .countdown-container {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('gara2.png');
+  background-size: cover;
+  background-position: bottom;
   display: flex;
   justify-content:center;
   flex-wrap: wrap;
-  margin: 5px 0;
+  margin-bottom: 20px;
+  opacity: 1;
+  border-radius: 0px;
+
 }
 
+
 .countdown {
-  background-color: #000000;
+  background-color:rgba(0, 0, 0, 0.8);
   color: white;
   padding: 10px;
   border-radius: 0px;
   text-align: center;
-  opacity: 1;
-  width: 200px;
-  margin: 10px;
+  position: relative;
+
+  width: 130px;
+  margin: 3px;
 }
 
 /* .countdown h3 {
@@ -309,13 +318,13 @@ tr:nth-child(even) td.totalone {
 } */
 
 .countdown div {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
-
+/* 
 @media (max-width: 768px) {
   .countdown {
       width: 40%;
-      margin: 5px 0;
+      margin: 0px 0px;
   }
-}
+} */
