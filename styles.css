@@ -262,3 +262,60 @@ tr:nth-child(even) td.totalone {
     }
     
 }
+/* .countdown-section {
+  position: relative;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 5px 0;
+  color: white;
+  overflow: hidden;
+  background: url('gara2.png') center/cover no-repeat;
+} */
+
+
+
+
+/* titolotto */
+.countdown-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin: 5px 0;
+}
+
+.countdown {
+  background-color: #000000;
+  color: white;
+  padding: 10px;
+  border-radius: 0px;
+  text-align: center;
+  opacity: 1;
+  width: 200px;
+  margin: 10px;
+}
+
+/* .countdown h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+} */
+
+.countdown div {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .countdown {
+      width: 40%;
+      margin: 5px 0;
+  }
+}

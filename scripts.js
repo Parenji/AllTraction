@@ -170,3 +170,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  function initializeCountdown(id, endtime) {
+      const timerElement = document.getElementById(id);
+      function updateCountdown() {
+          const now = new Date().getTime();
+          const timeleft = endtime - now;
+
+          const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+          timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+          if (timeleft < 0) {
+              clearInterval(countdowninterval);
+              timerElement.innerHTML = "EXPIRED";
+          }
+      }
+
+      const countdowninterval = setInterval(updateCountdown, 1000);
+  }
+
+  const lobby1EndTime = new Date("Jun 11, 2024 21:00:00").getTime();
+  const lobby2EndTime = new Date("Jun 11, 2024 22:10:00").getTime();
+  const lobby3EndTime = new Date("Jun 13, 2024 21:00:00").getTime();
+  const lobby4EndTime = new Date("Jun 13, 2024 22:10:00").getTime();
+
+  initializeCountdown("timer1", lobby1EndTime);
+  initializeCountdown("timer2", lobby2EndTime);
+  initializeCountdown("timer3", lobby3EndTime);
+  initializeCountdown("timer4", lobby4EndTime);
+});
+
