@@ -126,7 +126,7 @@ tr:nth-child(even) td.totalone {
 /* Stile del pulsante per il PDF */
 .pdf-button-container {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .pdf-button {
