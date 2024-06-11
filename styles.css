@@ -308,7 +308,7 @@ tr:nth-child(even) td.totalone {
   text-align: center;
   position: relative;
 
-  width: 130px;
+  width: auto;
   margin: 3px;
 }
 
@@ -318,7 +318,7 @@ tr:nth-child(even) td.totalone {
 } */
 
 .countdown div {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 /* 

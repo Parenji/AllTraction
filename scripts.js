@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
           if (timeleft < 0) {
               clearInterval(countdowninterval);
-              timerElement.innerHTML = "EXPIRED";
+              timerElement.innerHTML = "";
           }
       }
 
