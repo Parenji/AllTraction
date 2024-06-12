@@ -301,7 +301,7 @@ tr:nth-child(even) td.totalone {
 
 
 .countdown {
-  background-color:rgba(0, 0, 0, 0.8);
+  background-color:rgba(0, 0, 0, 0.83);
 
   flex-wrap: wrap;
   flex: 1;
@@ -334,14 +334,14 @@ tr:nth-child(even) td.totalone {
 
 .winner {
   font-weight: bold;
-  color: #FFD700; /* Colore dorato */
+  color: #fffcea; /* Colore dorato */
   text-shadow: 
       0 0 5px #FFD700,
       0 0 10px #FFD700,
       0 0 20px #FFD700,
       0 0 40px #FF8C00,
       0 0 80px #FF8C00,
-      0 0 90px #FF8C00,
-      0 0 100px #FF8C00,
-      0 0 150px #FF8C00; /* Effetto glowing */
+      0 0 90px #FF8C00/*,
+      0 0 100px #FF8C00 */
+  /*     0 0 150px #FF8C00 Effetto glowing */;
 }
