@@ -302,13 +302,16 @@ tr:nth-child(even) td.totalone {
 
 .countdown {
   background-color:rgba(0, 0, 0, 0.8);
+
+  flex-wrap: wrap;
+  flex: 1;
   color: white;
   padding: 10px;
   border-radius: 0px;
   text-align: center;
   position: relative;
-
-  width: auto;
+  justify-content: center;
+  align-items: center;
   margin: 3px;
 }
 
@@ -318,7 +321,7 @@ tr:nth-child(even) td.totalone {
 } */
 
 .countdown div {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bold;
 }
 /* 
@@ -328,3 +331,17 @@ tr:nth-child(even) td.totalone {
       margin: 0px 0px;
   }
 } */
+
+.winner {
+  font-weight: bold;
+  color: #FFD700; /* Colore dorato */
+  text-shadow: 
+      0 0 5px #FFD700,
+      0 0 10px #FFD700,
+      0 0 20px #FFD700,
+      0 0 40px #FF8C00,
+      0 0 80px #FF8C00,
+      0 0 90px #FF8C00,
+      0 0 100px #FF8C00,
+      0 0 150px #FF8C00; /* Effetto glowing */
+}
