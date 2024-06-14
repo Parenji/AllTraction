@@ -140,9 +140,25 @@ tr:nth-child(even) td.totalone {
   margin: 5px; /* Aggiungi un margine attorno al pulsante */
 }
 
+.pen-button {
+  background-color: rgb(227, 227, 0);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 5px; /* Aggiungi un margine attorno al pulsante */
+}
+
 .pdf-button:hover {
   background-color: #4c2020;
 }
+
+.pen-button:hover {
+  background-color: rgb(187, 187, 0);
+}
+
 
 /* Stile per le sezioni delle tendine */
 .accordion-container {
