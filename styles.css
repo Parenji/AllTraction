@@ -141,7 +141,7 @@ tr:nth-child(even) td.totalone {
 }
 
 .pen-button {
-  background-color: rgb(227, 227, 0);
+  background-color: rgb(255, 255, 0);
   color: black;
   border: none;
   padding: 10px 20px;
