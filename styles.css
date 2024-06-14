@@ -21,6 +21,13 @@ body {
   margin: 0 5px; /* Spaziatura tra il logo e il titolo */
 }
 
+/* Stile per le immagini del logo */
+.title-container .logo2 {
+  width: auto;
+  height: 60px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  margin: 0 15px; /* Spaziatura tra il logo e il titolo */
+}
+
 /* Stile del titolo */
 .title-container h1 {
   margin: 0;
