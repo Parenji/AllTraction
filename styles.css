@@ -75,26 +75,30 @@ th {
   background-color: #f2f2f2; /* Colore di sfondo */
 }
 
-/* Stile per le righe alternate */
+/* 
+Stile per le righe alternate
 tr:nth-child(even) {
   background-color: #f2f2f2; /* Colore di sfondo delle righe pari */
-}
+/* } 
+
+
+ */
 
 /* Stile per le colonne "Totale" */
 th.totalone{
-    background-color: #eeefe7; /* Colore di sfondo per evidenziare le colonne "Totale" */
+ /*   background-color: #eeefe7;  Colore di sfondo per evidenziare le colonne "Totale" */
     color: #810101; /* Colore per le colonne "Totale" */
     font-size: larger;
     font-weight: bold;
 }
 td.totalone {
-  background-color: #feffe3; /* Colore di sfondo per evidenziare le colonne "Totale" */
+/*  background-color: #feffe3;  Colore di sfondo per evidenziare le colonne "Totale" */
   color: #810101; /* Colore per le colonne "Totale" */
   font-size: larger;
   font-weight: bold;
 }
 tr:nth-child(even) td.totalone {
-    background-color: #eeefe7; /* Colore di sfondo per evidenziare le colonne "Totale" */
+ /*   background-color: #eeefe7;  Colore di sfondo per evidenziare le colonne "Totale" */
     color: #810101; /* Colore per le colonne "Totale" */
 }
 
@@ -369,4 +373,20 @@ tr:nth-child(even) td.totalone {
       0 0 90px #FF8C00/*,
       0 0 100px #FF8C00 */
   /*     0 0 150px #FF8C00 Effetto glowing */;
+}
+
+.qualified {
+  background-color: rgb(201, 255, 120) !important; /* colore di evidenziazione */
+}
+
+.qualified:nth-child(even) {
+  background-color: rgb(195, 226, 150) !important; /* colore di evidenziazione per le righe alternate */
+}
+
+.even-row {
+  background-color: #f2f2f2; /* colore di sfondo per righe alternate */
+}
+
+.odd-row {
+  background-color: #dedede; /* colore di sfondo per righe alternate */
 }
