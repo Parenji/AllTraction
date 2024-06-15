@@ -90,6 +90,12 @@ tr:nth-child(even) {
 
 
  */
+ td.totale {
+  /*  background-color: #feffe3;  Colore di sfondo per evidenziare le colonne "Totale" */
+    
+    /* font-size: larger; */
+    font-weight: bold;
+  }
 
 /* Stile per le colonne "Totale" */
 th.totalone{
@@ -326,6 +332,19 @@ tr:nth-child(even) td.totalone {
   background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('gara2.png');
   background-size: cover;
   background-position: bottom;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  opacity: 1;
+  border-radius: 0px;
+
+}
+
+.countdown-container1 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('fuji.jpeg');
+  background-size: cover;
+  background-position: top;
   display: flex;
   justify-content:center;
   flex-wrap: wrap;
