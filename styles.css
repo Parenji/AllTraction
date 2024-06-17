@@ -377,7 +377,7 @@ tr:nth-child(even) td.totalone {
   background-color: rgba(0, 0, 0, 0.83);
 
   flex-wrap: wrap;
-  flex: 1;
+  flex: auto;
   color: white;
   padding: 10px;
   border-radius: 0px;
