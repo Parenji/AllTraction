@@ -368,7 +368,7 @@ tr:nth-child(even) td.totalone {
 
 .countdown {
   background-color: rgba(0, 0, 0, 0.83);
-
+  min-width: 110px;
   flex-wrap: wrap;
   flex: 1;
   color: white;
@@ -381,20 +381,7 @@ tr:nth-child(even) td.totalone {
   margin: 3px;
 }
 
-.countdown2 {
-  background-color: rgba(0, 0, 0, 0.83);
 
-  flex-wrap: wrap;
-  flex: auto;
-  color: white;
-  padding: 10px;
-  border-radius: 0px;
-  text-align: center;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  margin: 3px;
-}
 
 /* .countdown h3 {
   margin-bottom: 10px;
