@@ -63,9 +63,15 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  /* background-color: white; */
   color: black;
   margin-bottom: 15px;
+}
+
+.table-container {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 /* Stile per le celle della tabella */
@@ -144,6 +150,8 @@ tr:nth-child(even) td.totalone {
   text-align: center;
   margin-bottom: 10px;
 }
+
+
 
 .pdf-button {
   background-color: #810101;
@@ -287,12 +295,12 @@ tr:nth-child(even) td.totalone {
     text-align: center;
   }
 
-  .panel-content {
-    background-color: white;
+  /* .panel-content {
+    background-color: white; 
     padding: 10px;
-    color: black;
+    color: rgb(255, 255, 255);
     border: 1px solid #ddd;
-  }
+  } */
 
   table {
     font-size: 10px;
