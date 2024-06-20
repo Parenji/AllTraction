@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>Pos.</th>
                             <th>ID PSN</th>
                             <th>ID GT7</th>
-                            <th class="totalone">TOTALE</th>
+                            <th>Team</th>
+                            <th class="totalone">Totale</th>
                             <th class="pole hidden">Pole WG</th>
                             <th class="gara hidden">Gara WG</th>
                             <th class="gv hidden">GV WG</th>
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th class="pole hidden">Pole AUT</th>
                             <th class="gara hidden">Gara AUT</th>
                             <th class="gv hidden">GV AUT</th>
-                            <th class="totale">Autopolis</th>
+                            <th class="totale">Autop.</th>
                             <th class="pole hidden">Pole Spa</th>
                             <th class="gara hidden">Gara Spa</th>
                             <th class="gv hidden">GV Spa</th>
@@ -94,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th class="gara hidden">Gara RB</th>
                             <th class="gv hidden">GV RB</th>
                             <th class="totale">Red Bull</th>
-                            <th class="totalone">TOTALE</th>
                         </tr></thead><tbody>`;
 
             data.forEach((item, i) => {
@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.posizione || ""}</td>
                                 <td>${item.id_psn || ""}</td>
                                 <td>${item.id_gt7 || ""}</td>
+                                 <td>${item.team || ""}</td>
                                 <td class="totalone">${item.totale || ""}</td>
                                 <td class="pole hidden">${
                                   item.pole_wg || ""
@@ -155,7 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                 }</td>
                                 <td class="gv hidden">${item.gv_rb || ""}</td>
                                 <td class="totale">${item.tot_rb || ""}</td>
-                                <td class="totalone">${item.totale || ""}</td>
                             </tr>`;
             });
 

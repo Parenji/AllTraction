@@ -41,8 +41,8 @@ h1 {
 .classifica {
   margin: 20px 0;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  /* border: 1px solid #ccc;
+  border-radius: 5px; */
 }
 
 .classifica h2 {
@@ -64,7 +64,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   /* background-color: white; */
-  color: black;
+  color: rgb(255, 255, 255);
   margin-bottom: 15px;
 }
 
@@ -77,14 +77,16 @@ table {
 /* Stile per le celle della tabella */
 td,
 th {
-  border: 1px solid #ddd; /* Bordo delle celle */
-  padding: 8px; /* Spazio interno */
+  /* border: 1px solid #ddd;  */
+  /* Bordo delle celle */
+  padding: 5px; /* Spazio interno */
   text-align: center; /* Centra il contenuto delle celle */
 }
 
 /* Stile per le intestazioni di tabella */
 th {
-  background-color: #f2f2f2; /* Colore di sfondo */
+  /* background-color: #f2f2f2;  */
+  /* Colore di sfondo */
 }
 
 /* 
@@ -105,19 +107,22 @@ td.totale {
 /* Stile per le colonne "Totale" */
 th.totalone {
   /*   background-color: #eeefe7;  Colore di sfondo per evidenziare le colonne "Totale" */
-  color: #810101; /* Colore per le colonne "Totale" */
+  /* color: #810101;  */
+  /* Colore per le colonne "Totale" */
   font-size: larger;
   font-weight: bold;
 }
 td.totalone {
   /*  background-color: #feffe3;  Colore di sfondo per evidenziare le colonne "Totale" */
-  color: #810101; /* Colore per le colonne "Totale" */
+  /* color: #810101;  */
+  /* Colore per le colonne "Totale" */
   font-size: larger;
   font-weight: bold;
 }
 tr:nth-child(even) td.totalone {
   /*   background-color: #eeefe7;  Colore di sfondo per evidenziare le colonne "Totale" */
-  color: #810101; /* Colore per le colonne "Totale" */
+  /* color: #810101;  */
+  /* Colore per le colonne "Totale" */
 }
 
 /* Stile per nascondere le colonne */
@@ -291,7 +296,7 @@ tr:nth-child(even) td.totalone {
 
   th,
   td {
-    padding: 6px;
+    padding: 5px;
     text-align: center;
   }
 
@@ -303,7 +308,7 @@ tr:nth-child(even) td.totalone {
   } */
 
   table {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 /* .countdown-section {
@@ -414,27 +419,30 @@ tr:nth-child(even) td.totalone {
 }
 
 .qualified {
-  background-color: rgb(
+  color: rgb(
     201,
     255,
     120
   ) !important; /* colore di evidenziazione */
 }
 
-.qualified:nth-child(even) {
-  background-color: rgb(
+/* .qualified:nth-child(even) { */
+  /* color: rgb(
     195,
     226,
     150
-  ) !important; /* colore di evidenziazione per le righe alternate */
-}
+  ) !important;  */
+  /* colore di evidenziazione per le righe alternate */
+/* } */
 
 .even-row {
-  background-color: #f2f2f2; /* colore di sfondo per righe alternate */
+  /* background-color: #f2f2f2;  */
+  /* colore di sfondo per righe alternate */
 }
 
 .odd-row {
-  background-color: #dedede; /* colore di sfondo per righe alternate */
+  /* background-color: #dedede;  */
+  /* colore di sfondo per righe alternate */
 }
 
 .twitch {
