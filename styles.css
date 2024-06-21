@@ -169,8 +169,10 @@ td.totalone {
 }
 
 .pen-button {
-  background-color: rgb(255, 255, 0);
-  color: black;
+  background-color: #810101;
+  color: white;
+  /* background-color: rgb(255, 255, 0);
+  color: black; */
   border: none;
   padding: 10px 20px;
   cursor: pointer;
