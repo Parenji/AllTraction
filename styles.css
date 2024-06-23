@@ -84,7 +84,7 @@ th {
 }
 
 th { 
-   background-color: #810101;  
+   /* background-color: #810101;   */
    /* Colore di sfondo  */
 }
 
@@ -193,7 +193,7 @@ td.totalone {
 
 /* Stile per le sezioni delle tendine */
 .accordion-container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
 
 }
@@ -238,7 +238,7 @@ td.totalone {
   display: none;
   overflow: hidden;
   background-color: black; /* Sfondo nero quando la tendina è aperta */
-  margin-bottom: 10px; /* Aggiungi uno spazio*/
+  margin-bottom: 5px; /* Aggiungi uno spazio*/
 }
 
 /* Stile del contenuto della tendina */
@@ -253,7 +253,7 @@ td.totalone {
   .accordion {
     font-size: 20px;
     padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   .accordion:hover {
     background-color: black;
