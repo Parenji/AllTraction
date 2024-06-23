@@ -83,10 +83,10 @@ th {
   text-align: center; /* Centra il contenuto delle celle */
 }
 
-/* th { */
-  /* background-color: #f2f2f2;  */
-  /* Colore di sfondo 
-}*/
+th { 
+   background-color: #810101;  
+   /* Colore di sfondo  */
+}
 
 /* 
 Stile per le righe alternate
@@ -138,7 +138,9 @@ td.totalone {
   cursor: pointer;
   font-size: 12px;
   margin-bottom: 0px;
+  margin-top: 5px;
   transition: background-color 0.3s ease;
+  border-radius: 3px;
 }
 
 .toggleColumnsButton:hover {
@@ -186,31 +188,49 @@ td.totalone {
 }
 
 .pen-button:hover {
-  background-color: rgb(187, 187, 0);
+  background-color: #4c2020;
 }
 
 /* Stile per le sezioni delle tendine */
 .accordion-container {
   margin-bottom: 20px;
+
+
 }
 
 .accordion {
-  background-color: #333;
+  background-color: #000000;
   color: white;
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  text-align: left;
   border: none;
   outline: none;
+  text-align: left;
   transition: 0.4s;
   font-size: 18px;
-  border-radius: 5px; /* Aggiungi un bordo arrotondato */
+  /* border-radius: 5px; Aggiungi un bordo arrotondato */
   margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
 }
 
+.accordion > i > svg {
+  width: 1rem;
+  height: 0.9rem;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+  float: right;
+}
+
+.accordion.active > i > svg {
+  height: 0.9rem;
+  width: 1rem;
+  transform: rotate(-90deg);
+}
+
+
+
 .accordion:hover {
-  background-color: #555;
+  background-color: #2a2a2a;
 }
 
 .panel {
@@ -225,7 +245,7 @@ td.totalone {
 .panel-content {
   background-color: rgb(0, 0, 0);
   padding: 0px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 /* Mobile styling */
@@ -234,6 +254,9 @@ td.totalone {
     font-size: 20px;
     padding: 20px;
     margin-bottom: 10px;
+  }
+  .accordion:hover {
+    background-color: black;
   }
 
   .pdf-button {
@@ -362,7 +385,7 @@ td.totalone {
   flex-wrap: wrap;
   margin-bottom: 20px;
   opacity: 1;
-  border-radius: 0px;
+  border-radius: 15px;
 }
 
 .lobbyx {
@@ -373,7 +396,7 @@ td.totalone {
 }
 
 .countdown {
-  background-color: rgba(0, 0, 0, 0.83);
+  background-color: rgba(0, 0, 0, 0.78);
   min-width: 110px;
   flex-wrap: wrap;
   flex: 1;
@@ -385,6 +408,13 @@ td.totalone {
   justify-content: center;
   align-items: center;
   margin: 3px;
+  border-radius: 15px;
+  cursor: pointer;
+
+}
+
+.countdown:hover {
+  background-color: rgba(0, 0, 0, 0.53);
 }
 
 
@@ -420,13 +450,8 @@ td.totalone {
 }
 
 .qualified {
-  color: rgb(
-    201,
-    255,
-    120
-  ) !important; /* colore di evidenziazione */
+  color: #d77777 !important; /* colore di evidenziazione */
 }
-
 /* .qualified:nth-child(even) { */
   /* color: rgb(
     195,

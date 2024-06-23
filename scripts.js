@@ -33,39 +33,34 @@ document.addEventListener("DOMContentLoaded", function () {
   function caricaClassifiche() {
     classifiche.forEach((classifica, index) => {
       // if (index < 4) {
-        const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
-        const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
+      const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+      const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-        fetch(urlWithTimestamp)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(
-                "Errore nel caricamento della classifica: " +
-                  response.statusText
-              );
-            }
-            return response.json();
-          })
-          .then((data) => {
-            let container = document.getElementById(`classifica${index + 1}`);
-            let html = "";
+      fetch(urlWithTimestamp)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Errore nel caricamento della classifica: " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          let container = document.getElementById(`classifica${index + 1}`);
+          let html = "";
 
-            // Genera la sezione "Lobby" per gli indici da 1 a 4
-            // if (index < 4) {
-            //   html += `<h2>Lobby ${index + 1}</h2>`;
-            // } else {
-            //   // Genera la sezione "Classifica Generale" per l'indice 5
-            //   html += `<h2>Classifica Generale</h2>`;
-            // }
-            // Genera il pulsante per nascondere/mostrare le colonne
-            html += `<button id="toggleColumnsButton${
-              index + 1
-            }" class="toggleColumnsButton">Mostra colonne dei punteggi dettagliati</button>`;
-            html += `<div style="margin-bottom: 5px;"></div>`;
-            // Genera la tabella
-            html += `<div class="table-container1"><table id="table${
-              index + 1
-            }"><thead><tr>
+          // Genera la sezione "Lobby" per gli indici da 1 a 4
+          // if (index < 4) {
+          //   html += `<h2>Lobby ${index + 1}</h2>`;
+          // } else {
+          //   // Genera la sezione "Classifica Generale" per l'indice 5
+          //   html += `<h2>Classifica Generale</h2>`;
+          // }
+
+          // Genera la tabella
+          html += `<div class="table-container1"><table id="table${
+            index + 1
+          }"><thead><tr>
                             <th>Pos.</th>
                             <th>ID PSN</th>
                             <th>ID GT7</th>
@@ -97,12 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th class="totale">Red Bull</th>
                         </tr></thead><tbody>`;
 
-            data.forEach((item, i) => {
-              let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
-              if (top14.includes(item.id_psn)) {
-                rowClass += " qualified";
-              }
-              html += `<tr class="${rowClass}">
+          data.forEach((item, i) => {
+            let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
+            if (top14.includes(item.id_psn)) {
+              rowClass += " qualified";
+            }
+            html += `<tr class="${rowClass}">
                                 <td>${item.posizione || ""}</td>
                                 <td>${item.id_psn || ""}</td>
                                 <td>${item.id_gt7 || ""}</td>
@@ -157,35 +152,39 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td class="gv hidden">${item.gv_rb || ""}</td>
                                 <td class="totale">${item.tot_rb || ""}</td>
                             </tr>`;
-            });
-
-            html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
-            container.innerHTML = html;
-
-            // Aggiungi l'evento click al pulsante per nascondere/mostrare le colonne
-            const toggleColumnsButton = document.getElementById(
-              `toggleColumnsButton${index + 1}`
-            );
-            toggleColumnsButton.addEventListener("click", function () {
-              const table = document.getElementById(`table${index + 1}`);
-              const columnsToToggle =
-                table.querySelectorAll(".pole, .gara, .gv");
-              columnsToToggle.forEach((column) => {
-                column.classList.toggle("hidden");
-              });
-              // Verifica lo stato di una colonna specifica per determinare il testo del pulsante
-              const isHidden = table.querySelector(".pole.hidden");
-              const buttonText = isHidden
-                ? "Mostra colonne dei punteggi dettagliati"
-                : "Nascondi colonne dei punteggi dettagliati";
-              toggleColumnsButton.textContent = buttonText;
-            });
-          })
-          .catch((error) => {
-            console.error("Errore nel caricamento della classifica:", error);
-            let container = document.getElementById(`classifica${index + 1}`);
-            container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
           });
+
+          html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
+                    // Genera il pulsante per nascondere/mostrare le colonne
+                    html += `<button id="toggleColumnsButton${
+                      index + 1
+                    }" class="toggleColumnsButton">Mostra punteggi dettagliati</button>`;
+                    html += `<div style="margin-bottom: 5px;"></div>`;
+          container.innerHTML = html;
+
+          // Aggiungi l'evento click al pulsante per nascondere/mostrare le colonne
+          const toggleColumnsButton = document.getElementById(
+            `toggleColumnsButton${index + 1}`
+          );
+          toggleColumnsButton.addEventListener("click", function () {
+            const table = document.getElementById(`table${index + 1}`);
+            const columnsToToggle = table.querySelectorAll(".pole, .gara, .gv");
+            columnsToToggle.forEach((column) => {
+              column.classList.toggle("hidden");
+            });
+            // Verifica lo stato di una colonna specifica per determinare il testo del pulsante
+            const isHidden = table.querySelector(".pole.hidden");
+            const buttonText = isHidden
+              ? "Mostra punteggi dettagliati"
+              : "Nascondi punteggi dettagliati";
+            toggleColumnsButton.textContent = buttonText;
+          });
+        })
+        .catch((error) => {
+          console.error("Errore nel caricamento della classifica:", error);
+          let container = document.getElementById(`classifica${index + 1}`);
+          container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
+        });
       // } else if (index === 4) {
       //   // La classifica generale è già stata caricata, quindi la saltiamo
       // }
