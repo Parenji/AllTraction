@@ -253,6 +253,15 @@ td.totalone {
     background-color: black;
   }
 
+  .accordionn {
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 0px;
+  }
+  .accordionn:hover {
+    background-color: black;
+  }
+
   .pdf-button {
     width: 100%;
     box-sizing: border-box;
