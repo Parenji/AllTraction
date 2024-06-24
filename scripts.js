@@ -155,11 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
           html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
-                    // Genera il pulsante per nascondere/mostrare le colonne
-                    html += `<button id="toggleColumnsButton${
-                      index + 1
-                    }" class="toggleColumnsButton">Mostra punteggi dettagliati</button>`;
-                    html += `<div style="margin-bottom: 5px;"></div>`;
+          // Genera il pulsante per nascondere/mostrare le colonne
+          html += `<button id="toggleColumnsButton${
+            index + 1
+          }" class="toggleColumnsButton">Mostra punteggi dettagliati</button>`;
+          html += `<div style="margin-bottom: 5px;"></div>`;
           container.innerHTML = html;
 
           // Aggiungi l'evento click al pulsante per nascondere/mostrare le colonne
@@ -205,38 +205,156 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   function initializeCountdown(id, endtime) {
+//     const timerElement = document.getElementById(id);
+//     function updateCountdown() {
+//       const now = new Date().getTime();
+//       const timeleft = endtime - now;
+
+//       const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+//       const hours = Math.floor(
+//         (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+//       );
+//       const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+//       const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+//       timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+//       if (timeleft < 0) {
+//         clearInterval(countdowninterval);
+//         timerElement.innerHTML = "";
+//       }
+//     }
+
+//     const countdowninterval = setInterval(updateCountdown, 1000);
+//   }
+
+//   const lobby1EndTime = new Date("Jun 25, 2024 21:00:00").getTime();
+//   const lobby2EndTime = new Date("Jun 25, 2024 22:10:00").getTime();
+//   const lobby3EndTime = new Date("Jun 27, 2024 21:00:00").getTime();
+//   const lobby4EndTime = new Date("Jun 27, 2024 22:10:00").getTime();
+
+//   initializeCountdown("timer1", lobby1EndTime);
+//   initializeCountdown("timer2", lobby2EndTime);
+//   initializeCountdown("timer3", lobby3EndTime);
+//   initializeCountdown("timer4", lobby4EndTime);
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
-  function initializeCountdown(id, endtime) {
-    const timerElement = document.getElementById(id);
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const timeleft = endtime - now;
+  const lobbys = [
+    "lobby1.json",
+    "lobby2.json",
+    "lobby3.json",
+    "lobby4.json",
+  ];
 
-      const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-      timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-      if (timeleft < 0) {
-        clearInterval(countdowninterval);
-        timerElement.innerHTML = "";
-      }
-    }
 
-    const countdowninterval = setInterval(updateCountdown, 1000);
+    caricaLobbys();
+  
+
+  function caricaLobbys() {
+    lobbys.forEach((lobby, index) => {
+      // if (index < 4) {
+      const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+      const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
+
+      const hosts = [
+        "Rupetheking",
+        "BAD_Brucem84",
+        "TLM_wid83",
+        "Parenji",
+      ];
+
+      const live = [
+        "Twitch",
+        "Twitch",
+        "Youtube",
+        "Twitch",
+      ];
+
+      const ora = [
+        "Martedì 25 giugno, ore 21:00",
+        "Martedì 25 giugno, ore 22:10",
+        "Giovedì 27 giugno, ore 21:00",
+        "Giovedì 27 giugno, ore 22:10",
+      ];
+    
+      fetch(urlWithTimestamp)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Errore nel caricamento della lobby: " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          let container = document.getElementById(`lobby${index + 1}`);
+          let html = "";
+
+          // Genera la sezione "Lobby" per gli indici da 1 a 4
+          // if (index < 4) {
+          //   html += `<h2>Lobby ${index + 1}</h2>`;
+          // } else {
+          //   // Genera la sezione "lobby Generale" per l'indice 5
+          //   html += `<h2>lobby Generale</h2>`;
+          // }
+
+          // Genera la tabella
+          html += `<div class="table-container1">
+          <div style="text-align: center;">${ora[index]}</div>  
+          <div style="text-align: center;">Host: ${hosts[index]}</div>
+          <div style="text-align: center;">Live su: ${live[index]}</div>
+       
+          <table id="mable${
+            index + 1
+          }"><thead><tr>
+                            <th>N.</th>
+                            <th>ID PSN</th>
+                            <th>ID GT7</th>
+                            <th>Team</th>
+
+                        </tr></thead><tbody>`;
+
+          data.forEach((item, i) => {
+            let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
+            html += `<tr class="${rowClass}">
+                                <td>${item.n || ""}</td>
+                                <td>${item.id_psn || ""}</td>
+                                <td>${item.id_gt7 || ""}</td>
+                                 <td>${item.team || ""}</td>
+                            </tr>`;
+          });
+
+          html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
+          html += `<div style="margin-bottom: 5px;"></div>`;
+          container.innerHTML = html;
+          
+        })
+        .catch((error) => {
+          console.error("Errore nel caricamento della lobby:", error);
+          let container = document.getElementById(`lobby${index + 1}`);
+          container.innerHTML = `<p>Errore nel caricamento della lobby.</p>`;
+        });
+      // } else if (index === 4) {
+      //   // La lobby generale è già stata caricata, quindi la saltiamo
+      // }
+    });
+    // Aggiungi l'evento click per le sezioni delle tendine
+    const accordions = document.querySelectorAll(".accordionn");
+    accordions.forEach((accordion) => {
+      accordion.addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    });
   }
-
-  const lobby1EndTime = new Date("Jun 18, 2024 21:00:00").getTime();
-  const lobby2EndTime = new Date("Jun 18, 2024 22:10:00").getTime();
-  const lobby3EndTime = new Date("Jun 20, 2024 21:00:00").getTime();
-  const lobby4EndTime = new Date("Jun 20, 2024 22:10:00").getTime();
-
-  initializeCountdown("timer1", lobby1EndTime);
-  initializeCountdown("timer2", lobby2EndTime);
-  initializeCountdown("timer3", lobby3EndTime);
-  initializeCountdown("timer4", lobby4EndTime);
 });
