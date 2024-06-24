@@ -227,6 +227,44 @@ td.totalone {
   background-color: #2a2a2a;
 }
 
+/* Stile per le sezioni delle tendine */
+.accordionn-container {
+  margin-bottom: 10px;
+}
+
+.accordionn {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  transition: 0.4s;
+  font-size: 18px;
+  /* border-radius: 5px; Aggiungi un bordo arrotondato */
+  margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
+}
+
+.accordionn > i > svg {
+  width: 1rem;
+  height: 0.9rem;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+  float: right;
+}
+
+.accordionn.active > i > svg {
+  height: 0.9rem;
+  width: 1rem;
+  transform: rotate(-90deg);
+}
+
+.accordionn:hover {
+  background-color: #2a2a2a;
+}
+
 .panel {
   padding: 0 px;
   display: none;
@@ -483,40 +521,3 @@ td.totalone {
   margin-top: 11px;
 }
 
-/* Stile per le sezioni delle tendine */
-.accordionn-container {
-  margin-bottom: 10px;
-}
-
-.accordionn {
-  background-color: #000000;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  outline: none;
-  text-align: left;
-  transition: 0.4s;
-  font-size: 18px;
-  /* border-radius: 5px; Aggiungi un bordo arrotondato */
-  margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
-}
-
-.accordionn > i > svg {
-  width: 1rem;
-  height: 0.9rem;
-  transform: rotate(90deg);
-  transition: all 0.3s ease;
-  float: right;
-}
-
-.accordionn.active > i > svg {
-  height: 0.9rem;
-  width: 1rem;
-  transform: rotate(-90deg);
-}
-
-.accordionn:hover {
-  background-color: #2a2a2a;
-}
