@@ -14,12 +14,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Stile per le immagini del logo */
-.title-container .logo {
-  width: auto;
-  height: 60px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
-  margin: 0 5px; /* Spaziatura tra il logo e il titolo */
-}
 
 /* Stile per le immagini del logo */
 .title-container .logo2 {
@@ -27,6 +21,25 @@ body {
   height: 150px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin: 0 0px; /* Spaziatura tra il logo e il titolo */
 }
+
+/* Stile per le immagini del logo */
+.logotrack {
+  width: auto;
+  height: 40px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.flagtrack {
+  width: auto;
+  height: 40px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  justify-content: center;
+}
+
 
 /* Stile del titolo */
 .title-container h1 {
