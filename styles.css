@@ -24,7 +24,7 @@ body {
 /* Stile per le immagini del logo */
 .title-container .logo2 {
   width: auto;
-  height: 100px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  height: 150px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin: 0 0px; /* Spaziatura tra il logo e il titolo */
 }
 
@@ -291,6 +291,7 @@ td.totalone {
     background-color: black;
   }
 
+
   .accordionn {
     font-size: 20px;
     padding: 20px;
@@ -521,3 +522,58 @@ td.totalone {
   margin-top: 11px;
 }
 
+.navbar-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 40px;
+  text-align: center;
+  border-top: 3px solid rgb(171, 0, 0);
+}
+
+.navbar-scroll {
+  /* transition: all 0.3s ease; */
+  /* transform: skew(-10deg); */
+  background-color: #ffffff; /* Cambia il colore di sfondo come preferisci */
+  color: rgb(0, 0, 0); /* Cambia il colore del testo come preferisci */
+  display: inline-block;
+  overflow-x: auto;
+  white-space: nowrap;
+  /* border-top: 3px solid rgb(171, 0, 0); */
+}
+
+.navbar-scroll a {
+  color: #000000;
+  display: inline-block;
+  padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.menu-link.active {
+  background-color: rgb(171, 0, 0);
+  font-weight: bold;
+  color: white;
+}
+
+.menu-link:hover {
+  background-color: rgba(171, 0, 0, 0.88); /* Cambia il colore al passaggio del mouse */ /* Cambia il colore del testo al passaggio del mouse */
+  color: white;
+} 
+
+.section {
+  display: none; /* Nascondi tutte le sezioni per impostazione predefinita */
+}
+
+.menu-link {
+  display: inline-block;
+  /* padding: 10px 20px; */
+  text-decoration: none;
+  /* color: #ffffff; */
+  /* background-color: #fff; */
+  border-radius: 0px;
+  /* transition: all 0.3s ease;
+  transform: skew(-10deg); */
+  font-family: 'Arial', sans-serif;
+}

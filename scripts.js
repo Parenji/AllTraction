@@ -242,18 +242,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const lobbys = [
-    "lobby1.json",
-    "lobby2.json",
-    "lobby3.json",
-    "lobby4.json",
-  ];
+  const lobbys = ["lobby1.json", "lobby2.json", "lobby3.json", "lobby4.json"];
 
-
-
-
-    caricaLobbys();
-  
+  caricaLobbys();
 
   function caricaLobbys() {
     lobbys.forEach((lobby, index) => {
@@ -261,19 +252,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      const hosts = [
-        "Rupetheking",
-        "BAD_Brucem84",
-        "TLM_wid83",
-        "Parenji",
-      ];
+      const hosts = ["Rupetheking", "BAD_Brucem84", "TLM_wid83", "Parenji"];
 
-      const live = [
-        "Twitch",
-        "Twitch",
-        "Youtube",
-        "Twitch",
-      ];
+      const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
       const ora = [
         "Martedì 25 giugno, ore 21:00",
@@ -281,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Giovedì 27 giugno, ore 21:00",
         "Giovedì 27 giugno, ore 22:10",
       ];
-    
+
       fetch(urlWithTimestamp)
         .then((response) => {
           if (!response.ok) {
@@ -309,9 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div style="text-align: center;">Host: ${hosts[index]}</div>
           <div style="text-align: center;">Live su: ${live[index]}</div>
        
-          <table id="mable${
-            index + 1
-          }"><thead><tr>
+          <table id="mable${index + 1}"><thead><tr>
                             <th>N.</th>
                             <th>ID PSN</th>
                             <th>ID GT7</th>
@@ -332,7 +311,6 @@ document.addEventListener("DOMContentLoaded", function () {
           html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
           html += `<div style="margin-bottom: 5px;"></div>`;
           container.innerHTML = html;
-          
         })
         .catch((error) => {
           console.error("Errore nel caricamento della lobby:", error);
@@ -358,3 +336,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".navbar-scroll a");
+  const sections = document.querySelectorAll(".section");
+
+  function hideAllSections() {
+    sections.forEach((section) => {
+      section.style.display = "none";
+    });
+  }
+
+  // Funzione per rimuovere la classe 'active' da tutti i link
+  function removeActiveClass() {
+    links.forEach((link) => {
+      link.classList.remove("active");
+    });
+  }
+
+  // Funzione per centrare il link attivo nella visuale
+
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        hideAllSections();
+        targetElement.style.display = "block";
+        targetElement.scrollIntoView({ behavior: "smooth" });
+
+        // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
+        removeActiveClass();
+        this.classList.add("active");
+
+      
+      }
+    });
+  });
+
+  ///Mostra la prima sezione per impostazione predefinita e evidenzia il primo link
+  if (sections.length > 0 && links.length > 0) {
+    sections[0].style.display = "block"; // Mostra la prima sezione
+    links[0].classList.add("active"); // Aggiungi la classe 'active' al primo link
+  }
+});
+

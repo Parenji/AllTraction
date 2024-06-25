@@ -11,7 +11,7 @@
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="styles.css" />
 </head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <body>
     <header>
         <div class="title-container">
@@ -20,17 +20,64 @@
             <img src="wttlm.jpeg" alt="Logo" class="logo2" />
         </div>
     </header>
-    <!-- Pulsante per scaricare il PDF -->
-    <div class="pdf-button-container">
-        <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
-            PDF Lobby e Host Gara 3
-        </button> -->
-        <button class="pdf-button" onclick="window.open('info.pdf', '_blank')">
-            PDF Info e opzioni stanza
-        </button>
+    <div class="navbar-container">
+        <div class="navbar-scroll">
+            <a href="#page1" class="menu-link">Lobby e Host</a>
+            <a href="#page2" class="menu-link">Classifiche</a>
+            <a href="#page3" class="menu-link">Report Direzione Gara</a>
+            <a href="#page4" class="menu-link">Info e opzioni stanza</a>
+            <a href="#page5" class="menu-link">Risultati</a>
+            <!-- Aggiungi altre pagine secondo necessità -->
+        </div>
     </div>
-    <!-- countdowns -->
 
+
+    <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
+        PDF Lobby e Host Gara 4
+    </button> -->
+    <!-- <div class="countdown-container">
+        <div class="countdown" id="countdown1"
+            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
+            <div class="lobbyx">Lobby 1</div>
+            <div class="winner"></div>
+            <div class="timer" id="timer1"></div>
+
+            <img src="twitch.svg" alt="twitchTLM" class="twitch">
+        </div>
+        <div class="countdown" id="countdown2"
+            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
+            <div class="lobbyx">Lobby 2</div>
+            <div class="winner"></div>
+            <div class="timer" id="timer2"></div>
+            <img src="twitch.svg" alt="twitchTLM" class="twitch">
+
+        </div>
+        <div class="countdown" id="countdown3"
+            onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
+            <div class="lobbyx">Lobby 3</div>
+            <div class="winner"></div>
+            <div class="timer" id="timer3"></div>
+
+            <img src="youtube.svg" alt="youtubeTLM" class="youtube">
+
+        </div>
+        <div class="countdown" id="countdown4"
+            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
+            <div class="lobbyx">Lobby 4</div>
+            <div class="winner"></div>
+            <div class="timer" id="timer4"></div>
+
+            <img src="twitch.svg" alt="twitchTLM" class="twitch">
+
+        </div>
+
+    </div> -->
+
+
+
+
+    <section id="page1" class="section">
+        <!-- LOBBY -->
     <div class="countdown-header">Gara 4 - Autopolis</div>
     <div class="accordionn-container">
         <button class="accordionn">
@@ -75,48 +122,78 @@
             <div class="panel-content table-container" id="lobby4"></div>
         </div>
     </div>
-    <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
-        PDF Lobby e Host Gara 4
-    </button> -->
-    <!-- <div class="countdown-container">
-        <div class="countdown" id="countdown1"
-            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-            <div class="lobbyx">Lobby 1</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer1"></div>
+    </section>
+        <section id="page2" class="section">
+            <div class="countdown-header">Classifiche</div>
+            <!-- Sezioni delle tendine per le lobby -->
+            <!-- Sezioni delle tendine per le lobby -->
+            <div class="accordion-container">
+                <button class="accordion">Lobby 1 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                        </svg></i>
+                </button>
+                <div class="panel">
+                    <div class="panel-content table-container" id="classifica1"></div>
+                </div>
+        
+                <button class="accordion">Lobby 2 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                        </svg></i></button>
+                <div class="panel">
+                    <div class="panel-content table-container" id="classifica2"></div>
+                </div>
+        
+                <button class="accordion">Lobby 3 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                        </svg></i></button>
+                <div class="panel">
+                    <div class="panel-content table-container" id="classifica3"></div>
+                </div>
+        
+                <button class="accordion">Lobby 4 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                        </svg></i></button>
+                <div class="panel">
+                    <div class="panel-content table-container" id="classifica4"></div>
+                </div>
+        
+                <button class="accordion">Classifica Generale <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                        </svg></i></button>
+                <div class="panel">
+                    <div class="panel-content table-container" id="classifica5"></div>
+                </div>
+            </div>
+        
+        </section>
 
-            <img src="twitch.svg" alt="twitchTLM" class="twitch">
-        </div>
-        <div class="countdown" id="countdown2"
-            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-            <div class="lobbyx">Lobby 2</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer2"></div>
-            <img src="twitch.svg" alt="twitchTLM" class="twitch">
+        <section id="page3" class="section">
+            <div class="pdf-button-container">
+                <button class="pen-button" onclick="window.open('penalita.pdf', '_blank')">
+                    PDF Penalità Gara 3
+                </button>
+            </div>
+        </section>
 
-        </div>
-        <div class="countdown" id="countdown3"
-            onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-            <div class="lobbyx">Lobby 3</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer3"></div>
+        <section id="page4" class="section">
+                <!-- Pulsante per scaricare il PDF -->
+    <div class="pdf-button-container">
+        <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
+            PDF Lobby e Host Gara 3
+        </button> -->
+        <button class="pdf-button" onclick="window.open('info.pdf', '_blank')">
+            PDF Info e opzioni stanza
+        </button>
+    </div>
+        </section>
 
-            <img src="youtube.svg" alt="youtubeTLM" class="youtube">
-
-        </div>
-        <div class="countdown" id="countdown4"
-            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-            <div class="lobbyx">Lobby 4</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer4"></div>
-
-            <img src="twitch.svg" alt="twitchTLM" class="twitch">
-
-        </div>
-
-    </div> -->
-
-    <!-- countdowns -->
+        <section id="page5" class="section">
+               <!-- countdowns -->
 
     <div class="countdown-header">Gara 3 - Fuji</div>
     <div class="countdown-container1">
@@ -156,58 +233,9 @@
         </div>
 
     </div>
+        </section>
 
-    <div class="pdf-button-container">
-        <button class="pen-button" onclick="window.open('penalita.pdf', '_blank')">
-            PDF Penalità Gara 3
-        </button>
-    </div>
-    <div class="countdown-header">Classifiche</div>
-    <!-- Sezioni delle tendine per le lobby -->
-    <!-- Sezioni delle tendine per le lobby -->
-    <div class="accordion-container">
-        <button class="accordion">Lobby 1 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24">
-                    <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                </svg></i>
-        </button>
-        <div class="panel">
-            <div class="panel-content table-container" id="classifica1"></div>
-        </div>
-
-        <button class="accordion">Lobby 2 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24">
-                    <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                </svg></i></button>
-        <div class="panel">
-            <div class="panel-content table-container" id="classifica2"></div>
-        </div>
-
-        <button class="accordion">Lobby 3 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24">
-                    <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                </svg></i></button>
-        <div class="panel">
-            <div class="panel-content table-container" id="classifica3"></div>
-        </div>
-
-        <button class="accordion">Lobby 4 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24">
-                    <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                </svg></i></button>
-        <div class="panel">
-            <div class="panel-content table-container" id="classifica4"></div>
-        </div>
-
-        <button class="accordion">Classifica Generale <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24">
-                    <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                </svg></i></button>
-        <div class="panel">
-            <div class="panel-content table-container" id="classifica5"></div>
-        </div>
-    </div>
-    <script src="scripts.js"></script>
+        <script src="scripts.js"></script>
 </body>
 
 </html>
