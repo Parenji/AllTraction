@@ -3,7 +3,7 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 20px 0px 20px 0px;
 }
 
 /* Stile per il container del titolo */
@@ -90,7 +90,7 @@ td,
 th {
   /* border: 1px solid #ddd;  */
   /* Bordo delle celle */
-  padding: 5px; /* Spazio interno */
+  padding: 0px; /* Spazio interno */
   text-align: center; /* Centra il contenuto delle celle */
 }
 
@@ -311,23 +311,22 @@ td.totalone {
     background-color: black;
   }
 
-  .pdf-button {
-    width: 100%;
+  .pen-button {
+    width: -webkit-fill-available ;
     box-sizing: border-box;
     padding: 12px;
-    margin: 0px;
-    margin-bottom: 10px;
+    margin: 20px;
     font-size: 18px;
   }
 
-  .pen-button {
-    width: 100%;
+  .pdf-button {
+    width: -webkit-fill-available ;
     box-sizing: border-box;
     padding: 12px;
-    margin: 0px;
-    margin-bottom: 10px;
+    margin: 20px;
     font-size: 18px;
   }
+
 }
 
 /* /* Stile per la freccia indicativa
@@ -345,6 +344,10 @@ td.totalone {
 
 /* Indicatore di scorrimento su mobile */
 @media (max-width: 768px) {
+ .section{
+padding: 5px;
+ }
+
   .table-container {
     position: relative;
     overflow-x: auto;
@@ -372,7 +375,7 @@ td.totalone {
 
   th,
   td {
-    padding: 5px;
+    padding: 4px 1px 4px;
     text-align: center;
   }
 
@@ -384,7 +387,7 @@ td.totalone {
   } */
 
   table {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 /* .countdown-section {
