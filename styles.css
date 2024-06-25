@@ -558,7 +558,7 @@ td.totalone {
 }
 
 .menu-link:hover {
-  background-color: rgba(171, 0, 0, 0.88); /* Cambia il colore al passaggio del mouse */ /* Cambia il colore del testo al passaggio del mouse */
+  background-color: rgb(171, 0, 0); /* Cambia il colore al passaggio del mouse */ /* Cambia il colore del testo al passaggio del mouse */
   color: white;
 } 
 
