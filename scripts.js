@@ -408,3 +408,32 @@ function populateTable(data) {
 
 // Carica i dati JSON quando la pagina è caricata
 window.onload = loadJSON;
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const menu = document.querySelector('.navbar-scroll');
+
+  menu.addEventListener('click', function (e) {
+      if (e.target.classList.contains('menu-link')) {
+          const clickedItem = e.target;
+          const itemRect = clickedItem.getBoundingClientRect();
+          const menuRect = menu.getBoundingClientRect();
+          const menuContainer = document.querySelector('.navbar-container');
+          const containerRect = menuContainer.getBoundingClientRect();
+
+          // Calcolo delle posizioni
+          const scrollLeft = menuContainer.scrollLeft;
+          const containerCenter = containerRect.width / 2;
+          const itemCenter = itemRect.left + (itemRect.width / 2) - containerRect.left;
+
+          // Nuova posizione di scroll
+          const scrollTo = scrollLeft + (itemCenter - containerCenter);
+
+          // Scroll dell'elemento nel menu
+          menuContainer.scroll({
+              left: scrollTo,
+              behavior: 'smooth'
+          });
+      }
+  });
+});

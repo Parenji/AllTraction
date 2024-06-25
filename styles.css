@@ -546,7 +546,8 @@ td.totalone {
   /* transform: skew(-10deg); */
   background-color: #ffffff; /* Cambia il colore di sfondo come preferisci */
   color: rgb(0, 0, 0); /* Cambia il colore del testo come preferisci */
-  display: inline-block;
+  display: inline-flex;
+  list-style: none;
   overflow-x: auto;
   white-space: nowrap;
   /* border-top: 3px solid rgb(171, 0, 0); */
