@@ -90,7 +90,7 @@ td,
 th {
   /* border: 1px solid #ddd;  */
   /* Bordo delle celle */
-  padding: 0px; /* Spazio interno */
+  padding: 5px; /* Spazio interno */
   text-align: center; /* Centra il contenuto delle celle */
 }
 
@@ -375,7 +375,7 @@ padding: 5px;
 
   th,
   td {
-    padding: 4px 1px 4px;
+    padding: 4px 2px 4px;
     text-align: center;
   }
 
