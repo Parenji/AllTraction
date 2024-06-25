@@ -14,7 +14,6 @@ body {
   margin-bottom: 20px;
 }
 
-
 /* Stile per le immagini del logo */
 .title-container .logo2 {
   width: auto;
@@ -39,7 +38,6 @@ body {
   margin-left: 20px;
   justify-content: center;
 }
-
 
 /* Stile del titolo */
 .title-container h1 {
@@ -97,8 +95,8 @@ th {
 }
 
 /* th { */
-  /* background-color: #810101;   */
-  /* Colore di sfondo  */
+/* background-color: #810101;   */
+/* Colore di sfondo  */
 /* } */
 
 /* 
@@ -304,7 +302,6 @@ td.totalone {
     background-color: black;
   }
 
-
   .accordionn {
     font-size: 20px;
     padding: 20px;
@@ -402,7 +399,7 @@ td.totalone {
 } */
 
 /* titolotto */
-.countdown-header {
+.titolozzo {
   position: relative;
   z-index: 2;
   text-align: center;
@@ -416,9 +413,9 @@ td.totalone {
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url("japan.svg");
+    url("images/japan.svg");
   background-size: cover;
-  background-position: top;
+  background-position: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -432,9 +429,9 @@ td.totalone {
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url("japan.svg");
+    url("/images/japan.svg");
   background-size: cover;
-  background-position: top;
+  background-position: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -571,12 +568,19 @@ td.totalone {
 }
 
 .menu-link:hover {
-  background-color: rgb(171, 0, 0); /* Cambia il colore al passaggio del mouse */ /* Cambia il colore del testo al passaggio del mouse */
+  background-color: rgb(
+    171,
+    0,
+    0
+  ); /* Cambia il colore al passaggio del mouse */ /* Cambia il colore del testo al passaggio del mouse */
   color: white;
-} 
+}
 
 .section {
   display: none; /* Nascondi tutte le sezioni per impostazione predefinita */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
 }
 
 .menu-link {
@@ -588,5 +592,5 @@ td.totalone {
   border-radius: 0px;
   /* transition: all 0.3s ease;
   transform: skew(-10deg); */
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }

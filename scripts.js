@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const classifiche = [
-    "classifica1.json",
-    "classifica2.json",
-    "classifica3.json",
-    "classifica4.json",
-    "classifica5.json",
+    "backend/classifica/classifica1.json",
+    "backend/classifica/classifica2.json",
+    "backend/classifica/classifica3.json",
+    "backend/classifica/classifica4.json",
+    "backend/classifica/classifica5.json",
   ];
 
   let top14 = [];
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const lobbys = ["lobby1.json", "lobby2.json", "lobby3.json", "lobby4.json"];
+  const lobbys = ["backend/lobby/lobby1.json", "backend/lobby/lobby2.json", "backend/lobby/lobby3.json", "backend/lobby/lobby4.json"];
 
   caricaLobbys();
 
@@ -384,3 +384,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+async function loadJSON() {
+  try {
+      const response = await fetch('backend/penalita/penalita.json');
+      const data = await response.json();
+      populateTable(data);
+  } catch (error) {
+      console.error('Errore nel caricamento del file JSON:', error);
+  }
+}
+
+// Funzione per popolare la tabella con i dati JSON
+function populateTable(data) {
+  const tableBody = document.getElementById('penaltiesTable').getElementsByTagName('tbody')[0];
+  data.forEach(item => {
+      const row = tableBody.insertRow();
+      Object.values(item).forEach(text => {
+          const cell = row.insertCell();
+          cell.textContent = text;
+      });
+  });
+}
+
+// Carica i dati JSON quando la pagina è caricata
+window.onload = loadJSON;

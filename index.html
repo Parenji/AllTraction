@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>TLM Worldtour</title>
-    <link rel="icon" href="icon.png">
+    <link rel="icon" href="images/icon.png">
     <link rel="stylesheet" href="styles.css" />
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,7 +18,7 @@
         <div class="title-container">
             <!-- <img src="Logotlm.png" alt="Logo" class="logo" />
             <h1>World Tour</h1> -->
-            <img src="wttlm.jpeg" alt="Logo" class="logo2" />
+            <img src="images/wttlm.jpeg" alt="Logo" class="logo2" />
         </div>
     </header>
     <div class="navbar-container">
@@ -43,14 +43,14 @@
             <div class="winner"></div>
             <div class="timer" id="timer1"></div>
 
-            <img src="twitch.svg" alt="twitchTLM" class="twitch">
+            <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
         </div>
         <div class="countdown" id="countdown2"
             onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
             <div class="lobbyx">Lobby 2</div>
             <div class="winner"></div>
             <div class="timer" id="timer2"></div>
-            <img src="twitch.svg" alt="twitchTLM" class="twitch">
+            <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
 
         </div>
         <div class="countdown" id="countdown3"
@@ -59,7 +59,7 @@
             <div class="winner"></div>
             <div class="timer" id="timer3"></div>
 
-            <img src="youtube.svg" alt="youtubeTLM" class="youtube">
+            <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
 
         </div>
         <div class="countdown" id="countdown4"
@@ -68,7 +68,7 @@
             <div class="winner"></div>
             <div class="timer" id="timer4"></div>
 
-            <img src="twitch.svg" alt="twitchTLM" class="twitch">
+            <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
 
         </div>
 
@@ -79,10 +79,10 @@
 
     <section id="page1" class="section">
         <!-- LOBBY -->
-        <div class="countdown-header">
+        <div class="titolozzo">
             <div>Gara 4</div>
-            <div><img src="logotrack.png" alt="Logo" class="logotrack" />
-                <img src="japan.svg" alt="Logo" class="flagtrack" />
+            <div><img src="images/logotrack.png" alt="Logo" class="logotrack" />
+                <img src="images/japan.svg" alt="Logo" class="flagtrack" />
             </div>
         </div>
         <div class="accordionn-container">
@@ -130,7 +130,7 @@
         </div>
     </section>
     <section id="page2" class="section">
-        <!-- <div class="countdown-header">Classifiche</div> -->
+        <!-- <div class="titolozzo">Classifiche</div> -->
         <!-- Sezioni delle tendine per le lobby -->
         <!-- Sezioni delle tendine per le lobby -->
         <div class="accordion-container">
@@ -180,10 +180,28 @@
     </section>
 
     <section id="page3" class="section">
+        <div class="titolozzo">
+        <div>Provvedimenti Gara 3</div>
+        </div>
+        <table id="penaltiesTable" class="panel-content">
+            <thead>
+                <tr>
+                    <th>Lobby</th>
+                    <th>ID PSN/ID GT7</th>
+                    <th>Penalità</th>
+                    <th>Posizioni perse</th>
+                    <th>Motivazione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- I dati saranno inseriti qui tramite JavaScript -->
+            </tbody>
+        </table>
         <div class="pdf-button-container">
-            <button class="pen-button" onclick="window.open('penalita.pdf', '_blank')">
-                PDF Penalità Gara 3
+            <button class="pen-button" onclick="window.open('pdf/penalita.pdf', '_blank')">
+                PDF Provvedimenti Gara 3
             </button>
+
         </div>
     </section>
 
@@ -193,16 +211,17 @@
             <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
             PDF Lobby e Host Gara 3
         </button> -->
-            <button class="pdf-button" onclick="window.open('info.pdf', '_blank')">
+            <button class="pdf-button" onclick="window.open('pdf/info.pdf', '_blank')">
                 PDF Info e opzioni stanza
             </button>
         </div>
+
     </section>
 
     <section id="page5" class="section">
         <!-- countdowns -->
 
-        <div class="countdown-header">Gara 3 - Fuji</div>
+        <div class="titolozzo">Gara 3 - Fuji</div>
         <div class="countdown-container1">
             <div class="countdown" id="countdown1"
                 onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
@@ -210,14 +229,14 @@
                 <div class="winner">RMT_87_TOMMY</div>
                 <!-- <div class="timer" id="timer1"></div> -->
 
-                <img src="twitch.svg" alt="twitchTLM" class="twitch">
+                <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
             </div>
             <div class="countdown" id="countdown2"
                 onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
                 <div class="lobbyx">Lobby 2</div>
                 <div class="winner">Daniele</div>
                 <!-- <div class="timer" id="timer2"></div> -->
-                <img src="twitch.svg" alt="twitchTLM" class="twitch">
+                <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
 
             </div>
             <div class="countdown" id="countdown3"
@@ -226,7 +245,7 @@
                 <div class="winner">RMT-Flavio-VR46</div>
                 <!-- <div class="timer" id="timer3"></div> -->
 
-                <img src="youtube.svg" alt="youtubeTLM" class="youtube">
+                <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
 
             </div>
             <div class="countdown" id="countdown4"
@@ -235,7 +254,7 @@
                 <div class="winner">L.Silvestri</div>
                 <!-- <div class="timer" id="timer4"></div> -->
 
-                <img src="twitch.svg" alt="twitchTLM" class="twitch">
+                <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
 
             </div>
 

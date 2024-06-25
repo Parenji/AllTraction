@@ -1,0 +1,4 @@
+{
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "markdown.updateLinksOnFileMove.enabled": "prompt"
+}
