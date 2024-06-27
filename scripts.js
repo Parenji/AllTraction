@@ -230,13 +230,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const countdowninterval = setInterval(updateCountdown, 1000);
   }
 
-  // const lobby1EndTime = new Date("Jun 25, 2024 21:00:00").getTime();
-  // const lobby2EndTime = new Date("Jun 25, 2024 22:10:00").getTime();
-  const lobby3EndTime = new Date("Jun 27, 2024 21:00:00").getTime();
-  const lobby4EndTime = new Date("Jun 27, 2024 22:10:00").getTime();
+  const lobby1EndTime = new Date("Jul 2, 2024 21:00:00").getTime();
+  const lobby2EndTime = new Date("Jul 2, 2024 22:10:00").getTime();
+  const lobby3EndTime = new Date("Jul 4, 2024 21:00:00").getTime();
+  const lobby4EndTime = new Date("Jul 4, 2024 22:10:00").getTime();
 
-  // initializeCountdown("timer1", lobby1EndTime);
-  // initializeCountdown("timer2", lobby2EndTime);
+  initializeCountdown("timer1", lobby1EndTime);
+  initializeCountdown("timer2", lobby2EndTime);
   initializeCountdown("timer3", lobby3EndTime);
   initializeCountdown("timer4", lobby4EndTime);
 });

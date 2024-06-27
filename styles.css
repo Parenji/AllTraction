@@ -443,6 +443,22 @@ padding: 5px;
   border-radius: 15px;
 }
 
+.countdown-containereu {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("images/eu.svg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  opacity: 1;
+  border-radius: 15px;
+}
+
 .lobbyx {
   font-size: 17px;
   font-weight: bold;
