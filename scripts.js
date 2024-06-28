@@ -257,10 +257,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
       const ora = [
-        "Martedì 25 giugno, ore 21:00",
-        "Martedì 25 giugno, ore 22:10",
-        "Giovedì 27 giugno, ore 21:00",
-        "Giovedì 27 giugno, ore 22:10",
+        "Martedì 2 luglio, ore 21:00",
+        "Martedì 2 luglio, ore 22:10",
+        "Giovedì 4 luglio, ore 21:00",
+        "Giovedì 4 luglio, ore 22:10",
       ];
 
       fetch(urlWithTimestamp)
