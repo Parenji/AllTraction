@@ -4,8 +4,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px 0px 20px 0px;
-background-image: radial-gradient(#520000 0.5px, #000000 0.5px);
-background-size: 20px 20px;
+
 }
 
 /* Stile per il container del titolo */
@@ -87,14 +86,7 @@ table {
   position: relative;
   overflow-x: auto;
   white-space: nowrap;
-  background-image: radial-gradient(#520000 0.5px, #000000 0.5px);
-  background-size: 20px 20px;
-}
 
-.table-container2 {
-
-  background-image: radial-gradient(#520000 0.5px, #000000 0.5px);
-  background-size: 20px 20px;
 }
 
 /* Stile per le celle della tabella */
@@ -231,8 +223,7 @@ td.totalone {
   font-size: 18px;
   /* border-radius: 5px; Aggiungi un bordo arrotondato */
   margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
-  background-image: radial-gradient(#520000 0.5px, #000000 0.5px);
-background-size: 20px 20px;
+
 }
 
 .accordion > i > svg {
@@ -271,8 +262,7 @@ background-size: 20px 20px;
   font-size: 18px;
   /* border-radius: 5px; Aggiungi un bordo arrotondato */
   margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
-  background-image: radial-gradient(#520000 0.5px, #000000 0.5px);
-  background-size: 20px 20px;
+
 }
 
 .accordionn > i > svg {
@@ -604,14 +594,14 @@ padding: 5px;
   color: white;
 }
 
-.menu-link:hover {
+/* .menu-link:hover {
   background-color: rgb(
     171,
     0,
     0
-  ); /* Cambia il colore al passaggio del mouse */ /* Cambia il colore del testo al passaggio del mouse */
+  );
   color: white;
-}
+} */
 
 .section {
   display: none; /* Nascondi tutte le sezioni per impostazione predefinita */
