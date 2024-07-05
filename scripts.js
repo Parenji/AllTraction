@@ -231,11 +231,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const lobby1EndTime = new Date("Jul 9, 2024 21:00:00").getTime();
-  const lobby2EndTime = new Date("Jul 2, 2024 22:10:00").getTime();
-  const lobby3EndTime = new Date("Jul 4, 2024 21:00:00").getTime();
-  const lobby4EndTime = new Date("Jul 4, 2024 22:10:00").getTime();
+  const lobby2EndTime = new Date("Jul 9, 2024 22:10:00").getTime();
+  const lobby3EndTime = new Date("Jul 11, 2024 21:00:00").getTime();
+  const lobby4EndTime = new Date("Jul 11, 2024 22:10:00").getTime();
 
-  // initializeCountdown("timer1", lobby1EndTime);
+  initializeCountdown("timer1", lobby1EndTime);
   initializeCountdown("timer2", lobby2EndTime);
   initializeCountdown("timer3", lobby3EndTime);
   initializeCountdown("timer4", lobby4EndTime);
@@ -252,15 +252,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      const hosts = ["Rupetheking", "BAD_Brucem84", "TLM_wid83", "Parenji"];
+      const hosts = ["Rupetheking", "BAD_Brucem84", "TLM_wid83", "BAD_Brucem84"];
 
       const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
       const ora = [
-        "Martedì 2 luglio, ore 21:00",
-        "Martedì 2 luglio, ore 22:10",
-        "Giovedì 4 luglio, ore 21:00",
-        "Giovedì 4 luglio, ore 22:10",
+        "Martedì 9 luglio, ore 21:00",
+        "Martedì 9 luglio, ore 22:10",
+        "Giovedì 11 luglio, ore 21:00",
+        "Giovedì 11 luglio, ore 22:10",
       ];
 
       fetch(urlWithTimestamp)
