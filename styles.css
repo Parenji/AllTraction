@@ -668,14 +668,14 @@ filter: grayscale(1) invert(1); */
 }
 
 .sponsor-logos img {
-  max-height: 60px; /* Dimensioni massime delle immagini */
-  max-width: 100px;
+  max-height: 50px; /* Dimensioni massime delle immagini */
+  max-width: 80px;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
   padding: 10px;
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
@@ -685,8 +685,8 @@ filter: grayscale(1) invert(1); */
 
 .social-icons a {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: auto;
 }
 
 .social-icons img {
