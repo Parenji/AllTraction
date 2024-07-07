@@ -3,8 +3,17 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px 0px 20px 0px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
 }
 
 /* Stile per il container del titolo */
@@ -12,14 +21,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 /* Stile per le immagini del logo */
-.title-container .logo2 {
+.title-container .logohead {
   width: auto;
   height: 150px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
-  margin: 0 0px; /* Spaziatura tra il logo e il titolo */
+  margin: 20px; /* Spaziatura tra il logo e il titolo */
+
 }
 
 /* Stile per le immagini del logo */
@@ -30,7 +40,7 @@ body {
   margin-bottom: 10px;
   justify-content: center;
   -webkit-filter: grayscale(0) invert(0);
-filter: brightness(140%) grayscale(0) invert(0);
+  filter: brightness(140%) grayscale(0) invert(0);
 }
 
 .flagtrack {
@@ -38,7 +48,7 @@ filter: brightness(140%) grayscale(0) invert(0);
   height: 15px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   /* margin-top: 10px;
   margin-bottom: 10px;*/
-  margin-left: 5px; 
+  margin-left: 5px;
   /* justify-content:; */
 }
 
@@ -86,7 +96,6 @@ table {
   position: relative;
   overflow-x: auto;
   white-space: nowrap;
-
 }
 
 /* Stile per le celle della tabella */
@@ -96,7 +105,6 @@ th {
   /* Bordo delle celle */
   padding: 5px; /* Spazio interno */
   text-align: center; /* Centra il contenuto delle celle */
-
 }
 
 /* th { */
@@ -223,7 +231,6 @@ td.totalone {
   font-size: 18px;
   /* border-radius: 5px; Aggiungi un bordo arrotondato */
   margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
-
 }
 
 .accordion > i > svg {
@@ -262,7 +269,6 @@ td.totalone {
   font-size: 18px;
   /* border-radius: 5px; Aggiungi un bordo arrotondato */
   margin-bottom: 10px; /* Aggiungi uno spazio tra i pulsanti */
-
 }
 
 .accordionn > i > svg {
@@ -319,7 +325,7 @@ td.totalone {
   }
 
   .pen-button {
-    width: -webkit-fill-available ;
+    width: -webkit-fill-available;
     box-sizing: border-box;
     padding: 12px;
     margin: 20px;
@@ -327,13 +333,12 @@ td.totalone {
   }
 
   .pdf-button {
-    width: -webkit-fill-available ;
+    width: -webkit-fill-available;
     box-sizing: border-box;
     padding: 12px;
     margin: 20px;
     font-size: 18px;
   }
-
 }
 
 /* /* Stile per la freccia indicativa
@@ -351,9 +356,9 @@ td.totalone {
 
 /* Indicatore di scorrimento su mobile */
 @media (max-width: 768px) {
- .section{
-padding: 5px;
- }
+  .section {
+    padding: 5px;
+  }
 
   .table-container {
     position: relative;
@@ -624,10 +629,68 @@ padding: 5px;
 
 .pentrack {
   background-color: white;
-  width:-webkit-fill-available;
+  width: -webkit-fill-available;
+  max-width: 100%;
   height: auto; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin: 10px;
   justify-content: center;
   /* -webkit-filter: grayscale(1) invert(1);
 filter: grayscale(1) invert(1); */
+}
+
+.footer-section {
+
+  width: 100%;
+  background-color: #1a1a1a;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='%23464646' fill-opacity='0.45'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E"); */
+  /* background-size: cover; */
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  /* border-top: 3px solid rgb(171, 0, 0); */
+
+}
+
+.sponsor-section h2 {
+  /* margin-bottom: 20px; */
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.sponsor-logos img {
+  max-height: 60px; /* Dimensioni massime delle immagini */
+  max-width: 100px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  -webkit-filter: grayscale(1) invert(1);
+  filter: grayscale(1) invert(1);
+  border-bottom: 1px solid rgb(132, 132, 132);
+
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
