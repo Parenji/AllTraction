@@ -10,6 +10,10 @@ body {
 }
 
 .main-container {
+  display:block;
+}
+
+.footer-container {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -101,16 +105,17 @@ table {
 /* Stile per le celle della tabella */
 td,
 th {
-  /* border: 1px solid #ddd;  */
+  border: 1px solid #000000; 
+  background-color: #1a1a1a;  
   /* Bordo delle celle */
   padding: 5px; /* Spazio interno */
   text-align: center; /* Centra il contenuto delle celle */
 }
 
-/* th { */
-/* background-color: #810101;   */
-/* Colore di sfondo  */
-/* } */
+th {
+  background-color: #810101;  
+  /* Colore di sfondo */
+}
 
 /* 
 Stile per le righe alternate
@@ -372,7 +377,7 @@ td.totalone {
     white-space: nowrap;
   }
 
-  .table-container::after {
+  /* .table-container::after {
     content: "→ Scorri";
     display: block;
     position: absolute;
@@ -383,7 +388,7 @@ td.totalone {
     color: #810101;
     pointer-events: none;
     opacity: 0.1;
-  }
+  } */
 
   th,
   td {
@@ -699,3 +704,11 @@ filter: grayscale(1) invert(1); */
 .social-icons img:hover {
   transform: scale(1.1); 
 }
+/* 
+.tlm {
+  font-size: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+} */
