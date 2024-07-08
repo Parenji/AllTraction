@@ -535,7 +535,7 @@ td.totalone {
 }
 
 .qualified {
-  color: #d77777 !important; /* colore di evidenziazione */
+  color: #ff8181 !important; /* colore di evidenziazione */
 }
 /* .qualified:nth-child(even) { */
 /* color: rgb(
@@ -574,7 +574,7 @@ td.totalone {
   white-space: nowrap;
   margin-bottom: 40px;
   text-align: center;
-  border-top: 3px solid rgb(171, 0, 0);
+  border-top: 2px solid rgb(171, 0, 0);
 }
 
 .navbar-scroll {
@@ -586,6 +586,7 @@ td.totalone {
   list-style: none;
   overflow-x: auto;
   white-space: nowrap;
+  /* border-bottom: 5px solid rgb(171, 0, 0); */
   /* border-top: 3px solid rgb(171, 0, 0); */
 }
 
