@@ -1,7 +1,8 @@
 body {
   background-color: black;
   color: white;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
+  font-family: 'f1';
   margin: 0;
   padding: 0px 0px 0px 0px;
   display: flex;
@@ -9,8 +10,17 @@ body {
   min-height: 100vh;
 }
 
+@font-face {
+  font-family: 'f1'; /*a name to be used later*/
+  src: url('Formula1-Regular.otf'); /*URL to font*/
+}
+
+button {
+  font-family: inherit;
+}
+
 .main-container {
-  display:block;
+  display: block;
 }
 
 .footer-container {
@@ -33,7 +43,6 @@ body {
   width: auto;
   height: 150px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin: 20px; /* Spaziatura tra il logo e il titolo */
-
 }
 
 /* Stile per le immagini del logo */
@@ -46,6 +55,8 @@ body {
   -webkit-filter: grayscale(0) invert(0);
   filter: brightness(140%) grayscale(0) invert(0);
 }
+
+
 
 .flagtrack {
   width: auto;
@@ -65,6 +76,12 @@ body {
 h1 {
   text-align: center;
 }
+
+h2 {
+  text-align: center;
+}
+
+
 
 .classifica {
   margin: 20px 0;
@@ -105,15 +122,15 @@ table {
 /* Stile per le celle della tabella */
 td,
 th {
-  border: 1px solid #000000; 
-  background-color: #1a1a1a;  
+  border: 1px solid #000000;
+  background-color: #1a1a1a;
   /* Bordo delle celle */
   padding: 5px; /* Spazio interno */
   text-align: center; /* Centra il contenuto delle celle */
 }
 
 th {
-  background-color: #810101;  
+  background-color: #810101;
   /* Colore di sfondo */
 }
 
@@ -476,6 +493,16 @@ td.totalone {
   border-radius: 15px;
 }
 
+.countdown-containerfinale {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 1;
+  border-radius: 15px;
+  font-size: 40px;
+}
+
+
 .lobbyx {
   font-size: 17px;
   font-weight: bold;
@@ -630,7 +657,7 @@ td.totalone {
   border-radius: 0px;
   /* transition: all 0.3s ease;
   transform: skew(-10deg); */
-  font-family: "Arial", sans-serif;
+  /* font-family: "Arial", sans-serif; */
 }
 
 .pentrack {
@@ -645,7 +672,6 @@ filter: grayscale(1) invert(1); */
 }
 
 .footer-section {
-
   width: 100%;
   background-color: #1a1a1a;
   /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='%23464646' fill-opacity='0.45'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E"); */
@@ -655,7 +681,6 @@ filter: grayscale(1) invert(1); */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: white;
   /* border-top: 3px solid rgb(171, 0, 0); */
-
 }
 
 .sponsor-section h2 {
@@ -686,7 +711,6 @@ filter: grayscale(1) invert(1); */
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
   border-bottom: 1px solid rgb(132, 132, 132);
-
 }
 
 .social-icons a {
@@ -703,7 +727,7 @@ filter: grayscale(1) invert(1); */
 }
 
 .social-icons img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 /* 
 .tlm {
@@ -713,3 +737,71 @@ filter: grayscale(1) invert(1); */
   text-transform: uppercase;
   letter-spacing: 1px;
 } */
+
+/* Stile per la griglia di partenza */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Due colonne per fila */
+  gap: 0px; /* Spazio tra le caselle */
+  padding: 15px;
+  background-color: #292929; /* Colore di sfondo simile al carbonio */
+  border-top: 10px solid;
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="black"/><rect x="10" width="10" height="10" fill="white"/><rect x="20" width="10" height="10" fill="black"/><rect x="30" width="10" height="10" fill="white"/></svg>')
+    10 repeat;
+}
+
+.grid-container2 {
+  background-image: linear-gradient(black,#333);
+  background-color: #333; /* Colore di sfondo simile al carbonio */
+  border-bottom: 10px solid;
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="white"/><rect x="10" width="10" height="10" fill="black"/><rect x="20" width="10" height="10" fill="white"/><rect x="30" width="10" height="10" fill="black"/></svg>')
+    10 repeat;
+    padding: 20px;
+    text-align: center;
+    font-size:  30px;
+    position: relative;
+    z-index: 2;
+}
+
+.grid-item {
+  /* background-color: #000000; Colore delle caselle */
+  color: white;
+  padding: 2px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 5px solid white ;
+  border-left: 5px solid white ;
+  border-right: 5px solid white ;
+  margin-bottom: 20px;
+  min-height: 70px;
+}
+
+.grid-index {
+  text-align: center;
+}
+
+.grid-item-container:nth-child(odd) {
+  margin-right: 10px; 
+}
+
+.grid-item-container:nth-child(even) {
+  margin-left: 10px; /* Spazio a sinistra per le caselle pari */
+  margin-top: 20px;
+}
+
+.infofinale {
+  font-size: larger;
+  padding: 10px;
+  text-align: center;
+}
+
+.logotrackfinale {
+  width: auto;
+  height: 70px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  justify-content: center;
+}

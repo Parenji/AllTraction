@@ -230,19 +230,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const countdowninterval = setInterval(updateCountdown, 1000);
   }
 
-  const lobby1EndTime = new Date("Jul 9, 2024 21:00:00").getTime();
-  const lobby2EndTime = new Date("Jul 9, 2024 22:10:00").getTime();
+  // const lobby1EndTime = new Date("Jul 9, 2024 21:00:00").getTime();
+  // const lobby2EndTime = new Date("Jul 9, 2024 22:10:00").getTime();
   const lobby3EndTime = new Date("Jul 11, 2024 21:00:00").getTime();
   const lobby4EndTime = new Date("Jul 11, 2024 22:10:00").getTime();
+  const finaleEndTime = new Date("Jul 18, 2024 21:00:00").getTime();
 
-  initializeCountdown("timer1", lobby1EndTime);
-  initializeCountdown("timer2", lobby2EndTime);
+  // initializeCountdown("timer1", lobby1EndTime);
+  // initializeCountdown("timer2", lobby2EndTime);
   initializeCountdown("timer3", lobby3EndTime);
   initializeCountdown("timer4", lobby4EndTime);
+  initializeCountdown("timer5", finaleEndTime);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const lobbys = ["backend/lobby/lobby1.json", "backend/lobby/lobby2.json", "backend/lobby/lobby3.json", "backend/lobby/lobby4.json"];
+  const lobbys = [
+    "backend/lobby/lobby1.json",
+    "backend/lobby/lobby2.json",
+    "backend/lobby/lobby3.json",
+    "backend/lobby/lobby4.json",
+  ];
 
   caricaLobbys();
 
@@ -252,7 +259,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      const hosts = ["Rupetheking", "BAD_Brucem84", "TLM_wid83", "BAD_Brucem84"];
+      const hosts = [
+        "Rupetheking",
+        "BAD_Brucem84",
+        "TLM_wid83",
+        "BAD_Brucem84",
+      ];
 
       const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
@@ -356,7 +368,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per centrare il link attivo nella visuale
 
-
   links.forEach((link) => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
@@ -371,8 +382,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
         removeActiveClass();
         this.classList.add("active");
-
-      
       }
     });
   });
@@ -386,54 +395,86 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function loadJSON() {
   try {
-      const response = await fetch('backend/penalita/penalita.json');
-      const data = await response.json();
-      populateTable(data);
+    const response = await fetch("backend/penalita/penalita.json");
+    const data = await response.json();
+    populateTable(data);
   } catch (error) {
-      console.error('Errore nel caricamento del file JSON:', error);
+    console.error("Errore nel caricamento del file JSON:", error);
   }
 }
 
 // Funzione per popolare la tabella con i dati JSON
 function populateTable(data) {
-  const tableBody = document.getElementById('penaltiesTable').getElementsByTagName('tbody')[0];
-  data.forEach(item => {
-      const row = tableBody.insertRow();
-      Object.values(item).forEach(text => {
-          const cell = row.insertCell();
-          cell.textContent = text;
-      });
+  const tableBody = document
+    .getElementById("penaltiesTable")
+    .getElementsByTagName("tbody")[0];
+  data.forEach((item) => {
+    const row = tableBody.insertRow();
+    Object.values(item).forEach((text) => {
+      const cell = row.insertCell();
+      cell.textContent = text;
+    });
   });
 }
 
 // Carica i dati JSON quando la pagina è caricata
 window.onload = loadJSON;
 
+document.addEventListener("DOMContentLoaded", function () {
+  const menu = document.querySelector(".navbar-scroll");
 
-document.addEventListener('DOMContentLoaded', function () {
-  const menu = document.querySelector('.navbar-scroll');
+  menu.addEventListener("click", function (e) {
+    if (e.target.classList.contains("menu-link")) {
+      const clickedItem = e.target;
+      const itemRect = clickedItem.getBoundingClientRect();
+      const menuRect = menu.getBoundingClientRect();
+      const menuContainer = document.querySelector(".navbar-container");
+      const containerRect = menuContainer.getBoundingClientRect();
 
-  menu.addEventListener('click', function (e) {
-      if (e.target.classList.contains('menu-link')) {
-          const clickedItem = e.target;
-          const itemRect = clickedItem.getBoundingClientRect();
-          const menuRect = menu.getBoundingClientRect();
-          const menuContainer = document.querySelector('.navbar-container');
-          const containerRect = menuContainer.getBoundingClientRect();
+      // Calcolo delle posizioni
+      const scrollLeft = menuContainer.scrollLeft;
+      const containerCenter = containerRect.width / 2;
+      const itemCenter =
+        itemRect.left + itemRect.width / 2 - containerRect.left;
 
-          // Calcolo delle posizioni
-          const scrollLeft = menuContainer.scrollLeft;
-          const containerCenter = containerRect.width / 2;
-          const itemCenter = itemRect.left + (itemRect.width / 2) - containerRect.left;
+      // Nuova posizione di scroll
+      const scrollTo = scrollLeft + (itemCenter - containerCenter);
 
-          // Nuova posizione di scroll
-          const scrollTo = scrollLeft + (itemCenter - containerCenter);
-
-          // Scroll dell'elemento nel menu
-          menuContainer.scroll({
-              left: scrollTo,
-              behavior: 'smooth'
-          });
-      }
+      // Scroll dell'elemento nel menu
+      menuContainer.scroll({
+        left: scrollTo,
+        behavior: "smooth",
+      });
+    }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Recupera i top 14 dalla classifica generale e crea la griglia di partenza
+  fetch("backend/classifica/classifica5.json")
+      .then(response => response.json())
+      .then(data => {
+          const top14 = data.slice(0, 14);
+          const gridContainer = document.querySelector(".grid-container");
+
+          top14.forEach((item, index) => {
+              const gridItemContainer = document.createElement("div");
+              gridItemContainer.classList.add("grid-item-container");
+
+              const gridIndex = document.createElement("div");
+              gridIndex.classList.add("grid-index");
+              gridIndex.textContent = `${index + 1}`;
+
+              const gridItem = document.createElement("div");
+              gridItem.classList.add("grid-item");
+              // gridItem.textContent = `${item.id_gt7} (${item.team})`;
+
+              gridItemContainer.appendChild(gridIndex);
+              gridItemContainer.appendChild(gridItem);
+              gridContainer.appendChild(gridItemContainer);
+          });
+      })
+      .catch(error => console.error("Errore nel caricamento della classifica generale:", error));
+});
+
