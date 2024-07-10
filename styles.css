@@ -499,7 +499,7 @@ td.totalone {
   flex-wrap: wrap;
   opacity: 1;
   border-radius: 15px;
-  font-size: 8vw;
+  font-size: 7vw;
 }
 
 
@@ -794,7 +794,7 @@ filter: grayscale(1) invert(1); */
 
 .infofinale {
   font-size: larger;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -802,6 +802,6 @@ filter: grayscale(1) invert(1); */
   width: auto;
   height: 70px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   justify-content: center;
 }
