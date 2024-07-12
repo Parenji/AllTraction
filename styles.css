@@ -668,8 +668,8 @@ td.totalone {
   height: auto; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin: 10px;
   justify-content: center;
-  /* -webkit-filter: grayscale(1) invert(1);
-filter: grayscale(1) invert(1); */
+  -webkit-filter: grayscale(1) invert(1);
+filter: grayscale(1) invert(1);
 }
 
 .footer-section {
