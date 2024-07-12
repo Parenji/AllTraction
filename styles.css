@@ -359,8 +359,9 @@ td.totalone {
     box-sizing: border-box;
     padding: 12px;
     margin: 20px;
-    font-size: 18px;
+    font-size: 18px;  
   }
+
 }
 
 /* /* Stile per la freccia indicativa
@@ -766,9 +767,9 @@ filter: grayscale(1) invert(1); */
 .grid-item {
   /* background-color: #000000; Colore delle caselle */
   color: white;
-  padding: 2px;
+  padding-top: 5px;
   text-align: center;
-  font-size: 18px;
+  font-size: 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -777,6 +778,13 @@ filter: grayscale(1) invert(1); */
   border-right: 5px solid white ;
   margin-bottom: 20px;
   min-height: 70px;
+  flex-flow: column;
+}
+
+@media (max-width: 768px) {
+  .grid-item {
+    font-size: 4vw;
+  }
 }
 
 .grid-index {
@@ -804,4 +812,9 @@ filter: grayscale(1) invert(1); */
   margin-top: 0px;
   margin-bottom: 10px;
   justify-content: center;
+}
+
+.team-icon {
+  height: 55px;
+  margin-top: 5px;
 }

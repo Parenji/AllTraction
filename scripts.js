@@ -232,14 +232,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // const lobby1EndTime = new Date("Jul 9, 2024 21:00:00").getTime();
   // const lobby2EndTime = new Date("Jul 9, 2024 22:10:00").getTime();
-  const lobby3EndTime = new Date("Jul 11, 2024 21:00:00").getTime();
-  const lobby4EndTime = new Date("Jul 11, 2024 22:10:00").getTime();
+  // const lobby3EndTime = new Date("Jul 11, 2024 21:00:00").getTime();
+  // const lobby4EndTime = new Date("Jul 11, 2024 22:10:00").getTime();
   const finaleEndTime = new Date("Jul 18, 2024 21:00:00").getTime();
 
   // initializeCountdown("timer1", lobby1EndTime);
   // initializeCountdown("timer2", lobby2EndTime);
-  initializeCountdown("timer3", lobby3EndTime);
-  initializeCountdown("timer4", lobby4EndTime);
+  // initializeCountdown("timer3", lobby3EndTime);
+  // initializeCountdown("timer4", lobby4EndTime);
   initializeCountdown("timer5", finaleEndTime);
 });
 
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "backend/lobby/lobby4.json",
   ];
 
-  caricaLobbys();
+  // caricaLobbys();
 
   function caricaLobbys() {
     lobbys.forEach((lobby, index) => {
@@ -329,9 +329,6 @@ document.addEventListener("DOMContentLoaded", function () {
           let container = document.getElementById(`lobby${index + 1}`);
           container.innerHTML = `<p>Errore nel caricamento della lobby.</p>`;
         });
-      // } else if (index === 4) {
-      //   // La lobby generale è già stata caricata, quindi la saltiamo
-      // }
     });
     // Aggiungi l'evento click per le sezioni delle tendine
     const accordions = document.querySelectorAll(".accordionn");
@@ -468,11 +465,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
               const gridItem = document.createElement("div");
               gridItem.classList.add("grid-item");
-              // gridItem.textContent = `${item.id_gt7} (${item.team})`;
+// Crea il contenitore gridItem come prima
+// const gridItem = document.createElement('div');
 
-              gridItemContainer.appendChild(gridIndex);
-              gridItemContainer.appendChild(gridItem);
-              gridContainer.appendChild(gridItemContainer);
+// Crea il div per l'ID
+const idDiv = document.createElement('div');
+idDiv.textContent = item.id_gt7;
+// Crea il div per l'immagine del team
+const teamImgDiv = document.createElement('div');
+const teamImg = document.createElement('img');
+teamImg.src = `images/${item.team}.png`;
+teamImg.alt = item.team;
+teamImg.classList.add('team-icon'); // Aggiungi una classe all'immagine
+teamImgDiv.appendChild(teamImg);
+
+// Appendi i due div al gridItem
+gridItem.appendChild(idDiv);
+gridItem.appendChild(teamImgDiv);
+
+// Appendi gridIndex e gridItem al container principale
+gridItemContainer.appendChild(gridIndex); // Supponendo che gridIndex sia già definito
+gridItemContainer.appendChild(gridItem);
+gridContainer.appendChild(gridItemContainer);
           });
       })
       .catch(error => console.error("Errore nel caricamento della classifica generale:", error));
