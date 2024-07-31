@@ -234,13 +234,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // const lobby2EndTime = new Date("Jul 9, 2024 22:10:00").getTime();
   // const lobby3EndTime = new Date("Jul 11, 2024 21:00:00").getTime();
   // const lobby4EndTime = new Date("Jul 11, 2024 22:10:00").getTime();
-  const finaleEndTime = new Date("Jul 18, 2024 21:00:00").getTime();
+  // const finaleEndTime = new Date("Jul 18, 2024 21:00:00").getTime();
 
   // initializeCountdown("timer1", lobby1EndTime);
   // initializeCountdown("timer2", lobby2EndTime);
   // initializeCountdown("timer3", lobby3EndTime);
   // initializeCountdown("timer4", lobby4EndTime);
-  initializeCountdown("timer5", finaleEndTime);
+  // initializeCountdown("timer5", finaleEndTime);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
