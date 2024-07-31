@@ -562,6 +562,18 @@ td.totalone {
       /*     0 0 150px #FF8C00 Effetto glowing */;
 }
 
+.winnerf {
+
+  font-weight: bold;
+  color: #fff7c7; /* Colore dorato */
+  text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700,
+    0 0 40px #ff8c00, 0 0 80px #ff8c00,
+    0 0 90px #ff8c00 /*,
+      0 0 100px #FF8C00 */;
+  margin-bottom: 40px;
+  
+}
+  
 .qualified {
   color: #ff8181 !important; /* colore di evidenziazione */
 }
