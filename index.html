@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>TLM Worldtour</title>
+    <title>TLM Fino al confine... e oltre</title>
     <link rel="icon" href="images/icon.png">
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -19,176 +19,53 @@
         <div class="title-container">
             <!-- <img src="Logotlm.png" alt="Logo" class="logo" />
             <h1>World Tour</h1> -->
-            <img src="images/wttlm.jpeg" alt="Logo" class="logohead" />
+            <div>
+                <img src="images/Logotlm.png" alt="Logo" class="logohead" />
+                <img src="images/faceo.png" alt="Logo" class="faceo" />
+            </div>
+
+
         </div>
     </header>
     <div class="navbar-container">
         <div class="navbar-scroll">
-            <a href="#page1" class="menu-link">LA FINALE</a>
-            <a href="#page2" class="menu-link">Classifiche</a>
-            <a href="#page3" class="menu-link">Report Direzione Gara</a>
-            <a href="#page4" class="menu-link">Info e opzioni stanza</a>
-            <a href="#page5" class="menu-link">Wall of Fame</a>
+            <a href="#page1" class="menu-link">Lobby</a>
+            <a href="#page2" class="menu-link">Info e opzioni stanza</a>
+            <a href="#page3" class="menu-link">Classifiche</a>
+            <a href="#page4" class="menu-link">Report Direzione Gara</a>
+            <!-- <a href="#page4" class="menu-link">Info e opzioni stanza</a> -->
+            <!-- <a href="#page5" class="menu-link">Wall of Fame</a> -->
             <!-- <a href="#page6" class="menu-link">LA FINALE</a> -->
             <!-- Aggiungi altre pagine secondo necessità -->
         </div>
     </div>
 
+    <section id="page1" class="section">
+        <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
+            Lobby e Host
+        </button> -->
+        <!-- <div class="titolozzo">Classifiche</div> -->
+        <!-- Sezioni delle tendine per le lobby -->
+        <!-- Sezioni delle tendine per le lobby -->
+        <div class="accordion-container">
 
-    <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
-        PDF Lobby e Host Gara 4
-    </button> -->
-    <!-- <div class="countdown-container">
-        <div class="countdown" id="countdown1"
-            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-            <div class="lobbyx">Lobby 1</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer1"></div>
-
-            <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-        </div>
-        <div class="countdown" id="countdown2"
-            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-            <div class="lobbyx">Lobby 2</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer2"></div>
-            <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-        </div>
-        <div class="countdown" id="countdown3"
-            onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-            <div class="lobbyx">Lobby 3</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer3"></div>
-
-            <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
-
-        </div>
-        <div class="countdown" id="countdown4"
-            onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-            <div class="lobbyx">Lobby 4</div>
-            <div class="winner"></div>
-            <div class="timer" id="timer4"></div>
-
-            <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-        </div>
-
-    </div> -->
-    <div class="main-container">
-
-        <section id="page1" class="section">
-            <div class="infofinale">
-                <!-- <div>Giovedì 18 Luglio 2024 ore 21</div>
-                <div>Host: TLM_wid83</div>
-                <div>Live su Twitch</div> -->
-                                    <div>
-                        Vincitore
-                    </div>
-
-            </div>
-            <div class="countdown-containerfinale">
-                <div class="countdown" id="countdown5"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="winnerf">
-                        L.Silvestri (RMT)
-                    </div>
-
-                    <!-- <img src="images/interlogo.png" alt="Logo" class="logotrackfinale" /> -->
-
-                </div>
+            <button class="accordion">Lobby Gr. 3 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24">
+                        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                    </svg></i>
+            </button>
+            <div class="panel">
+                <div class="panel-content table-container" id="lobby1"></div>
             </div>
 
-
-            <div class="grid-container2">
-                <div>Griglia di Partenza</div>
+            <button class="accordion">Lobby Gr. 4 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24">
+                        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                    </svg></i></button>
+            <div class="panel">
+                <div class="panel-content table-container" id="lobby2"></div>
             </div>
-            <div class="grid-container">
-                <!-- Le caselle della griglia saranno generate dinamicamente tramite JavaScript -->
-            </div>
-
-        </section>
-
-        <!-- LOBBY
-         <section id="page1" class="section">
-            <div class="titolozzo">
-                <div>Gara 6 <img src="images/eu.svg" alt="Logo" class="flagtrack" /></div>
-
-                <div><img src="images/rbrlogo.svg" alt="Logo" class="logotrack" />
-
-                </div>
-            </div>
-            <div class="accordionn-container">
-                <button class="accordionn">
-                    Lobby 1
-
-                    <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="lobby1"></div>
-                </div>
-                <button class="accordionn">
-                    Lobby 2
-                    <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="lobby2"></div>
-                </div>
-                <button class="accordionn">
-                    Lobby 3
-                    <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="lobby3"></div>
-                </div>
-                <button class="accordionn">
-                    Lobby 4
-
-                    <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="lobby4"></div>
-                </div>
-            </div>
-        </section> -->
-        <section id="page2" class="section">
-            <!-- <div class="titolozzo">Classifiche</div> -->
-            <!-- Sezioni delle tendine per le lobby -->
-            <!-- Sezioni delle tendine per le lobby -->
-            <div class="accordion-container">
-
-                <button class="accordion">Classifica Generale <i><svg class="icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica5"></div>
-                </div>
-                <button class="accordion">Lobby 1 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica1"></div>
-                </div>
-
-                <button class="accordion">Lobby 2 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica2"></div>
-                </div>
-
+            <!-- 
                 <button class="accordion">Lobby 3 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
                             height="24" viewBox="0 0 24 24">
                             <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
@@ -203,324 +80,140 @@
                         </svg></i></button>
                 <div class="panel">
                     <div class="panel-content table-container" id="classifica4"></div>
+                </div> -->
+
+        </div>
+
+    </section>
+
+        <div class="main-container">
+
+            <section id="page2" class="section">
+                <!-- Pulsante per scaricare il PDF -->
+                <div class="pdf-button-container">
+                    <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
+            PDF Lobby e Host Gara 3
+        </button> -->
+                    <button class="pdf-button" onclick="window.open('pdf/info.pdf', '_blank')">
+                        PDF Info e opzioni stanza
+                    </button>
                 </div>
 
-            </div>
+            </section>
 
-        </section>
 
-        <section id="page3" class="section">
-            <div class="titolozzo">
-                <div>Provvedimenti Finale</div>
-            </div>
-            <table id="penaltiesTable" class="panel-content">
-                <thead>
-                    <tr>
-                        <th>Lobby</th>
-                        <th>ID PSN / ID GT7</th>
-                        <th>Penalità</th>
-                        <th>Pos. perse</th>
-                        <th>Motivazione</th>
-                    </tr>
+            <section id="page3" class="section">
+                <!-- <div class="titolozzo">Classifiche</div> -->
+                <!-- Sezioni delle tendine per le lobby -->
+                <!-- Sezioni delle tendine per le lobby -->
+                <div class="accordion-container">
 
-                </thead>
-                <tbody>
-                    <!-- I dati saranno inseriti qui tramite JavaScript -->
-                </tbody>
-            </table>
-            <div class="pdf-button-container">
-                <!-- <img src="images/rbr.svg" alt="Logo" class="pentrack" /> -->
-            </div>
-            <!-- <div class="pdf-button-container">
+                    <!-- <button class="accordion">Classifica aggregata<i><svg class="icon"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                            </svg></i></button>
+                    <div class="panel">
+                        <div class="panel-content table-container" id="classifica5"></div>
+                    </div> -->
+                    <button class="accordion">Campionato Gr. 3 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                            </svg></i>
+                    </button>
+                    <div class="panel">
+                        <div class="panel-content table-container" id="classifica1"></div>
+                    </div>
+
+                    <button class="accordion">Campionato Gr. 4 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                            </svg></i></button>
+                    <div class="panel">
+                        <div class="panel-content table-container" id="classifica2"></div>
+                    </div>
+                    <!-- 
+                <button class="accordion">Lobby 3 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                        </svg></i></button>
+                <div class="panel">
+                    <div class="panel-content table-container" id="classifica3"></div>
+                </div>
+
+                <button class="accordion">Lobby 4 <i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
+                        </svg></i></button>
+                <div class="panel">
+                    <div class="panel-content table-container" id="classifica4"></div>
+                </div> -->
+
+                </div>
+
+            </section>
+
+            <section id="page4" class="section">
+                <div class="titolozzo">
+                    <div>Provvedimenti Gara 1</div>
+                </div>
+                <table id="penaltiesTable" class="panel-content">
+                    <thead>
+                        <tr>
+                            <th>Lobby</th>
+                            <th>ID PSN / ID GT7</th>
+                            <th>Penalità</th>
+                            <th>Pos. perse</th>
+                            <th>Motivazione</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <!-- I dati saranno inseriti qui tramite JavaScript -->
+                    </tbody>
+                </table>
+                <div class="pdf-button-container">
+                    <!-- <img src="images/rbr.svg" alt="Logo" class="pentrack" /> -->
+                </div>
+                <!-- <div class="pdf-button-container">
             <button class="pen-button" onclick="window.open('pdf/penalita.pdf', '_blank')">
                 PDF Provvedimenti Gara 4
             </button>
 
         </div>-->
-        </section>
+            </section>
 
-        <section id="page4" class="section">
-            <!-- Pulsante per scaricare il PDF -->
-            <div class="pdf-button-container">
-                <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
-            PDF Lobby e Host Gara 3
-        </button> -->
-                <button class="pdf-button" onclick="window.open('pdf/info.pdf', '_blank')">
-                    PDF Info e opzioni stanza
-                </button>
-            </div>
 
-        </section>
 
-        <section id="page5" class="section">
-            <!-- countdowns -->
-            <div class="titolozzo">Gara 6 - Red Bull Ring</div>
-            <div class="countdown-containereu">
-                <div class="countdown" id="countdown1"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 1</div>
-                    <div class="winner">RMT_87_TOMMY</div>
-                    <!-- <div class="timer" id="timer1"></div> -->
 
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
+        </div>
+        <div class="footer-container">
+            <div></div>
+            <div class="footer-section">
+                <!-- <div class="tlm">Team Lion Motorsport</div> -->
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/teamlionmotorsport/" target="_blank">
+                        <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100063705602323" target="_blank">
+                        <img src="https://www.svgrepo.com/show/512120/facebook-176.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.twitch.tv/team_lion_motorsport_live" target="_blank">
+                        <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch">
+                    </a>
+                    <a href="https://www.youtube.com/@TEAMLIONMOTORSPORT" target="_blank">
+                        <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="YouTube">
+                    </a>
                 </div>
-                <div class="countdown" id="countdown2"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 2</div>
-                    <div class="winner">TLM_andvea99</div>
-                    <!-- <div class="timer" id="timer2"></div> -->
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
+                <!-- <h2>Sponsored by</h2> -->
+                <div class="sponsor-logos">
+                    <img src="images/Abem Line.png" alt="Score Sponsor">
+                    <img src="images/Cafè Tre Archi Logo Wt.png" alt="Abem Sponsor">
+                    <img src="images/Logo SCoRe.png" alt="3 Archi Sponsor">
                 </div>
-                <div class="countdown" id="countdown3"
-                    onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-                    <div class="lobbyx">Lobby 3</div>
-                    <div class="winner">RMT-Flavio-VR46</div>
-                    <div class="timer" id="timer3"></div>
-
-                    <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
-
-                </div>
-                <div class="countdown" id="countdown4"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 4</div>
-                    <div class="winner">TLM_Kappa</div>
-                    <div class="timer" id="timer4"></div>
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-
-            </div>
-
-            <div class="titolozzo">Gara 5 - Spa</div>
-            <div class="countdown-containereu">
-                <div class="countdown" id="countdown1"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 1</div>
-                    <div class="winner">L.Silvestri</L>
-                    </div>
-                    <!-- <div class="timer" id="timer1"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-                </div>
-                <div class="countdown" id="countdown2"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 2</div>
-                    <div class="winner">BAD_brucem84</div>
-                    <!-- <div class="timer" id="timer2"></div> -->
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-                <div class="countdown" id="countdown3"
-                    onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-                    <div class="lobbyx">Lobby 3</div>
-                    <div class="winner">RMT-Flavio-VR46</div>
-                    <!-- <div class="timer" id="timer3"></div>  -->
-
-                    <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
-
-                </div>
-                <div class="countdown" id="countdown4"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 4</div>
-                    <div class="winner">D.Apicella</div>
-                    <!-- <div class="timer" id="timer4"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-
-            </div>
-
-            <div class="titolozzo">Gara 4 - Autopolis</div>
-            <div class="countdown-container">
-                <div class="countdown" id="countdown1"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 1</div>
-                    <div class="winner">TLM_andvea99</div>
-                    <!-- <div class="timer" id="timer1"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-                </div>
-                <div class="countdown" id="countdown2"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 2</div>
-                    <div class="winner">BAD_brucem84</div>
-                    <!-- <div class="timer" id="timer2"></div> -->
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-                <div class="countdown" id="countdown3"
-                    onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-                    <div class="lobbyx">Lobby 3</div>
-                    <div class="winner">RMT-Flavio-VR46</div>
-                    <!-- <div class="timer" id="timer3"></div>  -->
-
-                    <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
-
-                </div>
-                <div class="countdown" id="countdown4"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 4</div>
-                    <div class="winner">TLM_Parenti</div>
-                    <!-- <div class="timer" id="timer4"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-
-            </div>
-
-
-            <div class="titolozzo">Gara 3 - Fuji</div>
-            <div class="countdown-container">
-                <div class="countdown" id="countdown1"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 1</div>
-                    <div class="winner">RMT_87_TOMMY</div>
-                    <!-- <div class="timer" id="timer1"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-                </div>
-                <div class="countdown" id="countdown2"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 2</div>
-                    <div class="winner">Daniele</div>
-                    <!-- <div class="timer" id="timer2"></div> -->
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-                <div class="countdown" id="countdown3"
-                    onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-                    <div class="lobbyx">Lobby 3</div>
-                    <div class="winner">RMT-Flavio-VR46</div>
-                    <!-- <div class="timer" id="timer3"></div> -->
-
-                    <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
-
-                </div>
-                <div class="countdown" id="countdown4"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 4</div>
-                    <div class="winner">L.Silvestri</div>
-                    <!-- <div class="timer" id="timer4"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-
-            </div>
-
-            <div class="titolozzo">Gara 2 - Road Atlanta</div>
-            <div class="countdown-container1">
-                <div class="countdown" id="countdown1"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 1</div>
-                    <div class="winner">RMT-87-TOMMY</div>
-                    <!-- <div class="timer" id="timer1"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-                </div>
-                <div class="countdown" id="countdown2"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 2</div>
-                    <div class="winner">BAD_brucem84</div>
-                    <!-- <div class="timer" id="timer2"></div> -->
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-                <div class="countdown" id="countdown3"
-                    onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-                    <div class="lobbyx">Lobby 3</div>
-                    <div class="winner">RMT-Flavio-VR46</div>
-                    <!-- <div class="timer" id="timer3"></div>  -->
-
-                    <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
-
-                </div>
-                <div class="countdown" id="countdown4"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 4</div>
-                    <div class="winner">L.Silvestri</div>
-                    <!-- <div class="timer" id="timer4"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-
-            </div>
-
-
-            <div class="titolozzo">Gara 1 - Watkins Glen</div>
-            <div class="countdown-container1">
-                <div class="countdown" id="countdown1"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 1</div>
-                    <div class="winner">RMT_87_TOMMY</div>
-                    <!-- <div class="timer" id="timer1"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-                </div>
-                <div class="countdown" id="countdown2"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 2</div>
-                    <div class="winner">BAD_brucem84</div>
-                    <!-- <div class="timer" id="timer2"></div> -->
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-                <div class="countdown" id="countdown3"
-                    onclick="window.open('https://www.youtube.com/@TEAMLIONMOTORSPORT/streams', '_blank')">
-                    <div class="lobbyx">Lobby 3</div>
-                    <div class="winner">RMT-Flavio-VR46</div>
-                    <!-- <div class="timer" id="timer3"></div> -->
-
-                    <img src="images/youtube.svg" alt="youtubeTLM" class="youtube">
-
-                </div>
-                <div class="countdown" id="countdown4"
-                    onclick="window.open('https://www.twitch.tv/team_lion_motorsport_live', '_blank')">
-                    <div class="lobbyx">Lobby 4</div>
-                    <div class="winner">M.Bennardo</div>
-                    <!-- <div class="timer" id="timer4"></div> -->
-
-                    <img src="images/twitch.svg" alt="twitchTLM" class="twitch">
-
-                </div>
-
-            </div>
-        </section>
-
-    </div>
-    <div class="footer-container">
-        <div></div>
-        <div class="footer-section">
-            <!-- <div class="tlm">Team Lion Motorsport</div> -->
-            <div class="social-icons">
-                <a href="https://www.instagram.com/teamlionmotorsport/" target="_blank">
-                    <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100063705602323" target="_blank">
-                    <img src="https://www.svgrepo.com/show/512120/facebook-176.svg" alt="Facebook">
-                </a>
-                <a href="https://www.twitch.tv/team_lion_motorsport_live" target="_blank">
-                    <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch">
-                </a>
-                <a href="https://www.youtube.com/@TEAMLIONMOTORSPORT" target="_blank">
-                    <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="YouTube">
-                </a>
-            </div>
-            <!-- <h2>Sponsored by</h2> -->
-            <div class="sponsor-logos">
-                <img src="images/Abem Line.png" alt="Score Sponsor">
-                <img src="images/Cafè Tre Archi Logo Wt.png" alt="Abem Sponsor">
-                <img src="images/Logo SCoRe.png" alt="3 Archi Sponsor">
             </div>
         </div>
-    </div>
 
-    <script src="scripts.js"></script>
+        <script src="scripts.js"></script>
 </body>
 
 

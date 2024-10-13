@@ -65,92 +65,30 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>ID PSN</th>
                             <th>ID GT7</th>
                             <th>Team</th>
+                            <th class="totale hidden">L. Maggiore</th>
+                            <th class="totale hidden">Deep Forest</th>
+                            <th class="totale hidden">Sardegna</th>
+                            <th class="totale hidden">Red Bull</th>
+                            <th class="totale hidden">Monza</th>
                             <th class="totalone">Totale</th>
-                            <th class="pole hidden">Pole WG</th>
-                            <th class="gara hidden">Gara WG</th>
-                            <th class="gv hidden">GV WG</th>
-                            <th class="totale">W. Glen</th>
-                            <th class="pole hidden">Pole ATL</th>
-                            <th class="gara hidden">Gara ATL</th>
-                            <th class="gv hidden">GV ATL</th>
-                            <th class="totale">R. Atlanta</th>
-                            <th class="pole hidden">Pole FUJ</th>
-                            <th class="gara hidden">Gara FUJ</th>
-                            <th class="gv hidden">GV FUJ</th>
-                            <th class="totale">Fuji</th>
-                            <th class="pole hidden">Pole AUT</th>
-                            <th class="gara hidden">Gara AUT</th>
-                            <th class="gv hidden">GV AUT</th>
-                            <th class="totale">Autop.</th>
-                            <th class="pole hidden">Pole Spa</th>
-                            <th class="gara hidden">Gara Spa</th>
-                            <th class="gv hidden">GV Spa</th>
-                            <th class="totale">Spa</th>
-                            <th class="pole hidden">Pole RB</th>
-                            <th class="gara hidden">Gara RB</th>
-                            <th class="gv hidden">GV RB</th>
-                            <th class="totale">Red Bull</th>
                         </tr></thead><tbody>`;
 
           data.forEach((item, i) => {
             let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
-            if (top14.includes(item.id_psn)) {
-              rowClass += " qualified";
-            }
+            // if (top14.includes(item.id_psn)) {
+            //   rowClass += " qualified";
+            // }
             html += `<tr class="${rowClass}">
                                 <td>${item.posizione || ""}</td>
                                 <td>${item.id_psn || ""}</td>
                                 <td>${item.id_gt7 || ""}</td>
                                  <td>${item.team || ""}</td>
+                                <td class="totale hidden">${item.tot1 || ""}</td>
+                                <td class="totale hidden">${item.tot2 || ""}</td>
+                                <td class="totale hidden">${item.tot3 || ""}</td>
+                                <td class="totale hidden">${item.tot4 || ""}</td>
+                                <td class="totale hidden">${item.tot5 || ""}</td>
                                 <td class="totalone">${item.totale || ""}</td>
-                                <td class="pole hidden">${
-                                  item.pole_wg || ""
-                                }</td>
-                                <td class="gara hidden">${
-                                  item.gara_wg || ""
-                                }</td>
-                                <td class="gv hidden">${item.gv_wg || ""}</td>
-                                <td class="totale">${item.tot_wg || ""}</td>
-                                <td class="pole hidden">${
-                                  item.pole_atl || ""
-                                }</td>
-                                <td class="gara hidden">${
-                                  item.gara_atl || ""
-                                }</td>
-                                <td class="gv hidden">${item.gv_atl || ""}</td>
-                                <td class="totale">${item.tot_atl || ""}</td>
-                                <td class="pole hidden">${
-                                  item.pole_fuj || ""
-                                }</td>
-                                <td class="gara hidden">${
-                                  item.gara_fuj || ""
-                                }</td>
-                                <td class="gv hidden">${item.gv_fuj || ""}</td>
-                                <td class="totale">${item.tot_fuj || ""}</td>
-                                <td class="pole hidden">${
-                                  item.pole_aut || ""
-                                }</td>
-                                <td class="gara hidden">${
-                                  item.gara_aut || ""
-                                }</td>
-                                <td class="gv hidden">${item.gv_aut || ""}</td>
-                                <td class="totale">${item.tot_aut || ""}</td>
-                                <td class="pole hidden">${
-                                  item.pole_spa || ""
-                                }</td>
-                                <td class="gara hidden">${
-                                  item.gara_spa || ""
-                                }</td>
-                                <td class="gv hidden">${item.gv_spa || ""}</td>
-                                <td class="totale">${item.tot_spa || ""}</td>
-                                <td class="pole hidden">${
-                                  item.pole_rb || ""
-                                }</td>
-                                <td class="gara hidden">${
-                                  item.gara_rb || ""
-                                }</td>
-                                <td class="gv hidden">${item.gv_rb || ""}</td>
-                                <td class="totale">${item.tot_rb || ""}</td>
                             </tr>`;
           });
 
@@ -168,12 +106,12 @@ document.addEventListener("DOMContentLoaded", function () {
           );
           toggleColumnsButton.addEventListener("click", function () {
             const table = document.getElementById(`table${index + 1}`);
-            const columnsToToggle = table.querySelectorAll(".pole, .gara, .gv");
+            const columnsToToggle = table.querySelectorAll(".totale");
             columnsToToggle.forEach((column) => {
               column.classList.toggle("hidden");
             });
             // Verifica lo stato di una colonna specifica per determinare il testo del pulsante
-            const isHidden = table.querySelector(".pole.hidden");
+            const isHidden = table.querySelector(".totale.hidden");
             const buttonText = isHidden
               ? "Mostra punteggi dettagliati"
               : "Nascondi punteggi dettagliati";
@@ -247,11 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const lobbys = [
     "backend/lobby/lobby1.json",
     "backend/lobby/lobby2.json",
-    "backend/lobby/lobby3.json",
-    "backend/lobby/lobby4.json",
   ];
 
-  // caricaLobbys();
+  caricaLobbys();
 
   function caricaLobbys() {
     lobbys.forEach((lobby, index) => {
@@ -260,19 +196,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
       const hosts = [
-        "Rupetheking",
-        "BAD_Brucem84",
         "TLM_wid83",
-        "BAD_Brucem84",
+        "Rupetheking",
       ];
 
-      const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
+      // const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
       const ora = [
-        "Martedì 9 luglio, ore 21:00",
-        "Martedì 9 luglio, ore 22:10",
-        "Giovedì 11 luglio, ore 21:00",
-        "Giovedì 11 luglio, ore 22:10",
+        "Giovedì 17 ottobre 2024, ore 20:45",
+        "Giovedì 17 ottobre 2024, ore 21:45",
       ];
 
       fetch(urlWithTimestamp)
@@ -289,18 +221,17 @@ document.addEventListener("DOMContentLoaded", function () {
           let html = "";
 
           // Genera la sezione "Lobby" per gli indici da 1 a 4
-          // if (index < 4) {
-          //   html += `<h2>Lobby ${index + 1}</h2>`;
+          // if (index < 2) {
+          // html += `<h2>Lobby ${index + 1}</h2>`;
           // } else {
-          //   // Genera la sezione "lobby Generale" per l'indice 5
-          //   html += `<h2>lobby Generale</h2>`;
+            // Genera la sezione "lobby Generale" per l'indice 5
+            // html += `<h2>lobby Generale</h2>`;
           // }
 
           // Genera la tabella
           html += `<div class="table-container1">
           <div style="text-align: center;">${ora[index]}</div>  
           <div style="text-align: center;">Host: ${hosts[index]}</div>
-          <div style="text-align: center;">Live su: ${live[index]}</div>
        
           <table id="mable${index + 1}"><thead><tr>
                             <th>N.</th>

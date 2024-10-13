@@ -32,17 +32,30 @@ button {
 
 /* Stile per il container del titolo */
 .title-container {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0px;
+  z-index: 2;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /* Stile per le immagini del logo */
 .title-container .logohead {
   width: auto;
-  height: 150px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
-  margin: 20px; /* Spaziatura tra il logo e il titolo */
+  height: 100px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  margin: auto; /* Spaziatura tra il logo e il titolo */
+  margin-top: 10px;
+  display: block;
+}
+
+.title-container .faceo {
+  width: auto;
+  height: 60px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  margin: 5px auto; /* Spaziatura tra il logo e il titolo */
+  margin-bottom: 20px;
+  display: block;
 }
 
 /* Stile per le immagini del logo */
@@ -69,7 +82,7 @@ button {
 
 /* Stile del titolo */
 .title-container h1 {
-  margin: 0;
+  margin: 10;
   font-size: 2em;
 }
 
@@ -574,9 +587,9 @@ td.totalone {
   
 }
   
-.qualified {
-  color: #ff8181 !important; /* colore di evidenziazione */
-}
+/* .qualified {
+  color: #ff8181 !important; /* colore di evidenziazione 
+} */
 /* .qualified:nth-child(even) { */
 /* color: rgb(
     195,
