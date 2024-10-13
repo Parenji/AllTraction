@@ -196,8 +196,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
       const hosts = [
-        "TLM_wid83",
-        "Rupetheking",
+        "???",
+        "???",
       ];
 
       // const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
