@@ -58,6 +58,14 @@ button {
   display: block;
 }
 
+.section {
+  display: none; /* Nascondi tutte le sezioni per impostazione predefinita */
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  width: 800px;
+}
+
 /* Stile per le immagini del logo */
 .logotrack {
   width: auto;
@@ -341,6 +349,14 @@ td.totalone {
 
 /* Mobile styling */
 @media (max-width: 768px) {
+
+  .section{
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+
   .accordion {
     font-size: 20px;
     padding: 20px;
@@ -392,9 +408,6 @@ td.totalone {
 
 /* Indicatore di scorrimento su mobile */
 @media (max-width: 768px) {
-  .section {
-    padding: 5px;
-  }
 
   .table-container {
     position: relative;
@@ -667,12 +680,7 @@ td.totalone {
   color: white;
 } */
 
-.section {
-  display: none; /* Nascondi tutte le sezioni per impostazione predefinita */
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1050px;
-}
+
 
 .menu-link {
   display: inline-block;
@@ -842,4 +850,13 @@ filter: grayscale(1) invert(1);
 .team-icon {
   height: 55px;
   margin-top: 5px;
+}
+
+/* Classe per le immagini nelle celle della tabella */
+.table-img {
+  max-width: 100%; /* Adatta l'immagine alla larghezza della cella */
+  height: 20px;    /* Mantiene l'altezza proporzionata */
+  display: block;  /* Impedisce che l'immagine influenzi l'altezza della cella */
+  object-fit: contain; /* Mantiene le proporzioni senza tagliare l'immagine */
+  margin: 0 auto;
 }

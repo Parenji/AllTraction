@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const classifiche = [
     "backend/classifica/classifica1.json",
     "backend/classifica/classifica2.json",
-    "backend/classifica/classifica3.json",
-    "backend/classifica/classifica4.json",
-    "backend/classifica/classifica5.json",
+    // "backend/classifica/classifica3.json",
+    // "backend/classifica/classifica4.json",
+    // "backend/classifica/classifica5.json",
   ];
 
   let top14 = [];
 
   // Carica la classifica generale e identifica i primi 14 classificati
-  fetch(`${classifiche[4]}?t=${new Date().getTime()}`)
+  fetch(`${classifiche[1]}?t=${new Date().getTime()}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(
@@ -64,13 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>Pos.</th>
                             <th>ID PSN</th>
                             <th>ID GT7</th>
+                            <th>Naz.</th>
                             <th>Team</th>
+                            <th class="totalone">Totale</th>
                             <th class="totale hidden">L. Maggiore</th>
                             <th class="totale hidden">Deep Forest</th>
                             <th class="totale hidden">Sardegna</th>
                             <th class="totale hidden">Red Bull</th>
                             <th class="totale hidden">Monza</th>
-                            <th class="totalone">Totale</th>
                         </tr></thead><tbody>`;
 
           data.forEach((item, i) => {
@@ -82,13 +83,28 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.posizione || ""}</td>
                                 <td>${item.id_psn || ""}</td>
                                 <td>${item.id_gt7 || ""}</td>
+                                <td>
+                                  <img class="table-img" src="images/${item.naz || "default"}.png" alt="${
+                                              item.naz || "default"
+                                            }" width="50" height="50">
+                                </td>
                                  <td>${item.team || ""}</td>
-                                <td class="totale hidden">${item.tot1 || ""}</td>
-                                <td class="totale hidden">${item.tot2 || ""}</td>
-                                <td class="totale hidden">${item.tot3 || ""}</td>
-                                <td class="totale hidden">${item.tot4 || ""}</td>
-                                <td class="totale hidden">${item.tot5 || ""}</td>
                                 <td class="totalone">${item.totale || ""}</td>
+                                <td class="totale hidden">${
+                                  item.tot1 || ""
+                                }</td>
+                                <td class="totale hidden">${
+                                  item.tot2 || ""
+                                }</td>
+                                <td class="totale hidden">${
+                                  item.tot3 || ""
+                                }</td>
+                                <td class="totale hidden">${
+                                  item.tot4 || ""
+                                }</td>
+                                <td class="totale hidden">${
+                                  item.tot5 || ""
+                                }</td>
                             </tr>`;
           });
 
@@ -182,10 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const lobbys = [
-    "backend/lobby/lobby1.json",
-    "backend/lobby/lobby2.json",
-  ];
+  const lobbys = ["backend/lobby/lobby1.json", "backend/lobby/lobby2.json"];
 
   caricaLobbys();
 
@@ -195,10 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      const hosts = [
-        "???",
-        "???",
-      ];
+      const hosts = ["???", "???"];
 
       // const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
@@ -224,8 +234,8 @@ document.addEventListener("DOMContentLoaded", function () {
           // if (index < 2) {
           // html += `<h2>Lobby ${index + 1}</h2>`;
           // } else {
-            // Genera la sezione "lobby Generale" per l'indice 5
-            // html += `<h2>lobby Generale</h2>`;
+          // Genera la sezione "lobby Generale" per l'indice 5
+          // html += `<h2>lobby Generale</h2>`;
           // }
 
           // Genera la tabella
@@ -237,7 +247,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>N.</th>
                             <th>ID PSN</th>
                             <th>ID GT7</th>
+                            <th>Naz.</th>
                             <th>Team</th>
+                          
 
                         </tr></thead><tbody>`;
 
@@ -247,7 +259,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.n || ""}</td>
                                 <td>${item.id_psn || ""}</td>
                                 <td>${item.id_gt7 || ""}</td>
+                                <td>
+                                  <img class="table-img" src="images/${item.naz || "default"}.png" alt="${
+                                              item.naz || "default"
+                                            }" width="50" height="50">
+                                </td>
                                  <td>${item.team || ""}</td>
+
                             </tr>`;
           });
 
@@ -377,49 +395,49 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Recupera i top 14 dalla classifica generale e crea la griglia di partenza
+//   fetch("backend/classifica/classifica5.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const top14 = data.slice(0, 14);
+//       const gridContainer = document.querySelector(".grid-container");
 
-  // Recupera i top 14 dalla classifica generale e crea la griglia di partenza
-  fetch("backend/classifica/classifica5.json")
-      .then(response => response.json())
-      .then(data => {
-          const top14 = data.slice(0, 14);
-          const gridContainer = document.querySelector(".grid-container");
+//       top14.forEach((item, index) => {
+//         const gridItemContainer = document.createElement("div");
+//         gridItemContainer.classList.add("grid-item-container");
 
-          top14.forEach((item, index) => {
-              const gridItemContainer = document.createElement("div");
-              gridItemContainer.classList.add("grid-item-container");
+//         const gridIndex = document.createElement("div");
+//         gridIndex.classList.add("grid-index");
+//         gridIndex.textContent = `${index + 1}`;
 
-              const gridIndex = document.createElement("div");
-              gridIndex.classList.add("grid-index");
-              gridIndex.textContent = `${index + 1}`;
+//         const gridItem = document.createElement("div");
+//         gridItem.classList.add("grid-item");
+//         // Crea il contenitore gridItem come prima
+//         // const gridItem = document.createElement('div');
 
-              const gridItem = document.createElement("div");
-              gridItem.classList.add("grid-item");
-// Crea il contenitore gridItem come prima
-// const gridItem = document.createElement('div');
+//         // Crea il div per l'ID
+//         const idDiv = document.createElement("div");
+//         idDiv.textContent = item.id_gt7;
+//         // Crea il div per l'immagine del team
+//         const teamImgDiv = document.createElement("div");
+//         const teamImg = document.createElement("img");
+//         teamImg.src = `images/${item.team}.png`;
+//         teamImg.alt = item.team;
+//         teamImg.classList.add("team-icon"); // Aggiungi una classe all'immagine
+//         teamImgDiv.appendChild(teamImg);
 
-// Crea il div per l'ID
-const idDiv = document.createElement('div');
-idDiv.textContent = item.id_gt7;
-// Crea il div per l'immagine del team
-const teamImgDiv = document.createElement('div');
-const teamImg = document.createElement('img');
-teamImg.src = `images/${item.team}.png`;
-teamImg.alt = item.team;
-teamImg.classList.add('team-icon'); // Aggiungi una classe all'immagine
-teamImgDiv.appendChild(teamImg);
+//         // Appendi i due div al gridItem
+//         gridItem.appendChild(idDiv);
+//         gridItem.appendChild(teamImgDiv);
 
-// Appendi i due div al gridItem
-gridItem.appendChild(idDiv);
-gridItem.appendChild(teamImgDiv);
-
-// Appendi gridIndex e gridItem al container principale
-gridItemContainer.appendChild(gridIndex); // Supponendo che gridIndex sia già definito
-gridItemContainer.appendChild(gridItem);
-gridContainer.appendChild(gridItemContainer);
-          });
-      })
-      .catch(error => console.error("Errore nel caricamento della classifica generale:", error));
-});
-
+//         // Appendi gridIndex e gridItem al container principale
+//         gridItemContainer.appendChild(gridIndex); // Supponendo che gridIndex sia già definito
+//         gridItemContainer.appendChild(gridItem);
+//         gridContainer.appendChild(gridItemContainer);
+//       });
+//     })
+//     .catch((error) =>
+//       console.error("Errore nel caricamento della classifica generale:", error)
+//     );
+// });
