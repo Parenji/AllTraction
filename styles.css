@@ -46,17 +46,38 @@ button {
   width: auto;
   height: 100px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin: auto; /* Spaziatura tra il logo e il titolo */
-  margin-top: 10px;
+  margin-top: 20px;
   display: block;
 }
 
 .title-container .faceo {
-  width: auto;
-  height: 60px; /* Puoi modificare l'altezza in base alla dimensione desiderata */
+  max-width: 600px;
+  height: auto; /* Puoi modificare l'altezza in base alla dimensione desiderata */
   margin: 5px auto; /* Spaziatura tra il logo e il titolo */
   margin-bottom: 20px;
   display: block;
 }
+
+@media (max-width: 768px) {
+  .title-container .faceo {
+      width: 80%;  /* L'immagine occuperà l'80% della larghezza dello schermo */
+      max-width: 100%;  /* Non supererà mai il 100% della larghezza */
+      margin: 0 auto;   /* Centra l'immagine */
+      display: block;   /* Per evitare spazi extra */
+      margin-bottom: 20px;
+    }
+
+.title-container .logohead {
+  width: 60%;  /* L'immagine occuperà l'80% della larghezza dello schermo */
+  height: auto;
+  max-width: 100%;  /* Non supererà mai il 100% della larghezza */
+  margin: 0 auto;   /* Centra l'immagine */
+  display: block;   /* Per evitare spazi extra */
+  margin-top: 10px;
+}
+}
+
+
 
 .section {
   display: none; /* Nascondi tutte le sezioni per impostazione predefinita */
