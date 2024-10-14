@@ -62,10 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
             index + 1
           }"><thead><tr>
                             <th>Pos.</th>
-                            <th>ID PSN</th>
-                            <th>ID GT7</th>
                             <th>Naz.</th>
-                            <th>Team</th>
+                            <th>TEAM</th>
+                            <th>ID GT7</th>
                             <th class="totalone">Totale</th>
                             <th class="totale hidden">L. Maggiore</th>
                             <th class="totale hidden">Deep Forest</th>
@@ -81,14 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
             // }
             html += `<tr class="${rowClass}">
                                 <td>${item.posizione || ""}</td>
-                                <td>${item.id_psn || ""}</td>
-                                <td>${item.id_gt7 || ""}</td>
                                 <td>
                                   <img class="table-img" src="images/${item.naz || "default"}.png" alt="${
                                               item.naz || "default"
                                             }" width="50" height="50">
                                 </td>
-                                 <td>${item.team || ""}</td>
+                                <td>${item.team || ""}</td>
+
+                                <td>${item.id_gt7 || ""}</td>
                                 <td class="totalone">${item.totale || ""}</td>
                                 <td class="totale hidden">${
                                   item.tot1 || ""
@@ -244,11 +243,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <div style="text-align: center;">Host: ${hosts[index]}</div>
        
           <table id="mable${index + 1}"><thead><tr>
-                            <th>N.</th>
-                            <th>ID PSN</th>
-                            <th>ID GT7</th>
                             <th>Naz.</th>
                             <th>Team</th>
+                            <th>ID PSN</th>
+                            <th>ID GT7</th>
+                            <th>N.</th>
                           
 
                         </tr></thead><tbody>`;
@@ -256,15 +255,15 @@ document.addEventListener("DOMContentLoaded", function () {
           data.forEach((item, i) => {
             let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
             html += `<tr class="${rowClass}">
-                                <td>${item.n || ""}</td>
-                                <td>${item.id_psn || ""}</td>
-                                <td>${item.id_gt7 || ""}</td>
                                 <td>
                                   <img class="table-img" src="images/${item.naz || "default"}.png" alt="${
                                               item.naz || "default"
                                             }" width="50" height="50">
                                 </td>
-                                 <td>${item.team || ""}</td>
+                                <td>${item.team || ""}</td>
+                                <td>${item.id_psn || ""}</td>
+                                <td>${item.id_gt7 || ""}</td>
+                                <td>${item.n || ""}</td>                                 
 
                             </tr>`;
           });
