@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }"><thead><tr>
                             <th>Pos.</th>
                             <th>Naz.</th>
-                            <th>TEAM</th>
+                            <th>Num.</th>
                             <th>ID GT7</th>
                             <th class="totalone">Totale</th>
                             <th class="totale hidden">L. Maggiore</th>
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                               item.naz || "default"
                                             }" width="50" height="50">
                                 </td>
-                                <td>${item.team || ""}</td>
+                                <td>${item.n || ""}</td>
 
                                 <td>${item.id_gt7 || ""}</td>
                                 <td class="totalone">${item.totale || ""}</td>
@@ -244,10 +244,9 @@ document.addEventListener("DOMContentLoaded", function () {
        
           <table id="mable${index + 1}"><thead><tr>
                             <th>Naz.</th>
-                            <th>Team</th>
+                            <th>Num.</th>
                             <th>ID PSN</th>
                             <th>ID GT7</th>
-                            <th>N.</th>
                           
 
                         </tr></thead><tbody>`;
@@ -260,10 +259,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                               item.naz || "default"
                                             }" width="50" height="50">
                                 </td>
-                                <td>${item.team || ""}</td>
+                                <td>${item.n || ""}</td>
                                 <td>${item.id_psn || ""}</td>
-                                <td>${item.id_gt7 || ""}</td>
-                                <td>${item.n || ""}</td>                                 
+                                <td>${item.id_gt7 || ""}</td>                           
 
                             </tr>`;
           });
