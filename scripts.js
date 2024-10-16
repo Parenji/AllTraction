@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetElement) {
         hideAllSections();
         targetElement.style.display = "block";
-        targetElement.scrollIntoView({ behavior: "smooth" });
+        // targetElement.scrollIntoView({ behavior: "smooth" });
 
         // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
         removeActiveClass();
