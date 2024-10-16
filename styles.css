@@ -488,15 +488,25 @@ td.totalone {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.titoletto {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
   margin-bottom: 5px;
 }
 
 .countdown-container {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("images/japan.svg");
+  background-image: 
+   /* linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ), */
+    url("images/lagom.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -505,6 +515,8 @@ td.totalone {
   margin-bottom: 20px;
   opacity: 1;
   border-radius: 15px;
+  min-height: 170px;
+  color: black;
 }
 
 .countdown-container1 {
@@ -656,14 +668,17 @@ td.totalone {
   white-space: nowrap;
   margin-bottom: 40px;
   text-align: center;
-  border-top: 2px solid rgb(171, 0, 0);
+  /* border-top: 2px solid rgb(171, 0, 0); */
+  box-shadow: 0px 5px 25px 3px rgba(60, 60, 60, 0.4); /* Aggiungi questa riga */
+  
+
 }
 
 .navbar-scroll {
   /* transition: all 0.3s ease; */
   /* transform: skew(-10deg); */
-  background-color: #ffffff; /* Cambia il colore di sfondo come preferisci */
-  color: rgb(14, 14, 14); /* Cambia il colore del testo come preferisci */
+  background-color: #383838; /* Cambia il colore di sfondo come preferisci */
+  color: rgb(255, 255, 255); /* Cambia il colore del testo come preferisci */
   display: inline-flex;
   list-style: none;
   overflow-x: auto;
@@ -673,7 +688,7 @@ td.totalone {
 }
 
 .navbar-scroll a {
-  color: #000000;
+  color: #ffffff;
   display: inline-block;
   padding: 14px 20px;
   text-align: center;
@@ -681,10 +696,13 @@ td.totalone {
   font-size: 17px;
 }
 
+
+
 .menu-link.active {
-  background-color: rgb(171, 0, 0);
+  background-color: rgb(36, 36, 36);
   font-weight: bold;
   color: white;
+  
 }
 
 /* .menu-link:hover {
@@ -706,6 +724,15 @@ td.totalone {
   /* transition: all 0.3s ease;
   transform: skew(-10deg); */
   /* font-family: "Arial", sans-serif; */
+}
+
+.menu-link .home {
+  filter: invert(100%);
+}
+
+/* Quando il link è attivo, cambia il colore dell'SVG */
+.menu-link.active .home {
+  filter: invert(100%);
 }
 
 .pentrack {
@@ -874,3 +901,25 @@ td.totalone {
   object-fit: contain; /* Mantiene le proporzioni senza tagliare l'immagine */
   margin: 0 auto;
 }
+
+/* 
+#events {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+
+.other-events {
+  background-color: #595959;
+  padding: 20px;
+}
+
+.other-events ul {
+  list-style-type: none;
+}
+
+.other-events ul li {
+  padding: 10px 0;
+} */
