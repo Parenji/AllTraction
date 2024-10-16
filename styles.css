@@ -481,7 +481,7 @@ td.totalone {
   border-radius: 0
 }
 .menu-link .home {
-  width: calc(1.2vw + 30px);
+  width: calc(0.2vw + 32px);
   filter: invert(100%);
   padding-bottom: 5px
 }
