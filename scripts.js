@@ -81,9 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
             html += `<tr class="${rowClass}">
                                 <td>${item.posizione || ""}</td>
                                 <td>
-                                  <img class="table-img" src="images/${item.naz || "default"}.png" alt="${
-                                              item.naz || "default"
-                                            }" width="50" height="50">
+                                  <img class="table-img" src="images/${
+                                    item.naz || "default"
+                                  }.png" alt="${
+              item.naz || "default"
+            }" width="50" height="50">
                                 </td>
                                 <td>${item.n || ""}</td>
 
@@ -158,43 +160,156 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+//RISULTATI
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  function initializeCountdown(id, endtime) {
-    const timerElement = document.getElementById(id);
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const timeleft = endtime - now;
+  const risultati = [
+    "backend/risultati/risultato1.json",
+    "backend/risultati/risultato2.json",
+  ];
 
-      const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-      timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      if (timeleft < 0) {
-        clearInterval(countdowninterval);
-        timerElement.innerHTML = "";
+  // Carica la classifica generale e identifica i primi 14 classificati
+  fetch(`${risultati[1]}?t=${new Date().getTime()}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(
+          "Errore nel caricamento della classifica generale: " +
+            response.statusText
+        );
       }
-    }
+      return response.json();
+    })
+    .then((data) => {
+      // Ora carica le altre classifiche
+      caricaRisultati();
+    })
+    .catch((error) => {
+      console.error("Errore nel caricamento della classifica generale:", error);
+    });
 
-    const countdowninterval = setInterval(updateCountdown, 1000);
+  function caricaRisultati() {
+    risultati.forEach((risultato, index) => {
+      // if (index < 4) {
+      const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+      const urlWithTimestamp = `${risultato}?_=${timestamp}`; // Aggiungi il timestamp alla URL
+
+      fetch(urlWithTimestamp)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              "Errore nel caricamento dei risultati: " + response.statusText
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          let container = document.getElementById(`risultato${index + 1}`);
+          let html = "";
+
+          // Genera la sezione "Lobby" per gli indici da 1 a 4
+          // if (index < 4) {
+          //   html += `<h2>Lobby ${index + 1}</h2>`;
+          // } else {
+          //   // Genera la sezione "Classifica Generale" per l'indice 5
+          //   html += `<h2>Classifica Generale</h2>`;
+          // }
+
+          // Genera la tabella
+          html += `<div class="table-container1"><table id="rable${
+            index + 1
+          }"><thead><tr>
+                            <th>Pos.</th>
+                            <th>Naz.</th>
+                            <th>Num.</th>
+                            <th>ID GT7</th>
+                            <th class="totalone">Totale</th>
+                            <th class="totale hidden">Gara</th>
+                            <th class="totale hidden">Pole</th>
+                            <th class="totale hidden">GV</th>
+                        </tr></thead><tbody>`;
+
+          data.forEach((item, i) => {
+            let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
+            // if (top14.includes(item.id_psn)) {
+            //   rowClass += " qualified";
+            // }
+            html += `<tr class="${rowClass}">
+                                <td>${item.posizione || ""}</td>
+                                <td>
+                                  <img class="table-img" src="images/${
+                                    item.naz || "default"
+                                  }.png" alt="${
+              item.naz || "default"
+            }" width="50" height="50">
+                                </td>
+                                <td>${item.n || ""}</td>
+
+                                <td>${item.id_gt7 || ""}</td>
+                                <td class="totalone">${item.tot || ""}</td>
+                                <td class="totale hidden">${
+                                  item.gara || ""
+                                }</td>
+                                <td class="totale hidden">${
+                                  item.pole || ""
+                                }</td>
+                                <td class="totale hidden">${
+                                  item.gv || ""
+                                }</td>
+                            </tr>`;
+          });
+
+          html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
+          // Genera il pulsante per nascondere/mostrare le colonne
+          html += `<button id="toggleColumnsButtonn${
+            index + 1
+          }" class="toggleColumnsButton">Mostra punteggi dettagliati</button>`;
+          html += `<div style="margin-bottom: 5px;"></div>`;
+          container.innerHTML = html;
+
+          // Aggiungi l'evento click al pulsante per nascondere/mostrare le colonne
+          const toggleColumnsButton = document.getElementById(
+            `toggleColumnsButtonn${index + 1}`
+          );
+          toggleColumnsButton.addEventListener("click", function () {
+            const table = document.getElementById(`rable${index + 1}`);
+            const columnsToToggle = table.querySelectorAll(".totale");
+            columnsToToggle.forEach((column) => {
+              column.classList.toggle("hidden");
+            });
+            // Verifica lo stato di una colonna specifica per determinare il testo del pulsante
+            const isHidden = table.querySelector(".totale.hidden");
+            const buttonText = isHidden
+              ? "Mostra punteggi dettagliati"
+              : "Nascondi punteggi dettagliati";
+            toggleColumnsButton.textContent = buttonText;
+          });
+        })
+        .catch((error) => {
+          console.error("Errore nel caricamento dei risultati:", error);
+          let container = document.getElementById(`risultato${index + 1}`);
+          container.innerHTML = `<p>Errore nel caricamento dei risultati.</p>`;
+        });
+      // } else if (index === 4) {
+      //   // La classifica generale è già stata caricata, quindi la saltiamo
+      // }
+    });
+    // Aggiungi l'evento click per le sezioni delle tendine
+    // const accordions = document.querySelectorAll(".accordion");
+    // accordions.forEach((accordion) => {
+    //   accordion.addEventListener("click", function () {
+    //     this.classList.toggle("active");
+    //     const panel = this.nextElementSibling;
+    //     if (panel.style.display === "block") {
+    //       panel.style.display = "none";
+    //     } else {
+    //       panel.style.display = "block";
+    //     }
+    //   });
+    // });
   }
-
-  // const lobby1EndTime = new Date("Jul 9, 2024 21:00:00").getTime();
-  // const lobby2EndTime = new Date("Jul 9, 2024 22:10:00").getTime();
-  // const lobby3EndTime = new Date("Jul 11, 2024 21:00:00").getTime();
-  // const lobby4EndTime = new Date("Jul 11, 2024 22:10:00").getTime();
-  // const finaleEndTime = new Date("Jul 18, 2024 21:00:00").getTime();
-
-  // initializeCountdown("timer1", lobby1EndTime);
-  // initializeCountdown("timer2", lobby2EndTime);
-  // initializeCountdown("timer3", lobby3EndTime);
-  // initializeCountdown("timer4", lobby4EndTime);
-  // initializeCountdown("timer5", finaleEndTime);
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const lobbys = ["backend/lobby/lobby1.json", "backend/lobby/lobby2.json"];
@@ -255,13 +370,17 @@ document.addEventListener("DOMContentLoaded", function () {
             let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
             html += `<tr class="${rowClass}">
                                 <td>
-                                  <img class="table-img" src="images/${item.naz || "default"}.png" alt="${
-                                              item.naz || "default"
-                                            }" width="50" height="50">
+                                  <img class="table-img" src="images/${
+                                    item.naz || "default"
+                                  }.png" alt="${
+              item.naz || "default"
+            }" width="50" height="50">
                                 </td>
                                 <td>${item.n || ""}</td>
                                 <td>${item.id_psn || ""}</td>
-                                <td>${item.id_gt7 || ""}</td>                           
+                                <td>${
+                                  item.id_gt7 || ""
+                                }</td>                           
 
                             </tr>`;
           });
@@ -444,20 +563,35 @@ const nextEventDate = new Date("October 17, 2024 20:45:00").getTime();
 
 // Funzione per il countdown
 function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = nextEventDate - now;
+  const now = new Date().getTime();
+  const distance = nextEventDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / (1000));
 
-    document.getElementById("countdown").innerHTML = 
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-    if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "In attesa dei risultati ufficiali...";
-    }
+  let countdownText = "";
+
+  // Mostra i giorni solo se > 0
+  if (days > 0) {
+    countdownText += `${days}g `;
+  }
+
+  // Mostra ore e minuti
+  countdownText += `${hours}h ${minutes}m`;
+
+  if (days === 0) countdownText += ` ${seconds}s`;
+
+  // Aggiorna l'elemento HTML con il countdown
+  document.getElementById("countdown").innerHTML = countdownText;
+
+  // Se il countdown è scaduto
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML =
+      "In attesa dei risultati ufficiali...";
+  }
 }
 
 // Aggiorna il countdown ogni secondo

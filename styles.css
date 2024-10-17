@@ -1,31 +1,31 @@
 body {
-  background-color: #0e0e0e;
+  background-color: #0f0f0f;
   color: #fff;
   font-family: f1;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh
+  min-height: 100vh;
 }
 header {
-  background-image: url("images/carbon.jpg")
+  background-image: url("images/carbon.jpg");
 }
 @font-face {
   font-family: f1;
-  src: url("Formula1-Regular.otf")
+  src: url("Formula1-Regular.otf");
 }
 button {
-  font-family: inherit
+  font-family: inherit;
 }
 .main-container {
-  display: block
+  display: block;
 }
 .footer-container {
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: space-between
+  justify-content: space-between;
 }
 .title-container {
   display: block;
@@ -34,7 +34,7 @@ button {
   z-index: 2;
   text-align: center;
   font-size: 30px;
-  font-weight: 700
+  font-weight: 700;
 }
 .title-container .logohead {
   width: auto;
@@ -42,7 +42,7 @@ button {
   margin: auto;
   margin-top: 20px;
   display: block;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .9))
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
 }
 .title-container .faceo {
   max-width: 600px;
@@ -50,15 +50,15 @@ button {
   margin: 5px auto;
   margin-bottom: 20px;
   display: block;
-  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .9))
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .title-container .faceo {
     width: 80%;
     max-width: 100%;
     margin: 0 auto;
     display: block;
-    margin-bottom: 20px
+    margin-bottom: 20px;
   }
   .title-container .logohead {
     width: 40%;
@@ -66,7 +66,7 @@ button {
     max-width: 100%;
     margin: 0 auto;
     display: block;
-    margin-top: 10px
+    margin-top: 10px;
   }
 }
 .section {
@@ -74,81 +74,73 @@ button {
   margin-left: auto;
   margin-right: auto;
   width: 800px;
-  width: 800px
+  width: 800px;
 }
-.logotrack {
-  width: auto;
-  height: 80px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  justify-content: center;
-  -webkit-filter: grayscale(0) invert(0);
-  filter: brightness(140%) grayscale(0) invert(0)
-}
+
 .flagtrack {
   width: auto;
   height: 15px;
-  margin-left: 5px
+  margin-left: 5px;
 }
 .title-container h1 {
   margin: 10;
-  font-size: 2em
+  font-size: 2em;
 }
 h1 {
-  text-align: center
+  text-align: center;
 }
 h2 {
-  text-align: center
+  text-align: center;
 }
 .classifica {
   margin: 20px 0;
-  padding: 10px
+  padding: 10px;
 }
 .classifica h2 {
-  margin-top: 0
+  margin-top: 0;
 }
 .classifica ul {
   list-style-type: none;
-  padding: 0
+  padding: 0;
 }
 .classifica li {
   padding: 5px 0;
-  border-bottom: 1px solid #eee
+  border-bottom: 1px solid #eee;
 }
 table {
   width: 100%;
   border-collapse: collapse;
   color: #fff;
-  margin-bottom: 15px
+  margin-bottom: 15px;
 }
 .table-container {
   position: relative;
   overflow-x: auto;
-  white-space: nowrap
+  white-space: nowrap;
 }
 td,
 th {
   border: 1px solid #0e0e0e;
   background-color: #1a1a1a;
   padding: 5px;
-  text-align: center
+  text-align: center;
 }
 th {
-  background-color: #810101
+  background-color: #810101;
 }
 td.totale {
-  font-weight: 700
+  font-weight: 700;
 }
 th.totalone {
   font-size: larger;
-  font-weight: 700
+  font-weight: 700;
 }
 td.totalone {
   font-size: larger;
-  font-weight: 700
+  font-weight: 700;
 }
 .hidden {
-  display: none
+  display: none;
 }
 .toggleColumnsButton {
   background-color: #555;
@@ -159,18 +151,18 @@ td.totalone {
   font-size: 12px;
   margin-bottom: 0;
   margin-top: 5px;
-  transition: background-color .3s ease;
-  border-radius: 3px
+  transition: background-color 0.3s ease;
+  border-radius: 3px;
 }
 .toggleColumnsButton:hover {
-  background-color: #666
+  background-color: #666;
 }
 .hidden {
-  display: none
+  display: none;
 }
 .pdf-button-container {
   text-align: center;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 .pdf-button {
   background-color: #810101;
@@ -180,7 +172,7 @@ td.totalone {
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
-  margin: 5px
+  margin: 5px;
 }
 .pen-button {
   background-color: #810101;
@@ -190,16 +182,16 @@ td.totalone {
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
-  margin: 5px
+  margin: 5px;
 }
 .pdf-button:hover {
-  background-color: #4c2020
+  background-color: #4c2020;
 }
 .pen-button:hover {
-  background-color: #4c2020
+  background-color: #4c2020;
 }
 .accordion-container {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 .accordion {
   background-color: #0e0e0e;
@@ -210,27 +202,27 @@ td.totalone {
   border: none;
   outline: 0;
   text-align: left;
-  transition: .4s;
+  transition: 0.4s;
   font-size: 18px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 .accordion > i > svg {
   width: 1rem;
-  height: .9rem;
+  height: 0.9rem;
   transform: rotate(90deg);
-  transition: all .3s ease;
-  float: right
+  transition: all 0.3s ease;
+  float: right;
 }
 .accordion.active > i > svg {
-  height: .9rem;
+  height: 0.9rem;
   width: 1rem;
-  transform: rotate(-90deg)
+  transform: rotate(-90deg);
 }
 .accordion:hover {
-  background-color: #2a2a2a
+  background-color: #2a2a2a;
 }
 .accordionn-container {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 .accordionn {
   background-color: #0e0e0e;
@@ -241,92 +233,92 @@ td.totalone {
   border: none;
   outline: 0;
   text-align: left;
-  transition: .4s;
+  transition: 0.4s;
   font-size: 18px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 .accordionn > i > svg {
   width: 1rem;
-  height: .9rem;
+  height: 0.9rem;
   transform: rotate(90deg);
-  transition: all .3s ease;
-  float: right
+  transition: all 0.3s ease;
+  float: right;
 }
 .accordionn.active > i > svg {
-  height: .9rem;
+  height: 0.9rem;
   width: 1rem;
-  transform: rotate(-90deg)
+  transform: rotate(-90deg);
 }
 .accordionn:hover {
-  background-color: #2a2a2a
+  background-color: #2a2a2a;
 }
 .panel {
   padding: 0 px;
   display: none;
   overflow: hidden;
   background-color: #0e0e0e;
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 .panel-content {
   background-color: #0e0e0e;
-  padding: 0
+  padding: 0;
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .section {
     padding: 10px;
     margin-left: 0;
     margin-right: 0;
-    width: auto
+    width: auto;
   }
   .accordion {
     font-size: 20px;
     padding: 20px;
-    margin-bottom: 0
+    margin-bottom: 0;
   }
   .accordion:hover {
-    background-color: #0e0e0e
+    background-color: #0e0e0e;
   }
   .accordionn {
     font-size: 20px;
     padding: 20px;
-    margin-bottom: 0
+    margin-bottom: 0;
   }
   .accordionn:hover {
-    background-color: #0e0e0e
+    background-color: #0e0e0e;
   }
   .pen-button {
     width: -webkit-fill-available;
     box-sizing: border-box;
     padding: 12px;
     margin: 20px;
-    font-size: 18px
+    font-size: 18px;
   }
   .pdf-button {
     width: -webkit-fill-available;
     box-sizing: border-box;
     padding: 12px;
     margin: 20px;
-    font-size: 18px
+    font-size: 18px;
   }
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .table-container {
     position: relative;
     overflow-x: auto;
-    white-space: nowrap
+    white-space: nowrap;
   }
   .table-container1 {
     position: relative;
     overflow-x: auto;
-    white-space: nowrap
+    white-space: nowrap;
   }
   td,
   th {
     padding: 4px 2px 4px;
-    text-align: center
+    text-align: center;
   }
   table {
-    font-size: 12px
+    font-size: 12px;
   }
 }
 .titolozzo {
@@ -335,7 +327,7 @@ td.totalone {
   text-align: center;
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 .titoletto {
   position: relative;
@@ -343,7 +335,7 @@ td.totalone {
   text-align: center;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 5px
+  margin-bottom: 5px;
 }
 .countdown-container {
   background-image: url("images/lagom.webp");
@@ -356,10 +348,14 @@ td.totalone {
   opacity: 1;
   border-radius: 15px;
   min-height: 150px;
-  color: #000
+  color: #000;
 }
 .countdown-container1 {
-  background-image: linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),url("images/usa.svg");
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("images/usa.svg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -367,10 +363,14 @@ td.totalone {
   flex-wrap: wrap;
   margin-bottom: 20px;
   opacity: 1;
-  border-radius: 15px
+  border-radius: 15px;
 }
 .countdown-containereu {
-  background-image: linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),url("images/eu.svg");
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("images/eu.svg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -378,7 +378,7 @@ td.totalone {
   flex-wrap: wrap;
   margin-bottom: 20px;
   opacity: 1;
-  border-radius: 15px
+  border-radius: 15px;
 }
 .countdown-containerfinale {
   display: flex;
@@ -386,104 +386,87 @@ td.totalone {
   flex-wrap: wrap;
   opacity: 1;
   border-radius: 15px;
-  font-size: 7vw
+  font-size: 7vw;
 }
 .lobbyx {
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 5px;
-  color: #fff
-}
-.countdown {
-  background-color: rgb(14,14,14,.78);
-  min-width: 120px;
-  flex-wrap: wrap;
-  flex: 1;
   color: #fff;
-  padding: 10px;
-  border-radius: 0;
-  text-align: center;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  margin: 3px;
-  border-radius: 15px;
-  cursor: pointer
 }
-.countdown:hover {
-  background-color: rgb(14,14,14,.53)
-}
+
 .timer {
-  font-weight: lighter
+  font-weight: lighter;
 }
 .winner {
   font-size: 17px;
   font-weight: 700;
   color: #fff7c7;
-  text-shadow: 0 0 5px gold,0 0 10px gold,0 0 20px gold,0 0 40px #ff8c00,0 0 80px #ff8c00,0 0 90px #ff8c00
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00,
+    0 0 80px #ff8c00, 0 0 90px #ff8c00;
 }
 .winnerf {
   font-weight: 700;
   color: #fff7c7;
-  text-shadow: 0 0 5px gold,0 0 10px gold,0 0 20px gold,0 0 40px #ff8c00,0 0 80px #ff8c00,0 0 90px #ff8c00;
-  margin-bottom: 40px
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00,
+    0 0 80px #ff8c00, 0 0 90px #ff8c00;
+  margin-bottom: 40px;
 }
 .twitch {
   width: 30px;
   height: auto;
-  margin-top: 9px
+  margin-top: 9px;
 }
 .youtube {
   width: 30px;
   height: auto;
-  margin-top: 11px
+  margin-top: 11px;
 }
 .navbar-container {
-  max-width: 800px;
   display: flex;
   justify-content: space-around;
   margin: auto;
   margin-bottom: 30px;
   text-align: center;
-  box-shadow: 0 5px 25px 3px rgba(60,60,60,.4);
-  background-color: #383838;
-  flex-wrap: wrap
+  background-color: #202020;
+
+  flex-wrap: wrap;
 }
 .navbar-scroll {
-  display: contents;
+  max-width: 800px;
+  display: flex;
   list-style: none;
-  width: 90%;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #383838;
-  color: #fff
+  background-color: #202020;
+  color: #fff;
 }
 .navbar-scroll a {
   color: #fff;
   text-decoration: none;
   text-align: center;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  min-width: 10%;
-  font-size: calc(.5vw + 7px)
+  padding: 5px 0px;
+  font-size: calc(0.5vw + 7px);
 }
+
+
 .menu-link.active {
-  background-color: #242424;
+  background-color: #484848;
   font-weight: 700;
-  color: #fff
+  color: #fff;
+  box-shadow: 0 10px 20px 0px rgba(97, 97, 97, 0.28);
 }
-.menu-link {
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 0
-}
+
 .menu-link .home {
   width: calc(0.2vw + 32px);
   filter: invert(100%);
-  padding-bottom: 5px
+  padding-bottom: 5px;
 }
 .pentrack {
   background-color: #fff;
@@ -493,31 +476,31 @@ td.totalone {
   margin: 10px;
   justify-content: center;
   -webkit-filter: grayscale(1) invert(1);
-  filter: grayscale(1) invert(1)
+  filter: grayscale(1) invert(1);
 }
 .footer-section {
   width: 100%;
   background-color: #1a1a1a;
   padding: 0;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,.2);
-  color: #fff
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 .sponsor-section h2 {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px
+  letter-spacing: 1px;
 }
 .sponsor-logos {
   display: flex;
   justify-content: center;
   gap: 30px;
-  padding: 10px
+  padding: 10px;
 }
 .sponsor-logos img {
   max-height: 50px;
-  max-width: 80px
+  max-width: 80px;
 }
 .social-icons {
   display: flex;
@@ -526,41 +509,43 @@ td.totalone {
   padding: 10px;
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
-  border-bottom: 1px solid #848484
+  border-bottom: 1px solid #848484;
 }
 .social-icons a {
   display: inline-block;
   width: 22px;
-  height: auto
+  height: auto;
 }
 .social-icons img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform .3s
+  transition: transform 0.3s;
 }
 .social-icons img:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
   padding: 15px;
   background-color: #292929;
   border-top: 10px solid;
-  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="black"/><rect x="10" width="10" height="10" fill="white"/><rect x="20" width="10" height="10" fill="black"/><rect x="30" width="10" height="10" fill="white"/></svg>') 10 repeat
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="black"/><rect x="10" width="10" height="10" fill="white"/><rect x="20" width="10" height="10" fill="black"/><rect x="30" width="10" height="10" fill="white"/></svg>')
+    10 repeat;
 }
 .grid-container2 {
-  background-image: linear-gradient(black,#333);
+  background-image: linear-gradient(black, #333);
   background-color: #333;
   border-bottom: 10px solid;
-  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="white"/><rect x="10" width="10" height="10" fill="black"/><rect x="20" width="10" height="10" fill="white"/><rect x="30" width="10" height="10" fill="black"/></svg>') 10 repeat;
+  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="white"/><rect x="10" width="10" height="10" fill="black"/><rect x="20" width="10" height="10" fill="white"/><rect x="30" width="10" height="10" fill="black"/></svg>')
+    10 repeat;
   padding: 20px;
   text-align: center;
   font-size: 30px;
   position: relative;
-  z-index: 2
+  z-index: 2;
 }
 .grid-item {
   color: #fff;
@@ -575,43 +560,81 @@ td.totalone {
   border-right: 5px solid #fff;
   margin-bottom: 20px;
   min-height: 70px;
-  flex-flow: column
+  flex-flow: column;
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .grid-item {
-    font-size: 4vw
+    font-size: 4vw;
   }
 }
 .grid-index {
-  text-align: center
+  text-align: center;
 }
 .grid-item-container:nth-child(odd) {
-  margin-right: 10px
+  margin-right: 10px;
 }
 .grid-item-container:nth-child(2n) {
   margin-left: 10px;
-  margin-top: 20px
+  margin-top: 20px;
 }
 .infofinale {
   font-size: larger;
   padding: 5px;
-  text-align: center
+  text-align: center;
 }
-.logotrackfinale {
-  width: auto;
-  height: 90px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  justify-content: center
-}
+
 .team-icon {
   height: 55px;
-  margin-top: 5px
+  margin-top: 5px;
 }
 .table-img {
   max-width: 100%;
   height: 20px;
   display: block;
   object-fit: contain;
-  margin: 0 auto
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #222222;
+  padding: 20px;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+}
+
+.countdown {
+  font-size: calc(2vw + 16px);
+  min-width: 220px;
+}
+
+.logotrackfinale {
+  height: calc(5vw + 45px);
+  margin-top: 0;
+  margin-bottom: 0px;
+  justify-content: center;
+}
+
+
+.titolino-sx{
+  text-align: left;
+  padding: 4px 10px;
+  font-size: 15px;
+}
+
+.titolino-dx{
+text-align: right;
+padding: 4px 11px;
+font-size: 15px;
+}
+
+.antibox{
+  display: flex;
+  justify-content: space-between;
+
 }
