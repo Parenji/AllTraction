@@ -1,4 +1,6 @@
+
 import pandas as pd
+
 
 # Carica il file Excel
 excel_file = 'Classifiche.xlsx'

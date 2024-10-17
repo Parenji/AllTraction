@@ -335,21 +335,10 @@ td.totalone {
   text-align: center;
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  width: 100%;
 }
-.countdown-container {
-  background-image: url("images/lagom.webp");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  opacity: 1;
-  border-radius: 15px;
-  min-height: 150px;
-  color: #000;
-}
+
 .countdown-container1 {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.2),
@@ -364,29 +353,6 @@ td.totalone {
   margin-bottom: 20px;
   opacity: 1;
   border-radius: 15px;
-}
-.countdown-containereu {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("images/eu.svg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  opacity: 1;
-  border-radius: 15px;
-}
-.countdown-containerfinale {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  opacity: 1;
-  border-radius: 15px;
-  font-size: 7vw;
 }
 .lobbyx {
   font-size: 17px;
@@ -597,7 +563,7 @@ td.totalone {
 
 .box {
   background-color: #222222;
-  padding: 20px;
+  padding: 5px;
   display: flex;
   justify-content:space-around;
   flex-wrap: wrap;
@@ -611,10 +577,11 @@ td.totalone {
 .countdown {
   font-size: calc(2vw + 16px);
   min-width: 220px;
+  margin-bottom: 10px;
 }
 
 .logotrackfinale {
-  height: calc(5vw + 45px);
+  height: calc(5vw + 70px);
   margin-top: 0;
   margin-bottom: 0px;
   justify-content: center;
@@ -664,4 +631,32 @@ font-size: 15px;
   justify-content: center;
   width: 100%;
   padding-top: 2px;
+}
+
+.boxina-darkened {
+  background-color: #222222;
+  padding: 1px;
+  margin: 2px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+  flex: 1;
+  max-width: 24%;
+  opacity: 0.25; /* Riduce l'opacità per creare l'effetto di oscuramento */
+  filter: grayscale(100%); /* Rende l'immagine in bianco e nero (opzionale) */
+}
+
+/* .boxina-darkened::after {
+  background: rgba(0, 0, 0, 1);
+  pointer-events: none;
+} */
+.coppa{
+  width: 100%;
+}
+
+.coppaimg{
+  width: 40px;
+  filter: invert(100%);
+  margin-bottom: 5px;
 }

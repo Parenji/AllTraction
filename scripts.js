@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>Naz.</th>
                             <th>Num.</th>
                             <th>ID GT7</th>
-                            <th class="totalone">Totale</th>
+                            <th class="totalone">Punti</th>
                             <th class="totale hidden">L. Maggiore</th>
                             <th class="totale hidden">Deep Forest</th>
                             <th class="totale hidden">Sardegna</th>
@@ -90,21 +90,21 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.n || ""}</td>
 
                                 <td>${item.id_gt7 || ""}</td>
-                                <td class="totalone">${item.totale || ""}</td>
-                                <td class="totale hidden">${
-                                  item.tot1 || ""
+                                <td class="totalone">${(item.totale || 0).toFixed(0)}</td>
+                                <td class="totale hidden">${(
+                                  item.tot1 || 0).toFixed(0)
                                 }</td>
-                                <td class="totale hidden">${
-                                  item.tot2 || ""
+                                <td class="totale hidden">${(
+                                  (item.tot2) || "")
                                 }</td>
-                                <td class="totale hidden">${
-                                  item.tot3 || ""
+                                <td class="totale hidden">${(
+                                  item.tot3 || "")
                                 }</td>
-                                <td class="totale hidden">${
-                                  item.tot4 || ""
+                                <td class="totale hidden">${(
+                                  item.tot4 || "")
                                 }</td>
-                                <td class="totale hidden">${
-                                  item.tot5 || ""
+                                <td class="totale hidden">${(
+                                  item.tot5 || "")
                                 }</td>
                             </tr>`;
           });
@@ -161,7 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //RISULTATI
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const risultati = [
@@ -223,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>Naz.</th>
                             <th>Num.</th>
                             <th>ID GT7</th>
-                            <th class="totalone">Totale</th>
+                            <th class="totalone">Punti</th>
                             <th class="totale hidden">Gara</th>
                             <th class="totale hidden">Pole</th>
                             <th class="totale hidden">GV</th>
@@ -246,16 +245,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.n || ""}</td>
 
                                 <td>${item.id_gt7 || ""}</td>
-                                <td class="totalone">${item.tot || ""}</td>
-                                <td class="totale hidden">${
-                                  item.gara || ""
+                                <td class="totalone">${(item.tot || 0).toFixed(0)}</td>
+                                <td class="totale hidden">${(item.gara || 0).toFixed(0)
                                 }</td>
                                 <td class="totale hidden">${
                                   item.pole || ""
                                 }</td>
-                                <td class="totale hidden">${
-                                  item.gv || ""
-                                }</td>
+                                <td class="totale hidden">${item.gv || ""}</td>
                             </tr>`;
           });
 
@@ -310,7 +306,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const lobbys = ["backend/lobby/lobby1.json", "backend/lobby/lobby2.json"];
 
@@ -322,13 +317,13 @@ document.addEventListener("DOMContentLoaded", function () {
       const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      const hosts = ["TLM_Wid", "CTR_ocior-78"];
+      const hosts = ["TLM_Wid (?)", "CTR_ocior-78 (?)"];
 
       // const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
       const ora = [
-        "Giovedì 17 ottobre 2024, ore 20:45",
-        "Giovedì 17 ottobre 2024, ore 21:45",
+        "Giovedì 31 ottobre 2024, ore 20:45",
+        "Giovedì 31 ottobre 2024, ore 21:45",
       ];
 
       fetch(urlWithTimestamp)
@@ -559,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("October 17, 2024 20:45:00").getTime();
+const nextEventDate = new Date("October 31, 2024 20:45:00").getTime();
 
 // Funzione per il countdown
 function updateCountdown() {
@@ -567,10 +562,11 @@ function updateCountdown() {
   const distance = nextEventDate - now;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / (1000));
-
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   let countdownText = "";
 
@@ -596,3 +592,5 @@ function updateCountdown() {
 
 // Aggiorna il countdown ogni secondo
 setInterval(updateCountdown, 1000);
+
+
