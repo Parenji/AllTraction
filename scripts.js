@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      const hosts = ["???", "???"];
+      const hosts = ["TLM_Wid", "CTR_ocior-78"];
 
       // const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
