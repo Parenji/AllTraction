@@ -395,6 +395,8 @@ td.totalone {
   margin-bottom: 30px;
   text-align: center;
   background-color: #202020;
+  background-color: #810101;
+
 
   flex-wrap: wrap;
 }
@@ -406,6 +408,8 @@ td.totalone {
   justify-content: center;
   align-items: center;
   background-color: #202020;
+  background-color: #810101;
+
   color: #fff;
 }
 .navbar-scroll a {
@@ -417,16 +421,17 @@ td.totalone {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5px 0px;
+  padding: 5px 0px 7px;
   font-size: calc(0.5vw + 7px);
 }
 
 
 .menu-link.active {
   background-color: #484848;
+  background-color: #b80000;
   font-weight: 700;
   color: #fff;
-  box-shadow: 0 10px 20px 0px rgba(97, 97, 97, 0.28);
+  box-shadow: 0 10px 20px 0px rgba(255, 141, 141, 0.28);
 }
 
 .menu-link .home {
