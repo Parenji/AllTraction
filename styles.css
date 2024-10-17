@@ -601,7 +601,7 @@ td.totalone {
   display: flex;
   justify-content:space-around;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border-radius: 15px;
   min-height: 100px;
   text-align: center;
@@ -637,4 +637,30 @@ font-size: 15px;
   display: flex;
   justify-content: space-between;
 
+}
+
+.boxina {
+  background-color: #222222;
+  padding: 1px;
+  margin: 2px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  align-items: center;
+  flex: 1;
+  max-width: 24%;
+}
+
+.boxinacont {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logotrackpiccoli {
+  margin-top: 0;
+  margin-bottom: 0px;
+  justify-content: center;
+  width: 100%;
 }
