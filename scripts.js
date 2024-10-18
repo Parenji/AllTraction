@@ -306,105 +306,105 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const lobbys = ["backend/lobby/lobby1.json", "backend/lobby/lobby2.json"];
+// document.addEventListener("DOMContentLoaded", function () {
+//   const lobbys = ["backend/lobby/lobby1.json", "backend/lobby/lobby2.json"];
 
-  caricaLobbys();
+//   caricaLobbys();
 
-  function caricaLobbys() {
-    lobbys.forEach((lobby, index) => {
-      // if (index < 4) {
-      const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
-      const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
+//   function caricaLobbys() {
+//     lobbys.forEach((lobby, index) => {
+//       // if (index < 4) {
+//       const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+//       const urlWithTimestamp = `${lobby}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      const hosts = ["TLM_Wid (?)", "CTR_ocior-78 (?)"];
+//       const hosts = ["TLM_Wid (?)", "CTR_ocior-78 (?)"];
 
-      // const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
+//       // const live = ["Twitch", "Twitch", "Youtube", "Twitch"];
 
-      const ora = [
-        "Giovedì 31 ottobre 2024, ore 20:45",
-        "Giovedì 31 ottobre 2024, ore 21:45",
-      ];
+//       const ora = [
+//         "Giovedì 31 ottobre 2024, ore 20:45",
+//         "Giovedì 31 ottobre 2024, ore 21:45",
+//       ];
 
-      fetch(urlWithTimestamp)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              "Errore nel caricamento della lobby: " + response.statusText
-            );
-          }
-          return response.json();
-        })
-        .then((data) => {
-          let container = document.getElementById(`lobby${index + 1}`);
-          let html = "";
+//       fetch(urlWithTimestamp)
+//         .then((response) => {
+//           if (!response.ok) {
+//             throw new Error(
+//               "Errore nel caricamento della lobby: " + response.statusText
+//             );
+//           }
+//           return response.json();
+//         })
+//         .then((data) => {
+//           let container = document.getElementById(`lobby${index + 1}`);
+//           let html = "";
 
-          // Genera la sezione "Lobby" per gli indici da 1 a 4
-          // if (index < 2) {
-          // html += `<h2>Lobby ${index + 1}</h2>`;
-          // } else {
-          // Genera la sezione "lobby Generale" per l'indice 5
-          // html += `<h2>lobby Generale</h2>`;
-          // }
+//           // Genera la sezione "Lobby" per gli indici da 1 a 4
+//           // if (index < 2) {
+//           // html += `<h2>Lobby ${index + 1}</h2>`;
+//           // } else {
+//           // Genera la sezione "lobby Generale" per l'indice 5
+//           // html += `<h2>lobby Generale</h2>`;
+//           // }
 
-          // Genera la tabella
-          html += `<div class="table-container1">
-          <div style="text-align: center;">${ora[index]}</div>  
-          <div style="text-align: center;">Host: ${hosts[index]}</div>
+//           // Genera la tabella
+//           html += `<div class="table-container1">
+//           <div style="text-align: center;">${ora[index]}</div>  
+//           <div style="text-align: center;">Host: ${hosts[index]}</div>
        
-          <table id="mable${index + 1}"><thead><tr>
-                            <th>Naz.</th>
-                            <th>Num.</th>
-                            <th>ID PSN</th>
-                            <th>ID GT7</th>
+//           <table id="mable${index + 1}"><thead><tr>
+//                             <th>Naz.</th>
+//                             <th>Num.</th>
+//                             <th>ID PSN</th>
+//                             <th>ID GT7</th>
                           
 
-                        </tr></thead><tbody>`;
+//                         </tr></thead><tbody>`;
 
-          data.forEach((item, i) => {
-            let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
-            html += `<tr class="${rowClass}">
-                                <td>
-                                  <img class="table-img" src="images/${
-                                    item.naz || "default"
-                                  }.png" alt="${
-              item.naz || "default"
-            }" width="50" height="50">
-                                </td>
-                                <td>${item.n || ""}</td>
-                                <td>${item.id_psn || ""}</td>
-                                <td>${
-                                  item.id_gt7 || ""
-                                }</td>                           
+//           data.forEach((item, i) => {
+//             let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
+//             html += `<tr class="${rowClass}">
+//                                 <td>
+//                                   <img class="table-img" src="images/${
+//                                     item.naz || "default"
+//                                   }.png" alt="${
+//               item.naz || "default"
+//             }" width="50" height="50">
+//                                 </td>
+//                                 <td>${item.n || ""}</td>
+//                                 <td>${item.id_psn || ""}</td>
+//                                 <td>${
+//                                   item.id_gt7 || ""
+//                                 }</td>                           
 
-                            </tr>`;
-          });
+//                             </tr>`;
+//           });
 
-          html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
-          html += `<div style="margin-bottom: 5px;"></div>`;
-          container.innerHTML = html;
-        })
-        .catch((error) => {
-          console.error("Errore nel caricamento della lobby:", error);
-          let container = document.getElementById(`lobby${index + 1}`);
-          container.innerHTML = `<p>Errore nel caricamento della lobby.</p>`;
-        });
-    });
-    // Aggiungi l'evento click per le sezioni delle tendine
-    const accordions = document.querySelectorAll(".accordionn");
-    accordions.forEach((accordion) => {
-      accordion.addEventListener("click", function () {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    });
-  }
-});
+//           html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
+//           html += `<div style="margin-bottom: 5px;"></div>`;
+//           container.innerHTML = html;
+//         })
+//         .catch((error) => {
+//           console.error("Errore nel caricamento della lobby:", error);
+//           let container = document.getElementById(`lobby${index + 1}`);
+//           container.innerHTML = `<p>Errore nel caricamento della lobby.</p>`;
+//         });
+//     });
+//     // Aggiungi l'evento click per le sezioni delle tendine
+//     const accordions = document.querySelectorAll(".accordionn");
+//     accordions.forEach((accordion) => {
+//       accordion.addEventListener("click", function () {
+//         this.classList.toggle("active");
+//         const panel = this.nextElementSibling;
+//         if (panel.style.display === "block") {
+//           panel.style.display = "none";
+//         } else {
+//           panel.style.display = "block";
+//         }
+//       });
+//     });
+//   }
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(".navbar-scroll a");
