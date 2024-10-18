@@ -659,14 +659,13 @@ font-size: 15px;
   pointer-events: none;
 } */
 .coppa{
-  width: 100%;
-  margin-top: 5px;
+  width: 50%;
+
 }
 
 .coppaimg{
   width: 40px;
   filter: invert(100%);
-  margin-bottom: 5px;
 }
 
 .titolettohost {
@@ -675,5 +674,27 @@ font-size: 15px;
   text-align: center;
   font-size: 16px;
   font-weight: 700;
+  width: 50%;
+}
+
+.titolettowin {
+  padding: 2px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 12px);
+  font-weight: 700;
+  /* margin-bottom: 10px; */
+  width: 48%;
+}
+
+.titolettowincat {
+  padding: 0px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 8px);
+  font-weight: 700;
+  /* margin-bottom: 10px; */
   width: 50%;
 }
