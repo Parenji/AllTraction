@@ -554,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("October 31, 2024 20:45:00").getTime();
+const nextEventDate = new Date("October 30, 2024 20:45:00").getTime();
 
 // Funzione per il countdown
 function updateCountdown() {
