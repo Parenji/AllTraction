@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                   item.tot1 || 0).toFixed(0)
                                 }</td>
                                 <td class="totale hidden">${(
-                                  (item.tot2) || "")
+                                  item.tot2 || 0).toFixed(0)
                                 }</td>
                                 <td class="totale hidden">${(
                                   item.tot3 || "")
