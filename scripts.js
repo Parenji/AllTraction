@@ -98,13 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                   item.tot2 || 0).toFixed(0)
                                 }</td>
                                 <td class="totale hidden">${(
-                                  item.tot3 || "")
+                                  item.tot3 || 0).toFixed(0)
                                 }</td>
                                 <td class="totale hidden">${(
-                                  item.tot4 || "")
+                                  item.tot4 || 0).toFixed(0)
                                 }</td>
                                 <td class="totale hidden">${(
-                                  item.tot5 || "")
+                                  item.tot5 || 0).toFixed(0)
                                 }</td>
                             </tr>`;
           });
@@ -554,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("Novembrer 14, 2024 20:45:00").getTime();
+const nextEventDate = new Date("Novembrer 21, 2024 20:45:00").getTime();
 
 // Funzione per il countdown
 function updateCountdown() {
