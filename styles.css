@@ -588,6 +588,14 @@ td.totalone {
   border-radius: 15px;
 }
 
+.logotorneofinale {
+  height: calc(3vw + 30px);
+  margin-top: 0px;
+  margin-bottom: 10px;
+  justify-content: center;
+
+}
+
 .logotrackfinale {
   height: calc(5vw + 70px);
   margin-top: 0;
@@ -607,6 +615,12 @@ td.totalone {
 text-align: right;
 padding: 4px 11px;
 font-size: 15px;
+}
+
+.titolino-sx-classifiche{
+  text-align: left;
+  padding: 4px 10px;
+  font-size: 10px;
 }
 
 .antibox{

@@ -591,6 +591,6 @@ function updateCountdown() {
 }
 
 // Aggiorna il countdown ogni secondo
-setInterval(updateCountdown, 1000);
+// setInterval(updateCountdown, 1000);
 
 
