@@ -166,6 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const risultati = [
     "backend/risultati/risultato1.json",
     "backend/risultati/risultato2.json",
+    "backend/risultati/risultato3.json",
+    "backend/risultati/risultato4.json",
   ];
 
   // Carica la classifica generale e identifica i primi 14 classificati
@@ -554,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("Novembrer 28, 2024 20:45:00").getTime();
+const nextEventDate = new Date("February 11, 2025 21:00:00").getTime();
 
 // Funzione per il countdown
 function updateCountdown() {
@@ -591,6 +593,6 @@ function updateCountdown() {
 }
 
 // Aggiorna il countdown ogni secondo
-// setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 1000);
 
 

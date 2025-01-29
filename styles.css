@@ -54,19 +54,18 @@ button {
 }
 @media (max-width: 768px) {
   .title-container .faceo {
-    width: 80%;
+    width: 100%;
     max-width: 100%;
     margin: 0 auto;
     display: block;
-    margin-bottom: 20px;
   }
   .title-container .logohead {
-    width: 40%;
+    width: 20%;
     height: auto;
     max-width: 100%;
     margin: 0 auto;
     display: block;
-    margin-top: 10px;
+    margin-top: 15px;
   }
 }
 .section {
@@ -583,7 +582,7 @@ td.totalone {
   font-size: calc(2vw + 16px);
   min-width: 220px;
   /* margin-bottom: 10px; */
-  padding: 15px 0px;
+  padding: 15px 15px;
   background-color: #0f0f0f;
   border-radius: 15px;
 }
@@ -597,7 +596,7 @@ td.totalone {
 }
 
 .logotrackfinale {
-  height: calc(5vw + 70px);
+  height: calc(5vw + 40px);
   margin-top: 0;
   margin-bottom: 0px;
   justify-content: center;
@@ -641,14 +640,14 @@ font-size: 15px;
   background-color: #222222;
   display: flex;
   width: 100%;
-  padding: 0;
+  padding: 0px;
   margin: 0;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
 .boxina {
-  padding: 1px;
+  padding: 10px 5px;
   text-align: center;
   align-items: center;
   flex: 1;
@@ -665,7 +664,7 @@ font-size: 15px;
 
 .boxina-darkened {
   background-color: #000000;
-  padding: 1px;
+  padding: 10px 2px;
   text-align: center;
   align-items: center;
   flex: 1;
@@ -684,7 +683,7 @@ font-size: 15px;
 }
 
 .coppaimg{
-  width: 40px;
+  width: 30px;
   filter: invert(100%);
 }
 
@@ -704,7 +703,6 @@ font-size: 15px;
   text-align: center;
   font-size: calc(1vw + 12px);
   font-weight: 700;
-  /* margin-bottom: 10px; */
   width: 48%;
 }
 
@@ -715,6 +713,6 @@ font-size: 15px;
   text-align: center;
   font-size: calc(1vw + 8px);
   font-weight: 700;
-  /* margin-bottom: 10px; */
+  margin-top: 10px;
   width: 50%;
 }
