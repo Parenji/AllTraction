@@ -663,14 +663,13 @@ font-size: calc(0.5vw + 10px);
   margin-bottom: 0px;
   justify-content: center;
   width: 100%;
+  height: 62.04px;
+  object-fit: contain;
+
 }
 
 .boxina-darkened {
   background-color: #000000;
-  text-align: center;
-  align-items: center;
-  flex: 1;
-  max-width: 25%;
   opacity: 0.25; /* Riduce l'opacità per creare l'effetto di oscuramento */
   filter: grayscale(100%); /* Rende l'immagine in bianco e nero (opzionale) */
 }
@@ -761,7 +760,7 @@ font-size: calc(0.5vw + 10px);
 .captions {
   display: flex;
   justify-content: space-evenly;
-  font-size: calc(0.2vw + 10px);
+  font-size: calc(0.3vw + 9px);
   gap: 20px;
   color: #cacaca;
 }
