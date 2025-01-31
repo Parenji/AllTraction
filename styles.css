@@ -300,6 +300,7 @@ td.totalone {
     font-size: 18px;
   }
 }
+
 @media (max-width: 768px) {
   .table-container {
     position: relative;
@@ -320,6 +321,7 @@ td.totalone {
     font-size: 12px;
   }
 }
+
 .titolozzo {
   position: relative;
   z-index: 2;
@@ -328,6 +330,7 @@ td.totalone {
   font-weight: 700;
   margin-bottom: 5px;
 }
+
 .titoletto {
   position: relative;
   z-index: 2;
