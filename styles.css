@@ -587,9 +587,9 @@ td.totalone {
   font-size: calc(2vw + 14px);
   min-width: 100px;
   margin-bottom: 20px;
-  padding: 10px 10px;
+  padding: 15px 15px;
   background-color: #0f0f0f;
-  border-radius: 15px;
+  border-radius: 35px;
 }
 
 .logotorneofinale {
@@ -749,14 +749,14 @@ font-size: calc(0.5vw + 10px);
   display: flex;
   justify-content: center;
   gap: 10px;
-  border-radius: 15px;
+  border-radius: 50px;
   background-color:  #0f0f0f;
-  padding: 5px;
+  padding: 10px;
 }
 
 .logohome {
-  width: 38px; /* Imposta una dimensione fissa o usa max-width per renderlo responsive */
-  height: 35px;
+  width: 50px; /* Imposta una dimensione fissa o usa max-width per renderlo responsive */
+  height: 40px;
   object-fit: contain; /* Mantiene le proporzioni senza tagliare */
 }
 
