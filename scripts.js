@@ -245,6 +245,9 @@ document.addEventListener("DOMContentLoaded", function () {
           let html2 = "";
           vincitore.textContent = data[0].id_gt7;
           html2 += `
+            <div class="titolettowinlobby">
+                    Lobby ${index + 1}
+                </div>
             <div class="loghihome">
               <img src="images/${
                                     data[0].team || "default"

@@ -727,7 +727,7 @@ font-size: calc(0.5vw + 10px);
 }
 
 .containerwin {
-  padding: 2px;
+  padding: 0px;
   position: relative;
   z-index: 2;
   text-align: center;
@@ -739,6 +739,7 @@ font-size: calc(0.5vw + 10px);
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  gap: 2px;
 }
 
 .loghihome {
