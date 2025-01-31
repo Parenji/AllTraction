@@ -242,7 +242,25 @@ document.addEventListener("DOMContentLoaded", function () {
           let container = document.getElementById(`risultato${index + 1}`);
           let vincitore = document.getElementById(`vincitore${index + 1}`);
           let html = "";
+          let html2 = "";
           vincitore.textContent = data[0].id_gt7;
+          html2 += `
+            <div class="loghihome">
+              <img src="images/${
+                                    data[0].team || "default"
+                                  }.png" alt="Immagine 1" class="logohome">
+              <img src="images/${
+                                    data[0].marchio || "default"
+                                  }.svg" alt="Immagine 2" class="logohome">
+            </div>
+            <div class="captions">
+              <span class="caption">${data[0].auto} (${data[0].traz})</span>
+            </div>
+            <div class="centered-text">${data[0].id_gt7}</div>
+          </div>
+          
+          `
+          vincitore.innerHTML = html2;
 
           // Genera la sezione "Lobby" per gli indici da 1 a 4
           // if (index < 4) {

@@ -709,18 +709,64 @@ font-size: calc(0.5vw + 10px);
   width: 48%;
 }
 
-.titolettowincat {
+.titolettowinlobby {
   padding: 0px;
   position: relative;
   z-index: 2;
   text-align: center;
-  font-size: calc(0.5vw + 10px);
+  font-size: calc(0.2vw + 10px);
   font-weight: 700;
   margin-top: 10px;
   width: 50%;
+  color: #cacaca;
 }
 
 .minitesto {
   font-size: 9px;
   color: #c0c0c0;
+}
+
+.containerwin {
+  padding: 2px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(0.5vw + 12px);
+  font-weight: 700;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.loghihome {
+  align-items: baseline;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logohome {
+  width: 40px; /* Imposta una dimensione fissa o usa max-width per renderlo responsive */
+  height: 40px;
+  object-fit: contain; /* Mantiene le proporzioni senza tagliare */
+}
+
+.captions {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: calc(0.2vw + 10px);
+  gap: 20px;
+  color: #cacaca;
+}
+
+.caption {
+  width: 100%; /* Deve coincidere con la larghezza dell'immagine */
+  text-align: center;
+}
+
+.centered-text {
+  text-align: center;
 }
