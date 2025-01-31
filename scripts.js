@@ -240,7 +240,9 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then((data) => {
           let container = document.getElementById(`risultato${index + 1}`);
+          let vincitore = document.getElementById(`vincitore${index + 1}`);
           let html = "";
+          vincitore.textContent = data[0].id_gt7;
 
           // Genera la sezione "Lobby" per gli indici da 1 a 4
           // if (index < 4) {
