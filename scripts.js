@@ -1,10 +1,30 @@
+let ultimaGara = 1; // Cambia questo numero quando vuoi aggiornare la gara
+
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Numero della gara che aggiorni manualmente
+
+  // Funzione per aggiornare l'HTML
+  function aggiornaUI() {
+    document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
+    document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
+    document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
+    document.getElementById("garaSuccessiva").innerText = `Gara ${
+      ultimaGara + 1
+    }`;
+  }
+
+  // Chiama la funzione per aggiornare la UI
+  aggiornaUI();
+
   const classifiche = [
     "backend/classifica/classifica1.json",
     "backend/classifica/classifica2.json",
-    // "backend/classifica/classifica3.json",
-    // "backend/classifica/classifica4.json",
-    // "backend/classifica/classifica5.json",
+    "backend/classifica/classifica3.json",
+    "backend/classifica/classifica4.json",
+    "backend/classifica/classificafwd.json",
+    "backend/classifica/classificarwd.json",
+    "backend/classifica/classifica4wd.json",
   ];
 
   let top14 = [];
@@ -61,16 +81,16 @@ document.addEventListener("DOMContentLoaded", function () {
           html += `<div class="table-container1"><table id="table${
             index + 1
           }"><thead><tr>
-                            <th>Pos.</th>
-                            <th>Naz.</th>
-                            <th>Num.</th>
-                            <th>ID GT7</th>
-                            <th class="totalone">Punti</th>
-                            <th class="totale hidden">L. Maggiore</th>
-                            <th class="totale hidden">Deep Forest</th>
-                            <th class="totale hidden">Sardegna</th>
-                            <th class="totale hidden">Red Bull</th>
-                            <th class="totale hidden">Monza</th>
+                            <th></th>
+                            <th>Tm</th>
+                            <th>Auto</th>
+                            <th>Nome GT7</th>
+                            <th class="totalone">Pti</th>
+                            <th class="totale hidden">Gara 1</th>
+                            <th class="totale hidden">Gara 2</th>
+                            <th class="totale hidden">Gara 3</th>
+                            <th class="totale hidden">Gara 4</th>
+                            <th class="totale hidden">Gara 5</th>
                         </tr></thead><tbody>`;
 
           data.forEach((item, i) => {
@@ -82,30 +102,44 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.posizione || ""}</td>
                                 <td>
                                   <img class="table-img" src="images/${
-                                    item.naz || "default"
+                                    item.team || "default"
                                   }.png" alt="${
-              item.naz || "default"
+              item.team || "default"
             }" width="50" height="50">
+                                  <div class="minitesto">${
+                                    item.team || ""
+                                  }</div>
                                 </td>
-                                <td>${item.n || ""}</td>
+                                <td>
+                                  <img class="table-img" src="images/${
+                                    item.marchio || "default"
+                                  }.svg" alt="${
+              item.marchio || "default"
+            }" width="50" height="50">
+                                  <div class="minitesto">${
+                                    item.traz || ""
+                                  }</div>
+                                </td>
 
                                 <td>${item.id_gt7 || ""}</td>
-                                <td class="totalone">${(item.totale || 0).toFixed(0)}</td>
+                                <td class="totalone">${(
+                                  item.totale || 0
+                                ).toFixed(0)}</td>
                                 <td class="totale hidden">${(
-                                  item.tot1 || 0).toFixed(0)
-                                }</td>
+                                  item.tot1 || 0
+                                ).toFixed(0)}</td>
                                 <td class="totale hidden">${(
-                                  item.tot2 || 0).toFixed(0)
-                                }</td>
+                                  item.tot2 || 0
+                                ).toFixed(0)}</td>
                                 <td class="totale hidden">${(
-                                  item.tot3 || 0).toFixed(0)
-                                }</td>
+                                  item.tot3 || 0
+                                ).toFixed(0)}</td>
                                 <td class="totale hidden">${(
-                                  item.tot4 || 0).toFixed(0)
-                                }</td>
+                                  item.tot4 || 0
+                                ).toFixed(0)}</td>
                                 <td class="totale hidden">${(
-                                  item.tot5 || 0).toFixed(0)
-                                }</td>
+                                  item.tot5 || 0
+                                ).toFixed(0)}</td>
                             </tr>`;
           });
 
@@ -220,11 +254,11 @@ document.addEventListener("DOMContentLoaded", function () {
           html += `<div class="table-container1"><table id="rable${
             index + 1
           }"><thead><tr>
-                            <th>Pos.</th>
-                            <th>Naz.</th>
-                            <th>Num.</th>
-                            <th>ID GT7</th>
-                            <th class="totalone">Punti</th>
+                            <th></th>
+                            <th>Tm</th>
+                            <th>Auto</th>
+                            <th>Nome GT7</th>
+                            <th class="totalone">Pti</th>
                             <th class="totale hidden">Gara</th>
                             <th class="totale hidden">Pole</th>
                             <th class="totale hidden">GV</th>
@@ -239,21 +273,38 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td>${item.posizione || ""}</td>
                                 <td>
                                   <img class="table-img" src="images/${
-                                    item.naz || "default"
+                                    item.team || "default"
                                   }.png" alt="${
-              item.naz || "default"
+              item.team || "default"
             }" width="50" height="50">
+                                  <div class="minitesto">${
+                                    item.team || ""
+                                  }</div>
                                 </td>
-                                <td>${item.n || ""}</td>
+                                <td>
+                                  <img class="table-img" src="images/${
+                                    item.marchio || "default"
+                                  }.svg" alt="${
+              item.marchio || "default"
+            }" width="50" height="50">
+                                  <div class="minitesto">${
+                                    item.traz || ""
+                                  }</div>
+                                </td>
 
                                 <td>${item.id_gt7 || ""}</td>
-                                <td class="totalone">${(item.tot || 0).toFixed(0)}</td>
-                                <td class="totale hidden">${(item.gara || 0).toFixed(0)
+                                <td class="totalone">${(
+                                  item["tot" + ultimaGara] || 0
+                                ).toFixed(0)}</td>
+                                <td class="totale hidden">${(
+                                  item["gara" + ultimaGara] || 0
+                                ).toFixed(0)}</td>
+                                <td class="totale hidden">${
+                                  item["pole" + ultimaGara] || ""
                                 }</td>
                                 <td class="totale hidden">${
-                                  item.pole || ""
+                                  item["gv" + ultimaGara] || ""
                                 }</td>
-                                <td class="totale hidden">${item.gv || ""}</td>
                             </tr>`;
           });
 
@@ -351,15 +402,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //           // Genera la tabella
 //           html += `<div class="table-container1">
-//           <div style="text-align: center;">${ora[index]}</div>  
+//           <div style="text-align: center;">${ora[index]}</div>
 //           <div style="text-align: center;">Host: ${hosts[index]}</div>
-       
+
 //           <table id="mable${index + 1}"><thead><tr>
 //                             <th>Naz.</th>
 //                             <th>Num.</th>
 //                             <th>ID PSN</th>
 //                             <th>ID GT7</th>
-                          
 
 //                         </tr></thead><tbody>`;
 
@@ -377,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //                                 <td>${item.id_psn || ""}</td>
 //                                 <td>${
 //                                   item.id_gt7 || ""
-//                                 }</td>                           
+//                                 }</td>
 
 //                             </tr>`;
 //           });
@@ -594,5 +644,3 @@ function updateCountdown() {
 
 // Aggiorna il countdown ogni secondo
 setInterval(updateCountdown, 1000);
-
-

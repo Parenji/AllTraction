@@ -102,14 +102,16 @@
 
             <div class="antibox">
                 <div class="titolino-sx">Ultima gara</div>
-                <div class="titolino-dx">Gara 1</div>
+                <div class="titolino-dx" id="garaCorrente2"></div>
             </div>
             <div class="box">
                 <div class="logotrackfinalediv">
                     <img src="images/watkins.svg" alt="Logo" class="logotrackfinale" />
                 </div>
                 <div class="titoletto">
-                    Vincitori
+                    <div class="coppa">
+                        <img src="images/icons/coppa.svg" alt="Logo" class="coppaimg" />
+                    </div>
                 </div>
 
                 <div class="titolettowincat">
@@ -119,10 +121,10 @@
                     Lobby 2
                 </div>
                 <div class="titolettowin">
-                    Flavio-VR46
+                    RMT-FlavioVR46
                 </div>
                 <div class="titolettowin">
-                    Tommy
+                    RMT_87_TOMMY
                 </div>
                 <div class="titolettowincat">
                     Lobby 3
@@ -131,23 +133,24 @@
                     Lobby 4
                 </div>
                 <div class="titolettowin">
-                    ???
+                    S. Polo
                 </div>
                 <div class="titolettowin">
-                    ???
+                    N.Baglioni
                 </div>
             </div>
 
             <div class="antibox">
                 <div class="titolino-sx">Prossima gara</div>
-                <div class="titolino-dx">Gara 2</div>
+                <div class="titolino-dx" id="garaSuccessiva"></p></div>
             </div>
             <div class="box">
 
-                <div class="countdown"><span id="countdown"></span></div>
                 <div class="titoletto">
-                    <img src="images/fuji.png" alt="Logo" class="logotrackfinale" />
+                    <img src="images/fuji.svg" alt="Logo" class="logotrackfinale" />
                 </div>
+
+                <div class="countdown"><span id="countdown"></span></div>
                 <div class="titoletto">
                     Host
                 </div>
@@ -187,7 +190,7 @@
                 </div>
                 <div class="boxina">
 
-                    <img src="images/fuji.png" alt="Logo" class="logotrackpiccoli" />
+                    <img src="images/fuji.svg" alt="Logo" class="logotrackpiccoli" />
                 </div>
                 <div class="boxina">
 
@@ -200,6 +203,20 @@
                 <div class="boxina">
 
                     <img src="images/tokyo.png" alt="Logo" class="logotrackpiccoli" />
+                </div>
+            </div>
+            <div class="antibox">
+                <div class="titolino-sx">Semifinali</div>
+                <div class="titolino-dx">Finale</div>
+            </div>
+            <div class="boxinacont">
+                <div class="boxina">
+
+                    <img src="images/spa.svg" alt="Logo" class="logotrackpiccoli" />
+                </div>
+                <div class="boxina">
+
+                    <img src="images/scroix.png" alt="Logo" class="logotrackpiccoli" />
                 </div>
             </div>
 
@@ -234,8 +251,8 @@
         <section id="page2" class="section">
             <!-- Sezioni delle tendine per le lobby -->
             <div class="accordion-container">
-                <div class="titoletto">
-                    Gara 1
+                <div class="titoletto" id="garaCorrente3">
+                    
                 </div>
                 <button class="accordion">Lobby 1<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
                             height="24" viewBox="0 0 24 24">
@@ -298,12 +315,12 @@
                     PDF Info e opzioni stanza
                 </button>
             </div>
-            <div class="titolino-sx">Nota:</div>
+            <!-- <div class="titolino-sx">Nota:</div>
             <div class="titolino-sx">Anche se non esplicitamente dichiarato nel regolamento in pdf, è severamente
                 vietato fare il pit all' ultimo giro così poi da tagliare subito il traguardo.
                 L'unica cosa consentita è fare pit e non sostituire gomme e/o non fare rifornimento.
                 La libertà di scegliere quando è vincolata al fatto che poi si percorra anche tutta la pitlane in
-                uscita.</div>
+                uscita.</div> -->
 
         </section>
 
@@ -371,7 +388,7 @@
                             <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
                         </svg></i></button>
                 <div class="panel">
-                    <div class="panel-content table-container" id="classificafwd"></div>
+                    <div class="panel-content table-container" id="classifica5"></div>
                     <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
 
                 </div>
@@ -381,7 +398,7 @@
                             <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
                         </svg></i></button>
                 <div class="panel">
-                    <div class="panel-content table-container" id="classificarwd"></div>
+                    <div class="panel-content table-container" id="classifica6"></div>
                     <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
                 </div>
 
@@ -390,7 +407,7 @@
                             <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
                         </svg></i></button>
                 <div class="panel">
-                    <div class="panel-content table-container" id="classifica4wd"></div>
+                    <div class="panel-content table-container" id="classifica7"></div>
                     <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
                 </div>
 
@@ -400,8 +417,7 @@
         </section>
 
         <section id="page4" class="section">
-            <div class="titolozzo">
-                <div>Gara 1</div>
+            <div class="titolozzo" id="garaCorrente1">
             </div>
             <table id="penaltiesTable" class="panel-content">
                 <thead>

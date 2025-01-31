@@ -38,7 +38,7 @@ button {
 }
 .title-container .logohead {
   width: auto;
-  height: 100px;
+  height: 70px;
   margin: auto;
   margin-top: 20px;
   display: block;
@@ -60,7 +60,7 @@ button {
     display: block;
   }
   .title-container .logohead {
-    width: 20%;
+    width: 15%;
     height: auto;
     max-width: 100%;
     margin: 0 auto;
@@ -270,7 +270,7 @@ td.totalone {
     width: auto;
   }
   .accordion {
-    font-size: 20px;
+    font-size: 16px;
     padding: 20px;
     margin-bottom: 0;
   }
@@ -313,7 +313,7 @@ td.totalone {
   }
   td,
   th {
-    padding: 4px 2px 4px;
+    padding: 4px 4px 4px;
     text-align: center;
   }
   table {
@@ -455,6 +455,7 @@ td.totalone {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #fff;
+  margin-top: 10px;
 }
 .sponsor-section h2 {
   font-size: 10px;
@@ -559,7 +560,8 @@ td.totalone {
 }
 .table-img {
   max-width: 100%;
-  height: 20px;
+  width:35px;
+  height: 25px;
   display: block;
   object-fit: contain;
   margin: 0 auto;
@@ -579,10 +581,10 @@ td.totalone {
 }
 
 .countdown {
-  font-size: calc(2vw + 16px);
-  min-width: 220px;
-  /* margin-bottom: 10px; */
-  padding: 15px 15px;
+  font-size: calc(4vw + 10px);
+  min-width: 100px;
+  margin-bottom: 20px;
+  padding: 10px 10px;
   background-color: #0f0f0f;
   border-radius: 15px;
 }
@@ -596,12 +598,12 @@ td.totalone {
 }
 
 .logotrackfinale {
-  height: calc(5vw + 40px);
+  max-width: 300px;
+  width: calc(20vw + 80px);
+  min-height: 60px;
   margin-top: 0;
   margin-bottom: 0px;
   justify-content: center;
-
-
 }
 .logotrackfinalediv {
   width: 100%;
@@ -613,13 +615,13 @@ td.totalone {
 .titolino-sx{
   text-align: left;
   padding: 4px 10px;
-  font-size: 15px;
+  font-size: calc(0.5vw + 10px);
 }
 
 .titolino-dx{
 text-align: right;
 padding: 4px 11px;
-font-size: 15px;
+font-size: calc(0.5vw + 10px);
 }
 
 .titolino-sx-classifiche{
@@ -643,15 +645,17 @@ font-size: 15px;
   padding: 0px;
   margin: 0;
   border-radius: 10px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .boxina {
-  padding: 10px 5px;
+  padding: 2% 1%;
   text-align: center;
   align-items: center;
   flex: 1;
   max-width: 25%;
+  align-content: center;
 }
 
 .logotrackpiccoli {
@@ -659,12 +663,10 @@ font-size: 15px;
   margin-bottom: 0px;
   justify-content: center;
   width: 100%;
-  padding-top: 2px;
 }
 
 .boxina-darkened {
   background-color: #000000;
-  padding: 10px 2px;
   text-align: center;
   align-items: center;
   flex: 1;
@@ -678,7 +680,8 @@ font-size: 15px;
   pointer-events: none;
 } */
 .coppa{
-  width: 50%;
+  margin-top: 10px;
+  width: 100%;
 
 }
 
@@ -701,7 +704,7 @@ font-size: 15px;
   position: relative;
   z-index: 2;
   text-align: center;
-  font-size: calc(1vw + 12px);
+  font-size: calc(0.5vw + 12px);
   font-weight: 700;
   width: 48%;
 }
@@ -711,8 +714,13 @@ font-size: 15px;
   position: relative;
   z-index: 2;
   text-align: center;
-  font-size: calc(1vw + 8px);
+  font-size: calc(0.5vw + 10px);
   font-weight: 700;
   margin-top: 10px;
   width: 50%;
+}
+
+.minitesto {
+  font-size: 9px;
+  color: #c0c0c0;
 }
