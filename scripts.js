@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
           vincitore.textContent = data[0].id_gt7;
           html2 += `
             <div class="titolettowinlobby">
-                    Lobby ${index + 1}
+                    Lobby<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> ${index + 1}</span>
                 </div>
             <div class="loghihome">
               <img src="images/${
@@ -256,10 +256,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                     data[0].marchio || "default"
                                   }.svg" alt="Immagine 2" class="logohome">
             </div>
+            <div class="centered-text">${data[0].id_gt7}</div>
             <div class="captions">
               <span class="caption">${data[0].auto} (${data[0].traz})</span>
             </div>
-            <div class="centered-text">${data[0].id_gt7}</div>
           </div>
           
           `

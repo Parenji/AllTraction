@@ -718,7 +718,7 @@ font-size: calc(0.5vw + 10px);
   font-weight: 700;
   margin-top: 10px;
   width: 50%;
-  color: #cacaca;
+  color: #b80000;
 }
 
 .minitesto {
@@ -747,6 +747,9 @@ font-size: calc(0.5vw + 10px);
   display: flex;
   justify-content: center;
   gap: 10px;
+  border-radius: 15px;
+  background-color:  #0f0f0f;
+  padding: 5px;
 }
 
 .logohome {
