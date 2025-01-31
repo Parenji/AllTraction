@@ -581,7 +581,7 @@ td.totalone {
 }
 
 .countdown {
-  font-size: calc(4vw + 10px);
+  font-size: calc(2vw + 14px);
   min-width: 100px;
   margin-bottom: 20px;
   padding: 10px 10px;
