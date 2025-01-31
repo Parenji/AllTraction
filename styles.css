@@ -650,7 +650,7 @@ font-size: calc(0.5vw + 10px);
 }
 
 .boxina {
-  padding: 2% 1%;
+  padding: 1% 2%;
   text-align: center;
   align-items: center;
   flex: 1;
@@ -750,8 +750,8 @@ font-size: calc(0.5vw + 10px);
 }
 
 .logohome {
-  width: 40px; /* Imposta una dimensione fissa o usa max-width per renderlo responsive */
-  height: 40px;
+  width: 38px; /* Imposta una dimensione fissa o usa max-width per renderlo responsive */
+  height: 35px;
   object-fit: contain; /* Mantiene le proporzioni senza tagliare */
 }
 
