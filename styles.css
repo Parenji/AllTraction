@@ -1,3 +1,7 @@
+:root {
+  --brdr-color: #3c3c3c;
+}
+
 body {
   background-color: #0f0f0f;
   color: #fff;
@@ -399,7 +403,6 @@ td.totalone {
   /* background-color: #202020;
   background-color: #810101; */
 
-
   flex-wrap: wrap;
 }
 .navbar-scroll {
@@ -427,10 +430,9 @@ td.totalone {
   font-size: calc(0.5vw + 7px);
 }
 
-
 .menu-link.active {
   background-color: #484848;
-  background-color: #b80000;
+  background-color: #c20000;
   font-weight: 700;
   color: #fff;
   box-shadow: 0 10px 20px 0px rgba(255, 141, 141, 0.23);
@@ -563,7 +565,7 @@ td.totalone {
 }
 .table-img {
   max-width: 100%;
-  width:35px;
+  width: 35px;
   height: 25px;
   display: block;
   object-fit: contain;
@@ -574,7 +576,7 @@ td.totalone {
   background-color: #222222;
   padding: 15px 10px 20px;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 5px;
   border-radius: 15px;
@@ -590,6 +592,9 @@ td.totalone {
   padding: 15px 15px;
   background-color: #0f0f0f;
   border-radius: 35px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaaaaa;
 }
 
 .logotorneofinale {
@@ -597,7 +602,6 @@ td.totalone {
   margin-top: 0px;
   margin-bottom: 10px;
   justify-content: center;
-
 }
 
 .logotrackfinale {
@@ -610,35 +614,30 @@ td.totalone {
 }
 .logotrackfinalediv {
   width: 100%;
-
-
 }
 
-
-.titolino-sx{
+.titolino-sx {
   text-align: left;
   padding: 4px 10px;
   font-size: calc(0.5vw + 10px);
 }
 
-.titolino-dx{
-text-align: right;
-padding: 4px 11px;
-font-size: calc(0.5vw + 10px);
+.titolino-dx {
+  text-align: right;
+  padding: 4px 11px;
+  font-size: calc(0.5vw + 10px);
 }
 
-.titolino-sx-classifiche{
+.titolino-sx-classifiche {
   text-align: left;
   padding: 4px 10px;
   font-size: 10px;
 }
 
-.antibox{
+.antibox {
   display: flex;
   justify-content: space-between;
-
 }
-
 
 
 .boxinacont {
@@ -647,9 +646,11 @@ font-size: calc(0.5vw + 10px);
   width: 100%;
   padding: 0px;
   margin: 0;
-  border-radius: 10px;
+  border-radius: 15px;
   justify-content: space-between;
   overflow: hidden;
+  margin-bottom: 5px;
+
 }
 
 .boxina {
@@ -668,7 +669,6 @@ font-size: calc(0.5vw + 10px);
   width: 100%;
   height: 62.04px;
   object-fit: contain;
-
 }
 
 .boxina-darkened {
@@ -681,13 +681,12 @@ font-size: calc(0.5vw + 10px);
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
 } */
-.coppa{
+.coppa {
   margin-top: 10px;
   width: 100%;
-
 }
 
-.coppaimg{
+.coppaimg {
   width: 30px;
   filter: invert(100%);
 }
@@ -720,7 +719,7 @@ font-size: calc(0.5vw + 10px);
   font-weight: 700;
   margin-top: 10px;
   width: 50%;
-  color: #b80000;
+  color: #c20000;
 }
 
 .minitesto {
@@ -750,8 +749,11 @@ font-size: calc(0.5vw + 10px);
   justify-content: center;
   gap: 10px;
   border-radius: 50px;
-  background-color:  #0f0f0f;
+  background-color: #0f0f0f;
   padding: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaaaaa;
 }
 
 .logohome {
