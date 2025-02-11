@@ -585,8 +585,35 @@ td.totalone {
   align-items: center;
 }
 
-.countdown {
+#countdown {
+  display: flex;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  text-align: center;
   font-size: calc(2vw + 17px);
+  min-width: 100px;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  background-color: #0f0f0f;
+  border-radius: 35px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaaaaa;
+}
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+.time-box span {
+  font-size: calc(1vw + 6px);
+  color: gray;
+}
+
+/* .countdown {
+  font-size: calc(1vw + 3px);
   min-width: 100px;
   margin-bottom: 10px;
   padding: 15px 15px;
@@ -595,7 +622,7 @@ td.totalone {
   border-width: 1px;
   border-style: solid;
   border-color: #aaaaaa;
-}
+} */
 
 .logotorneofinale {
   height: calc(3vw + 30px);
@@ -717,9 +744,9 @@ td.totalone {
   text-align: center;
   font-size: calc(0.2vw + 10px);
   font-weight: 700;
-  margin-top: 10px;
   width: 50%;
   color: #c20000;
+  margin-top: 10px;
 }
 
 .minitesto {
@@ -769,6 +796,16 @@ td.totalone {
   gap: 20px;
   color: #cacaca;
 }
+
+.orarilobby {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: calc(0.3vw + 9px);
+  gap: 20px;
+  color: #cacaca;
+  width: 50%;
+}
+
 
 .caption {
   width: 100%; /* Deve coincidere con la larghezza dell'immagine */

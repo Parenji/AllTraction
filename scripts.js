@@ -629,41 +629,39 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("February 11, 2025 21:00:00").getTime();
+const nextEventDate = new Date("February 13, 2025 21:00:00").getTime();
 
-// Funzione per il countdown
+
+        
 function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = nextEventDate - now;
+    const now = new Date().getTime();
+    const distance = nextEventDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  let countdownText = "";
+    let countdownHTML = "";
 
-  // Mostra i giorni solo se > 0
-  if (days > 0) {
-    countdownText += `${days}g `;
-  }
+    // if (days > 0) {
+        countdownHTML += `<div class='time-box'><div>${days}</div><span>GIORNI</span></div>`;
+    // }
+    countdownHTML += `<div class='time-box'><div>${hours}</div><span>ORE</span></div>`;
+    countdownHTML += `<div class='time-box'><div>${minutes}</div><span>MINUTI</span></div>`;
+    // if (days === 0) {
+        countdownHTML += `<div class='time-box'><div>${seconds}</div><span>SECONDI</span></div>`;
+    // }
 
-  // Mostra ore e minuti
-  countdownText += `${hours}h ${minutes}m`;
+    document.getElementById("countdown").innerHTML = countdownHTML;
 
-  if (days === 0) countdownText += ` ${seconds}s`;
-
-  // Aggiorna l'elemento HTML con il countdown
-  document.getElementById("countdown").innerHTML = countdownText;
-
-  // Se il countdown è scaduto
-  if (distance < 0) {
-    document.getElementById("countdown").innerHTML =
-      "In attesa dei risultati ufficiali...";
-  }
+    if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "In attesa dei risultati ufficiali...";
+    }
 }
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
 // Aggiorna il countdown ogni secondo
 setInterval(updateCountdown, 1000);
