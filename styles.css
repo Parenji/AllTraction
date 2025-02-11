@@ -1,5 +1,6 @@
 :root {
   --brdr-color: #3c3c3c;
+  --grigio-captions:  #cacaca;
 }
 
 body {
@@ -609,7 +610,7 @@ td.totalone {
 }
 .time-box span {
   font-size: calc(1vw + 6px);
-  color: gray;
+  color: var(--grigio-captions);
 }
 
 /* .countdown {
@@ -722,7 +723,7 @@ td.totalone {
   position: relative;
   z-index: 2;
   text-align: center;
-  font-size: 16px;
+  font-size: calc(0.5vw + 12px);
   font-weight: 700;
   width: 50%;
 }
