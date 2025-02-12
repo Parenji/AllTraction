@@ -589,15 +589,14 @@ td.totalone {
 #countdown {
   display: flex;
   gap: 15px;
-  font-family: Arial, sans-serif;
   font-size: 2rem;
   text-align: center;
-  font-size: calc(2vw + 17px);
+  font-size: calc(1vw + 18px);
   min-width: 100px;
   margin-bottom: 10px;
-  padding: 12px 15px;
+  padding: 12px 18px;
   background-color: #0f0f0f;
-  border-radius: 35px;
+  border-radius: 45px;
   border-width: 1px;
   border-style: solid;
   border-color: #aaaaaa;
@@ -609,7 +608,7 @@ td.totalone {
   width: 25%;
 }
 .time-box span {
-  font-size: calc(1vw + 6px);
+  font-size: calc(0.4vw + 8px);
   color: var(--grigio-captions);
 }
 
