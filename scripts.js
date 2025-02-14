@@ -1,4 +1,4 @@
-let ultimaGara = 1; // Cambia questo numero quando vuoi aggiornare la gara
+let ultimaGara = 2; // Cambia questo numero quando vuoi aggiornare la gara
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -629,7 +629,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("February 13, 2025 21:00:00").getTime();
+const nextEventDate = new Date("February 25, 2025 21:00:00").getTime();
 
 
         
