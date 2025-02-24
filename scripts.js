@@ -1,5 +1,20 @@
 let ultimaGara = 2; // Cambia questo numero quando vuoi aggiornare la gara
 
+const hosts = [
+  "TLM_Buitre83GT",
+  "GTRC-AleRasato74",
+  "TLM_wid83",
+  "rupetheking"
+];
+
+hosts.forEach((host, index) => {
+  let anchor = document.getElementById(`host${index + 1}`);
+  if (anchor) {
+      anchor.href = `https://profile.playstation.com/${host}/add`;
+      anchor.textContent = host;
+  }
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Numero della gara che aggiorni manualmente

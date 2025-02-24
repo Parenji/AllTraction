@@ -719,12 +719,20 @@ td.totalone {
 }
 
 .titolettohost {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   position: relative;
   z-index: 2;
   text-align: center;
   font-size: calc(0.5vw + 12px);
   font-weight: 700;
   width: 50%;
+  justify-content: center;
+}
+
+.titolettohost a {
+  color: white;
 }
 
 .titolettowin {
@@ -815,4 +823,9 @@ td.totalone {
 .centered-text {
   text-align: center;
   width: 100%;
+}
+
+.ps-icon {
+  width: 20px;
+  height: 20px;
 }
