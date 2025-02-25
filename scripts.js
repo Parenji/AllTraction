@@ -1,8 +1,8 @@
 let ultimaGara = 2; // Cambia questo numero quando vuoi aggiornare la gara
 
 const hosts = [
-  "TLM_Buitre83GT",
   "GTRC-AleRasato74",
+  "Silentium884",
   "TLM_wid83",
   "rupetheking"
 ];

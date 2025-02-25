@@ -1,8 +1,7 @@
 :root {
   --brdr-color: #3c3c3c;
-  --grigio-captions:  #cacaca;
+  --grigio-captions: #cacaca;
 }
-
 body {
   background-color: #0f0f0f;
   color: #fff;
@@ -80,7 +79,6 @@ button {
   width: 800px;
   width: 800px;
 }
-
 .flagtrack {
   width: auto;
   height: 15px;
@@ -305,7 +303,6 @@ td.totalone {
     font-size: 18px;
   }
 }
-
 @media (max-width: 768px) {
   .table-container {
     position: relative;
@@ -326,7 +323,6 @@ td.totalone {
     font-size: 12px;
   }
 }
-
 .titolozzo {
   position: relative;
   z-index: 2;
@@ -335,17 +331,14 @@ td.totalone {
   font-weight: 700;
   margin-bottom: 5px;
 }
-
 .titoletto {
   position: relative;
   z-index: 2;
   text-align: center;
   font-size: calc(1vw + 16px);
   font-weight: 700;
-  /* margin-bottom: 10px; */
   width: 100%;
 }
-
 .countdown-container1 {
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.2),
@@ -367,7 +360,6 @@ td.totalone {
   margin-bottom: 5px;
   color: #fff;
 }
-
 .timer {
   font-weight: lighter;
 }
@@ -401,9 +393,6 @@ td.totalone {
   margin: auto;
   margin-bottom: 30px;
   text-align: center;
-  /* background-color: #202020;
-  background-color: #810101; */
-
   flex-wrap: wrap;
 }
 .navbar-scroll {
@@ -415,7 +404,6 @@ td.totalone {
   align-items: center;
   background-color: #202020;
   background-color: #810101;
-
   color: #fff;
 }
 .navbar-scroll a {
@@ -427,18 +415,16 @@ td.totalone {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5px 0px 7px;
+  padding: 5px 0 7px;
   font-size: calc(0.5vw + 7px);
 }
-
 .menu-link.active {
   background-color: #484848;
   background-color: #c20000;
   font-weight: 700;
   color: #fff;
-  box-shadow: 0 10px 20px 0px rgba(255, 141, 141, 0.23);
+  box-shadow: 0 10px 20px 0 rgba(255, 141, 141, 0.23);
 }
-
 .menu-link .home {
   width: calc(0.2vw + 32px);
   filter: invert(100%);
@@ -559,7 +545,6 @@ td.totalone {
   padding: 5px;
   text-align: center;
 }
-
 .team-icon {
   height: 55px;
   margin-top: 5px;
@@ -572,9 +557,8 @@ td.totalone {
   object-fit: contain;
   margin: 0 auto;
 }
-
 .box {
-  background-color: #222222;
+  background-color: #222;
   padding: 15px 10px 20px;
   display: flex;
   justify-content: center;
@@ -585,7 +569,6 @@ td.totalone {
   text-align: center;
   align-items: center;
 }
-
 #countdown {
   display: flex;
   gap: 15px;
@@ -599,7 +582,7 @@ td.totalone {
   border-radius: 45px;
   border-width: 1px;
   border-style: solid;
-  border-color: #aaaaaa;
+  border-color: #aaa;
 }
 .time-box {
   display: flex;
@@ -611,75 +594,53 @@ td.totalone {
   font-size: calc(0.4vw + 8px);
   color: var(--grigio-captions);
 }
-
-/* .countdown {
-  font-size: calc(1vw + 3px);
-  min-width: 100px;
-  margin-bottom: 10px;
-  padding: 15px 15px;
-  background-color: #0f0f0f;
-  border-radius: 35px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #aaaaaa;
-} */
-
 .logotorneofinale {
   height: calc(3vw + 30px);
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 10px;
   justify-content: center;
 }
-
 .logotrackfinale {
   max-width: 300px;
   width: calc(20vw + 80px);
   min-height: 60px;
   margin-top: 0;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   justify-content: center;
 }
 .logotrackfinalediv {
   width: 100%;
 }
-
 .titolino-sx {
   text-align: left;
   padding: 4px 10px;
   font-size: calc(0.5vw + 10px);
 }
-
 .titolino-dx {
   text-align: right;
   padding: 4px 11px;
   font-size: calc(0.5vw + 10px);
 }
-
 .titolino-sx-classifiche {
   text-align: left;
   padding: 4px 10px;
   font-size: 10px;
 }
-
 .antibox {
   display: flex;
   justify-content: space-between;
 }
-
-
 .boxinacont {
-  background-color: #222222;
+  background-color: #222;
   display: flex;
   width: 100%;
-  padding: 0px;
+  padding: 0;
   margin: 0;
   border-radius: 15px;
   justify-content: space-between;
   overflow: hidden;
   margin-bottom: 5px;
-
 }
-
 .boxina {
   padding: 1% 1%;
   text-align: center;
@@ -688,36 +649,27 @@ td.totalone {
   max-width: 25%;
   align-content: center;
 }
-
 .logotrackpiccoli {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
   justify-content: center;
   width: 100%;
   height: 62.04px;
   object-fit: contain;
 }
-
 .boxina-darkened {
-  background-color: #000000;
-  opacity: 0.25; /* Riduce l'opacità per creare l'effetto di oscuramento */
-  filter: grayscale(100%); /* Rende l'immagine in bianco e nero (opzionale) */
+  background-color: #000;
+  opacity: 0.25;
+  filter: grayscale(100%);
 }
-
-/* .boxina-darkened::after {
-  background-color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-} */
 .coppa {
   margin-top: 10px;
   width: 100%;
 }
-
 .coppaimg {
   width: 30px;
   filter: invert(100%);
 }
-
 .titolettohost {
   display: flex;
   align-items: center;
@@ -730,11 +682,9 @@ td.totalone {
   width: 50%;
   justify-content: center;
 }
-
 .titolettohost a {
-  color: white;
+  color: #fff;
 }
-
 .titolettowin {
   padding: 2px;
   position: relative;
@@ -744,9 +694,8 @@ td.totalone {
   font-weight: 700;
   width: 48%;
 }
-
 .titolettowinlobby {
-  padding: 0px;
+  padding: 0;
   position: relative;
   z-index: 2;
   text-align: center;
@@ -756,14 +705,12 @@ td.totalone {
   color: #c20000;
   margin-top: 10px;
 }
-
 .minitesto {
   font-size: 9px;
-  color: #c0c0c0;
+  color: silver;
 }
-
 .containerwin {
-  padding: 0px;
+  padding: 0;
   position: relative;
   z-index: 2;
   text-align: center;
@@ -777,7 +724,6 @@ td.totalone {
   border-radius: 10px;
   gap: 2px;
 }
-
 .loghihome {
   align-items: baseline;
   display: flex;
@@ -788,15 +734,13 @@ td.totalone {
   padding: 10px;
   border-width: 1px;
   border-style: solid;
-  border-color: #aaaaaa;
+  border-color: #aaa;
 }
-
 .logohome {
-  width: 50px; /* Imposta una dimensione fissa o usa max-width per renderlo responsive */
+  width: 50px;
   height: 40px;
-  object-fit: contain; /* Mantiene le proporzioni senza tagliare */
+  object-fit: contain;
 }
-
 .captions {
   display: flex;
   justify-content: space-evenly;
@@ -804,7 +748,6 @@ td.totalone {
   gap: 20px;
   color: #cacaca;
 }
-
 .orarilobby {
   display: flex;
   justify-content: space-evenly;
@@ -813,19 +756,15 @@ td.totalone {
   color: #cacaca;
   width: 50%;
 }
-
-
 .caption {
-  width: 100%; /* Deve coincidere con la larghezza dell'immagine */
+  width: 100%;
   text-align: center;
 }
-
 .centered-text {
   text-align: center;
   width: 100%;
   font-size: calc(0.5vw + 10px);
 }
-
 .ps-icon {
   width: 16px;
   height: 16px;
