@@ -1,4 +1,4 @@
-let ultimaGara = 2; // Cambia questo numero quando vuoi aggiornare la gara
+let ultimaGara = 3; // Cambia questo numero quando vuoi aggiornare la gara
 
 const hosts = [
   "GTRC-AleRasato74",
@@ -644,7 +644,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("February 27, 2025 21:00:00").getTime();
+const nextEventDate = new Date("March 11, 2025 21:00:00").getTime();
 
 
         
