@@ -227,9 +227,9 @@ td.totalone {
   width: 1rem;
   transform: rotate(-90deg);
 }
-.accordion:hover {
+/* .accordion:hover {
   background-color: #2a2a2a;
-}
+} */
 .accordionn-container {
   margin-bottom: 10px;
 }
