@@ -81,30 +81,30 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .then((data) => {
             let container = document.getElementById(`classifica${index + 1}`);
-            if (index > 3) {
-              let vincitoretraz = document.getElementById(`prova${index + 1}`);
-              let html2 = "";
-              vincitoretraz.textContent = data[0].id_gt7;
-              html2 += `
+        //     if (index > 3) {
+        //       let vincitoretraz = document.getElementById(`prova${index + 1}`);
+        //       let html2 = "";
+        //       vincitoretraz.textContent = data[0].id_gt7;
+        //       html2 += `
 
-          <div class="loghihome">
-            <img src="images/${
-              data[0].team || "default"
-            }.png" alt="Immagine 1" class="logohome">
-                        <div class="winner" style="min-width: 120px;">${
-                          data[0].id_gt7
-                        }</div>
-            <img src="images/${
-              data[0].marchio || "default"
-            }.svg" alt="Immagine 2" class="logohome">
+        //   <div class="loghihome">
+        //     <img src="images/${
+        //       data[0].team || "default"
+        //     }.png" alt="Immagine 1" class="logohome">
+        //                 <div class="winner" style="min-width: 120px;">${
+        //                   data[0].id_gt7
+        //                 }</div>
+        //     <img src="images/${
+        //       data[0].marchio || "default"
+        //     }.svg" alt="Immagine 2" class="logohome">
 
-          </div>
+        //   </div>
 
-        </div>
+        // </div>
         
-        `;
-              vincitoretraz.innerHTML = html2;
-            }
+        // `;
+        //       vincitoretraz.innerHTML = html2;
+        //     }
 
             let html = "";
 
