@@ -24,9 +24,7 @@ document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Numero della gara che aggiorni manualmente
 
-  // Chiama la funzione per aggiornare la UI
 
 
 
