@@ -1,20 +1,21 @@
-let ultimaGara = 4; // Cambia questo numero quando vuoi aggiornare la gara
+let ultimaGara = 5; // Cambia questo numero quando vuoi aggiornare la gara
 
 const hosts = [
+  "?",
+  "?",
   "GTRC-AleRasato74",
   "Silentium884",
   "TLM_wid83",
-  "rupetheking"
+  "rupetheking",
 ];
 
 hosts.forEach((host, index) => {
   let anchor = document.getElementById(`host${index + 1}`);
   if (anchor) {
-      anchor.href = `https://profile.playstation.com/${host}/add`;
-      anchor.textContent = host;
+    anchor.href = `https://profile.playstation.com/${host}/add`;
+    anchor.textContent = host;
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   // Numero della gara che aggiorni manualmente
@@ -24,9 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
     document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
     document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
-    document.getElementById("garaSuccessiva").innerText = `Gara ${
-      ultimaGara + 1
-    }`;
   }
 
   // Chiama la funzione per aggiornare la UI
@@ -40,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "backend/classifica/classificafwd.json",
     "backend/classifica/classificarwd.json",
     "backend/classifica/classifica4wd.json",
+    "backend/classifica/semi1.json",
+    "backend/classifica/semi2.json",
   ];
 
   let top14 = [];
@@ -67,35 +67,61 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function caricaClassifiche() {
     classifiche.forEach((classifica, index) => {
-      // if (index < 4) {
-      const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
-      const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
+      if (index < 7) {
+        const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+        const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
-      fetch(urlWithTimestamp)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(
-              "Errore nel caricamento della classifica: " + response.statusText
-            );
-          }
-          return response.json();
-        })
-        .then((data) => {
-          let container = document.getElementById(`classifica${index + 1}`);
-          let html = "";
+        fetch(urlWithTimestamp)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                "Errore nel caricamento della classifica: " +
+                  response.statusText
+              );
+            }
+            return response.json();
+          })
+          .then((data) => {
+            let container = document.getElementById(`classifica${index + 1}`);
+            if (index > 3) {
+              let vincitoretraz = document.getElementById(`prova${index + 1}`);
+              let html2 = "";
+              vincitoretraz.textContent = data[0].id_gt7;
+              html2 += `
 
-          // Genera la sezione "Lobby" per gli indici da 1 a 4
-          // if (index < 4) {
-          //   html += `<h2>Lobby ${index + 1}</h2>`;
-          // } else {
-          //   // Genera la sezione "Classifica Generale" per l'indice 5
-          //   html += `<h2>Classifica Generale</h2>`;
-          // }
+          <div class="loghihome">
+            <img src="images/${
+              data[0].team || "default"
+            }.png" alt="Immagine 1" class="logohome">
+                        <div class="winner" style="min-width: 120px;">${
+                          data[0].id_gt7
+                        }</div>
+            <img src="images/${
+              data[0].marchio || "default"
+            }.svg" alt="Immagine 2" class="logohome">
 
-          // Genera la tabella
-          html += `<div class="table-container1"><table id="table${
-            index + 1
-          }"><thead><tr>
+          </div>
+
+        </div>
+        
+        `;
+              vincitoretraz.innerHTML = html2;
+            }
+
+            let html = "";
+
+            // Genera la sezione "Lobby" per gli indici da 1 a 4
+            // if (index < 4) {
+            //   html += `<h2>Lobby ${index + 1}</h2>`;
+            // } else {
+            //   // Genera la sezione "Classifica Generale" per l'indice 5
+            //   html += `<h2>Classifica Generale</h2>`;
+            // }
+
+            // Genera la tabella
+            html += `<div class="table-container1"><table id="table${
+              index + 1
+            }"><thead><tr>
                             <th></th>
                             <th>Tm</th>
                             <th>Auto</th>
@@ -108,19 +134,19 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th class="totale hidden">Gara 5</th>
                         </tr></thead><tbody>`;
 
-          data.forEach((item, i) => {
-            let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
-            // if (top14.includes(item.id_psn)) {
-            //   rowClass += " qualified";
-            // }
-            html += `<tr class="${rowClass}">
+            data.forEach((item, i) => {
+              let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
+              // if (top14.includes(item.id_psn)) {
+              //   rowClass += " qualified";
+              // }
+              html += `<tr class="${rowClass}">
                                 <td>${item.posizione || ""}</td>
                                 <td>
                                   <img class="table-img" src="images/${
                                     item.team || "default"
                                   }.png" alt="${
-              item.team || "default"
-            }" width="50" height="50">
+                item.team || "default"
+              }" width="50" height="50">
                                   <div class="minitesto">${
                                     item.team || ""
                                   }</div>
@@ -129,8 +155,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                   <img class="table-img" src="images/${
                                     item.marchio || "default"
                                   }.svg" alt="${
-              item.marchio || "default"
-            }" width="50" height="50">
+                item.marchio || "default"
+              }" width="50" height="50">
                                   <div class="minitesto">${
                                     item.traz || ""
                                   }</div>
@@ -156,45 +182,119 @@ document.addEventListener("DOMContentLoaded", function () {
                                   item.tot5 || 0
                                 ).toFixed(0)}</td>
                             </tr>`;
-          });
-
-          html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
-          // Genera il pulsante per nascondere/mostrare le colonne
-          html += `<button id="toggleColumnsButton${
-            index + 1
-          }" class="toggleColumnsButton">Mostra punteggi dettagliati</button>`;
-          html += `<div style="margin-bottom: 5px;"></div>`;
-          container.innerHTML = html;
-
-          // Aggiungi l'evento click al pulsante per nascondere/mostrare le colonne
-          const toggleColumnsButton = document.getElementById(
-            `toggleColumnsButton${index + 1}`
-          );
-          toggleColumnsButton.addEventListener("click", function () {
-            const table = document.getElementById(`table${index + 1}`);
-            const columnsToToggle = table.querySelectorAll(".totale");
-            columnsToToggle.forEach((column) => {
-              column.classList.toggle("hidden");
             });
-            // Verifica lo stato di una colonna specifica per determinare il testo del pulsante
-            const isHidden = table.querySelector(".totale.hidden");
-            const buttonText = isHidden
-              ? "Mostra punteggi dettagliati"
-              : "Nascondi punteggi dettagliati";
-            toggleColumnsButton.textContent = buttonText;
+
+            html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
+            // Genera il pulsante per nascondere/mostrare le colonne
+            html += `<button id="toggleColumnsButton${
+              index + 1
+            }" class="toggleColumnsButton">Mostra punteggi dettagliati</button>`;
+            html += `<div style="margin-bottom: 5px;"></div>`;
+            container.innerHTML = html;
+
+            // Aggiungi l'evento click al pulsante per nascondere/mostrare le colonne
+            const toggleColumnsButton = document.getElementById(
+              `toggleColumnsButton${index + 1}`
+            );
+            toggleColumnsButton.addEventListener("click", function () {
+              const table = document.getElementById(`table${index + 1}`);
+              const columnsToToggle = table.querySelectorAll(".totale");
+              columnsToToggle.forEach((column) => {
+                column.classList.toggle("hidden");
+              });
+              // Verifica lo stato di una colonna specifica per determinare il testo del pulsante
+              const isHidden = table.querySelector(".totale.hidden");
+              const buttonText = isHidden
+                ? "Mostra punteggi dettagliati"
+                : "Nascondi punteggi dettagliati";
+              toggleColumnsButton.textContent = buttonText;
+            });
+          })
+          .catch((error) => {
+            console.error("Errore nel caricamento della classifica:", error);
+            let container = document.getElementById(`classifica${index + 1}`);
+            container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
           });
-        })
-        .catch((error) => {
-          console.error("Errore nel caricamento della classifica:", error);
-          let container = document.getElementById(`classifica${index + 1}`);
-          container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
-        });
-      // } else if (index === 4) {
+      }
+      else {
+        const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
+        const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
+
+        fetch(urlWithTimestamp)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                "Errore nel caricamento della classifica: " +
+                  response.statusText
+              );
+            }
+            return response.json();
+          })
+          .then((data) => {
+            let container = document.getElementById(`semi${index - 6}`);
+
+
+            let html = "";
+
+            // Genera la tabella
+            html += `<div class="table-container1"><table id="table${
+              index + 1
+            }"><thead><tr>
+                            <th>Lob.</th>
+                            <th>Team</th>
+                            <th>Auto</th>
+                            <th>Nome GT7</th>
+                        </tr></thead><tbody>`;
+
+            data.forEach((item, i) => {
+              let rowClass = i % 2 === 0 ? "even-row" : "odd-row";
+              // if (top14.includes(item.id_psn)) {
+              //   rowClass += " qualified";
+              // }
+              html += `<tr class="${rowClass}">
+                                <td>${item.lobby || ""}</td>
+                                <td>
+                                  <img class="table-img" src="images/${
+                                    item.team || "default"
+                                  }.png" alt="${
+                item.team || "default"
+              }" width="50" height="50">
+                                  <div class="minitesto">${
+                                    item.team || ""
+                                  }</div>
+                                </td>
+                                <td>
+                                  <img class="table-img" src="images/${
+                                    item.marchio || "default"
+                                  }.svg" alt="${
+                item.marchio || "default"
+              }" width="50" height="50">
+                                  <div class="minitesto">${
+                                    item.traz || ""
+                                  }</div>
+                                </td>
+
+                                <td>${item.id_gt7 || ""}</td>
+                            </tr>`;
+            });
+
+            html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
+            
+            container.innerHTML = html;
+
+          })
+          .catch((error) => {
+            console.error("Errore nel caricamento della classifica:", error);
+            let container = document.getElementById(`classifica${index + 1}`);
+            container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
+          });
+      }
+      // else if (index === 4) {
       //   // La classifica generale è già stata caricata, quindi la saltiamo
       // }
     });
     // Aggiungi l'evento click per le sezioni delle tendine
-    const accordions = document.querySelectorAll(".accordion");
+    const accordions = document.querySelectorAll(".accordion, .accordionn");
     accordions.forEach((accordion) => {
       accordion.addEventListener("click", function () {
         this.classList.toggle("active");
@@ -261,15 +361,17 @@ document.addEventListener("DOMContentLoaded", function () {
           vincitore.textContent = data[0].id_gt7;
           html2 += `
             <div class="titolettowinlobby">
-                    Lobby<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> ${index + 1}</span>
+                    Lobby<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> ${
+                      index + 1
+                    }</span>
                 </div>
             <div class="loghihome">
               <img src="images/${
-                                    data[0].team || "default"
-                                  }.png" alt="Immagine 1" class="logohome">
+                data[0].team || "default"
+              }.png" alt="Immagine 1" class="logohome">
               <img src="images/${
-                                    data[0].marchio || "default"
-                                  }.svg" alt="Immagine 2" class="logohome">
+                data[0].marchio || "default"
+              }.svg" alt="Immagine 2" class="logohome">
             </div>
             <div class="centered-text">${data[0].id_gt7}</div>
             <div class="captions">
@@ -277,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
           
-          `
+          `;
           vincitore.innerHTML = html2;
 
           // Genera la sezione "Lobby" per gli indici da 1 a 4
@@ -644,35 +746,36 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("March 25, 2025 21:00:00").getTime();
+const nextEventDate = new Date("April 8, 2025 21:00:00").getTime();
 
-
-        
 function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = nextEventDate - now;
+  const now = new Date().getTime();
+  const distance = nextEventDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    let countdownHTML = "";
+  let countdownHTML = "";
 
-    // if (days > 0) {
-        countdownHTML += `<div class='time-box'><div>${days}</div><span>GIORNI</span></div>`;
-    // }
-    countdownHTML += `<div class='time-box'><div>${hours}</div><span>ORE</span></div>`;
-    countdownHTML += `<div class='time-box'><div>${minutes}</div><span>MINUTI</span></div>`;
-    // if (days === 0) {
-        countdownHTML += `<div class='time-box'><div>${seconds}</div><span>SECONDI</span></div>`;
-    // }
+  // if (days > 0) {
+  countdownHTML += `<div class='time-box'><div>${days}</div><span>GIORNI</span></div>`;
+  // }
+  countdownHTML += `<div class='time-box'><div>${hours}</div><span>ORE</span></div>`;
+  countdownHTML += `<div class='time-box'><div>${minutes}</div><span>MINUTI</span></div>`;
+  // if (days === 0) {
+  countdownHTML += `<div class='time-box'><div>${seconds}</div><span>SECONDI</span></div>`;
+  // }
 
-    document.getElementById("countdown").innerHTML = countdownHTML;
+  document.getElementById("countdown").innerHTML = countdownHTML;
 
-    if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "In attesa dei risultati ufficiali...";
-    }
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML =
+      "In attesa dei risultati ufficiali...";
+  }
 }
 
 setInterval(updateCountdown, 1000);

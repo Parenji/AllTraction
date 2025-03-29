@@ -1,6 +1,12 @@
 :root {
   --brdr-color: #3c3c3c;
   --grigio-captions: #cacaca;
+  --grigio-box: #222;
+  --bordigrigi: rgb(170, 170, 170);
+}
+
+button {
+  background: none;
 }
 body {
   background-color: #0f0f0f;
@@ -196,7 +202,6 @@ td.totalone {
   margin-bottom: 10px;
 }
 .accordion {
-  background-color: #0e0e0e;
   color: #fff;
   cursor: pointer;
   padding: 18px;
@@ -208,6 +213,8 @@ td.totalone {
   font-size: 18px;
   margin-bottom: 10px;
 }
+
+
 .accordion > i > svg {
   width: 1rem;
   height: 0.9rem;
@@ -226,43 +233,16 @@ td.totalone {
 .accordionn-container {
   margin-bottom: 10px;
 }
-.accordionn {
-  background-color: #0e0e0e;
-  color: #fff;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  outline: 0;
-  text-align: left;
-  transition: 0.4s;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.accordionn > i > svg {
-  width: 1rem;
-  height: 0.9rem;
-  transform: rotate(90deg);
-  transition: all 0.3s ease;
-  float: right;
-}
-.accordionn.active > i > svg {
-  height: 0.9rem;
-  width: 1rem;
-  transform: rotate(-90deg);
-}
-.accordionn:hover {
-  background-color: #2a2a2a;
-}
+
 .panel {
   padding: 0 px;
   display: none;
   overflow: hidden;
-  background-color: #0e0e0e;
+  /* background-color: #0e0e0e; */
   margin-bottom: 5px;
 }
 .panel-content {
-  background-color: #0e0e0e;
+  /* background-color: #0e0e0e; */
   padding: 0;
 }
 @media (max-width: 768px) {
@@ -316,7 +296,7 @@ td.totalone {
   }
   td,
   th {
-    padding: 4px 4px 4px;
+    padding: 4px 6px 4px;
     text-align: center;
   }
   table {
@@ -338,6 +318,8 @@ td.totalone {
   font-size: calc(1vw + 16px);
   font-weight: 700;
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 .countdown-container1 {
   background-image: linear-gradient(
@@ -366,9 +348,8 @@ td.totalone {
 .winner {
   font-size: 17px;
   font-weight: 700;
-  color: #fff7c7;
-  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00,
-    0 0 80px #ff8c00, 0 0 90px #ff8c00;
+  /* color: #fff7c7; */
+  text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px gold, 0 0 40px #ff8c00;
 }
 .winnerf {
   font-weight: 700;
@@ -558,7 +539,7 @@ td.totalone {
   margin: 0 auto;
 }
 .box {
-  background-color: #222;
+  background: linear-gradient(145deg, #333, #111);
   padding: 15px 10px 20px;
   display: flex;
   justify-content: center;
@@ -568,7 +549,33 @@ td.totalone {
   min-height: 100px;
   text-align: center;
   align-items: center;
+  border: 1px solid var(--bordigrigi);
+  box-shadow: 0 0 15px rgba(170, 170, 170, 0.3);
 }
+
+.box-oro {
+  background: linear-gradient(145deg, #333, #111);
+  padding: 15px 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid gold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* .box-oro span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
+} */
+
+
 #countdown {
   display: flex;
   gap: 15px;
@@ -582,7 +589,7 @@ td.totalone {
   border-radius: 45px;
   border-width: 1px;
   border-style: solid;
-  border-color: #aaa;
+  border-color: var(--bordigrigi);
 }
 .time-box {
   display: flex;
@@ -631,7 +638,7 @@ td.totalone {
   justify-content: space-between;
 }
 .boxinacont {
-  background-color: #222;
+  background: linear-gradient(145deg, #333, #111);
   display: flex;
   width: 100%;
   padding: 0;
@@ -640,6 +647,8 @@ td.totalone {
   justify-content: space-between;
   overflow: hidden;
   margin-bottom: 5px;
+  border: 1px solid var(--bordigrigi);
+  box-shadow: 0 0 15px rgba(170, 170, 170, 0.3);
 }
 .boxina {
   padding: 1% 1%;
@@ -677,10 +686,11 @@ td.totalone {
   position: relative;
   z-index: 2;
   text-align: center;
-  font-size: calc(0.5vw + 10px);
+  font-size: calc(0.3vw + 11px);
   font-weight: 700;
-  width: 50%;
+  width: 100%;
   justify-content: center;
+  color: #cacaca;
 }
 .titolettohost a {
   color: #fff;
@@ -724,8 +734,24 @@ td.totalone {
   border-radius: 10px;
   gap: 2px;
 }
+
+.containerwintraz {
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(0.5vw + 12px);
+  font-weight: 700;
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 2px;
+}
 .loghihome {
-  align-items: baseline;
+  align-items: center;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -734,7 +760,7 @@ td.totalone {
   padding: 10px;
   border-width: 1px;
   border-style: solid;
-  border-color: #aaa;
+  border-color: var(--bordigrigi);
 }
 .logohome {
   width: 50px;
@@ -751,10 +777,10 @@ td.totalone {
 .orarilobby {
   display: flex;
   justify-content: space-evenly;
-  font-size: calc(0.3vw + 9px);
+  font-size: calc(0.3vw + 11px);
   gap: 20px;
   color: #cacaca;
-  width: 50%;
+  width: 100%;
 }
 .caption {
   width: 100%;
