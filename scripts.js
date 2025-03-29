@@ -17,19 +17,18 @@ hosts.forEach((host, index) => {
   }
 });
 
+
+document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
+document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
+document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // Numero della gara che aggiorni manualmente
 
   // Chiama la funzione per aggiornare la UI
 
-  aggiornaUI;
 
-  // Funzione per aggiornare l'HTML
-  function aggiornaUI() {
-    document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
-    document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
-    document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
-  }
 
   const classifiche = [
     "backend/classifica/classifica1.json",
