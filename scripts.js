@@ -20,6 +20,11 @@ hosts.forEach((host, index) => {
 document.addEventListener("DOMContentLoaded", function () {
   // Numero della gara che aggiorni manualmente
 
+    // Chiama la funzione per aggiornare la UI
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(aggiornaUI, 100);
+    });
+
   // Funzione per aggiornare l'HTML
   function aggiornaUI() {
     document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
@@ -27,10 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
   }
 
-  // Chiama la funzione per aggiornare la UI
-  document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(aggiornaUI, 100);
-  });
+
 
   const classifiche = [
     "backend/classifica/classifica1.json",
