@@ -20,10 +20,9 @@ hosts.forEach((host, index) => {
 document.addEventListener("DOMContentLoaded", function () {
   // Numero della gara che aggiorni manualmente
 
-    // Chiama la funzione per aggiornare la UI
-    document.addEventListener("DOMContentLoaded", function () {
-      setTimeout(aggiornaUI, 100);
-    });
+  // Chiama la funzione per aggiornare la UI
+
+  aggiornaUI;
 
   // Funzione per aggiornare l'HTML
   function aggiornaUI() {
@@ -31,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
     document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
   }
-
-
 
   const classifiche = [
     "backend/classifica/classifica1.json",
@@ -219,8 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let container = document.getElementById(`classifica${index + 1}`);
             container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
           });
-      }
-      else {
+      } else {
         const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
         const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
@@ -236,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .then((data) => {
             let container = document.getElementById(`semi${index - 6}`);
-
 
             let html = "";
 
@@ -283,9 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             html += `</tbody></table></div>`; // Chiudi il contenitore scrollabile
-            
-            container.innerHTML = html;
 
+            container.innerHTML = html;
           })
           .catch((error) => {
             console.error("Errore nel caricamento della classifica:", error);
