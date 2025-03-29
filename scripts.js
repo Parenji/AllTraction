@@ -25,10 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
     document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
     document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
-  };
+  }
 
   // Chiama la funzione per aggiornare la UI
-  aggiornaUI();
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(aggiornaUI, 100);
+  });
 
   const classifiche = [
     "backend/classifica/classifica1.json",
