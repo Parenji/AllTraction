@@ -737,7 +737,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("April 8, 2025 21:00:00").getTime();
+const nextEventDate = new Date("April 8, 2025 22:00:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
