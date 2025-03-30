@@ -1,12 +1,8 @@
 let ultimaGara = 5; // Cambia questo numero quando vuoi aggiornare la gara
 
 const hosts = [
-  "?",
-  "?",
-  "GTRC-AleRasato74",
-  "Silentium884",
+  "TLM_Buitre83GT",
   "TLM_wid83",
-  "rupetheking",
 ];
 
 hosts.forEach((host, index) => {
