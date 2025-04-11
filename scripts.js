@@ -1,9 +1,6 @@
-let ultimaGara = 5; // Cambia questo numero quando vuoi aggiornare la gara
+let ultimaGara = 6; // Cambia questo numero quando vuoi aggiornare la gara
 
-const hosts = [
-  "TLM_Buitre83GT",
-  "TLM_wid83",
-];
+const hosts = ["?", "TLM_Buitre83GT"];
 
 hosts.forEach((host, index) => {
   let anchor = document.getElementById(`host${index + 1}`);
@@ -13,17 +10,11 @@ hosts.forEach((host, index) => {
   }
 });
 
-
-document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
-document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
-document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
-
+// document.getElementById("garaCorrente1").innerText = `Gara ${ultimaGara}`;
+// document.getElementById("garaCorrente2").innerText = `Gara ${ultimaGara}`;
+// document.getElementById("garaCorrente3").innerText = `Gara ${ultimaGara}`;
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
-
-
   const classifiche = [
     "backend/classifica/classifica1.json",
     "backend/classifica/classifica2.json",
@@ -34,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "backend/classifica/classifica4wd.json",
     "backend/classifica/semi1.json",
     "backend/classifica/semi2.json",
+    "backend/risultati/finale.json",
   ];
 
   let top14 = [];
@@ -61,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function caricaClassifiche() {
     classifiche.forEach((classifica, index) => {
-      if (index < 7) {
+      if (index > 3 && index < 7) {
         const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
         const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
@@ -77,30 +69,30 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .then((data) => {
             let container = document.getElementById(`classifica${index + 1}`);
-        //     if (index > 3) {
-        //       let vincitoretraz = document.getElementById(`prova${index + 1}`);
-        //       let html2 = "";
-        //       vincitoretraz.textContent = data[0].id_gt7;
-        //       html2 += `
+            //     if (index > 3) {
+            //       let vincitoretraz = document.getElementById(`prova${index + 1}`);
+            //       let html2 = "";
+            //       vincitoretraz.textContent = data[0].id_gt7;
+            //       html2 += `
 
-        //   <div class="loghihome">
-        //     <img src="images/${
-        //       data[0].team || "default"
-        //     }.png" alt="Immagine 1" class="logohome">
-        //                 <div class="winner" style="min-width: 120px;">${
-        //                   data[0].id_gt7
-        //                 }</div>
-        //     <img src="images/${
-        //       data[0].marchio || "default"
-        //     }.svg" alt="Immagine 2" class="logohome">
+            //   <div class="loghihome">
+            //     <img src="images/${
+            //       data[0].team || "default"
+            //     }.png" alt="Immagine 1" class="logohome">
+            //                 <div class="winner" style="min-width: 120px;">${
+            //                   data[0].id_gt7
+            //                 }</div>
+            //     <img src="images/${
+            //       data[0].marchio || "default"
+            //     }.svg" alt="Immagine 2" class="logohome">
 
-        //   </div>
+            //   </div>
 
-        // </div>
-        
-        // `;
-        //       vincitoretraz.innerHTML = html2;
-        //     }
+            // </div>
+
+            // `;
+            //       vincitoretraz.innerHTML = html2;
+            //     }
 
             let html = "";
 
@@ -126,6 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th class="totale hidden">Gara 3</th>
                             <th class="totale hidden">Gara 4</th>
                             <th class="totale hidden">Gara 5</th>
+                            <th class="totale hidden">Semifinali</th>
+                            <th class="totale hidden">Finale</th>
+
                         </tr></thead><tbody>`;
 
             data.forEach((item, i) => {
@@ -175,6 +170,12 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <td class="totale hidden">${(
                                   item.tot5 || 0
                                 ).toFixed(0)}</td>
+                                <td class="totale hidden">${(
+                                  item.tot6 || 0
+                                ).toFixed(0)}</td>
+                                <td class="totale hidden">${(
+                                  item.tot7 || 0
+                                ).toFixed(0)}</td>
                             </tr>`;
             });
 
@@ -209,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let container = document.getElementById(`classifica${index + 1}`);
             container.innerHTML = `<p>Errore nel caricamento della classifica.</p>`;
           });
-      } else {
+      } else if (index === 9) {
         const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
         const urlWithTimestamp = `${classifica}?_=${timestamp}`; // Aggiungi il timestamp alla URL
 
@@ -224,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
           })
           .then((data) => {
-            let container = document.getElementById(`semi${index - 6}`);
+            let container = document.getElementById(`finale`);
 
             let html = "";
 
@@ -306,8 +307,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const risultati = [
     "backend/risultati/risultato1.json",
     "backend/risultati/risultato2.json",
-    "backend/risultati/risultato3.json",
-    "backend/risultati/risultato4.json",
   ];
 
   // Carica la classifica generale e identifica i primi 14 classificati
@@ -352,9 +351,9 @@ document.addEventListener("DOMContentLoaded", function () {
           vincitore.textContent = data[0].id_gt7;
           html2 += `
             <div class="titolettowinlobby">
-                    Lobby<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> ${
-                      index + 1
-                    }</span>
+                    Semifinale<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)">     
+                    ${String.fromCharCode(65 + index)}
+                    </span>
                 </div>
             <div class="loghihome">
               <img src="images/${
@@ -737,7 +736,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("April 8, 2025 22:00:00").getTime();
+const nextEventDate = new Date("April 29, 2025 21:00:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();

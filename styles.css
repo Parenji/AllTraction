@@ -3,6 +3,7 @@
   --grigio-captions: #cacaca;
   --grigio-box: #222;
   --bordigrigi: rgb(170, 170, 170);
+  --rossotlm: #810101;
 }
 
 button {
@@ -134,7 +135,7 @@ th {
   text-align: center;
 }
 th {
-  background-color: #810101;
+  background-color: var(--rossotlm);
 }
 td.totale {
   font-weight: 700;
@@ -173,7 +174,7 @@ td.totalone {
   margin-bottom: 10px;
 }
 .pdf-button {
-  background-color: #810101;
+  background-color: var(--rossotlm);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -183,7 +184,7 @@ td.totalone {
   margin: 5px;
 }
 .pen-button {
-  background-color: #810101;
+  background-color: var(--rossotlm);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -318,8 +319,19 @@ td.totalone {
   font-size: calc(1vw + 16px);
   font-weight: 700;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 5px;
+}
+
+.titolettounderlogo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 700;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 15px;
 }
 .countdown-container1 {
   background-image: linear-gradient(
@@ -384,7 +396,7 @@ td.totalone {
   justify-content: center;
   align-items: center;
   background-color: #202020;
-  background-color: #810101;
+  background-color: var(--rossotlm);
   color: #fff;
 }
 .navbar-scroll a {
@@ -779,8 +791,9 @@ td.totalone {
   justify-content: space-evenly;
   font-size: calc(0.3vw + 11px);
   gap: 20px;
-  color: #cacaca;
+  color: #ffffff;
   width: 100%;
+  margin-bottom: 5px;
 }
 .caption {
   width: 100%;
@@ -794,4 +807,55 @@ td.totalone {
 .ps-icon {
   width: 16px;
   height: 16px;
+}
+
+.glow-box {
+  background: linear-gradient(145deg, #333, #111);
+  padding: 15px 10px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid var(--rossotlm);
+  box-shadow: 0 0 1px #810101, 0 0 6px #a80000, 0 0 12px #f90000;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.glow-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shiny-move 2.5s infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes shiny-move {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+.glow-box > * {
+  position: relative;
+  z-index: 2;
 }
