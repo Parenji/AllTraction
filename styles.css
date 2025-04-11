@@ -841,7 +841,7 @@ td.totalone {
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-20deg);
-  animation: shiny-move 2.5s infinite;
+  animation: shiny-move 6s infinite;
   z-index: 1;
   pointer-events: none;
 }
@@ -849,9 +849,25 @@ td.totalone {
 @keyframes shiny-move {
   0% {
     left: -75%;
+    opacity: 0;
+  }
+  10% {
+    left: -75%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    left: 125%;
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
   }
   100% {
     left: 125%;
+    opacity: 0;
   }
 }
 
