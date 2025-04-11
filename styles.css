@@ -840,7 +840,7 @@ td.totalone {
     rgba(255, 255, 255, 0.18) 50%,
     rgba(255, 255, 255, 0) 100%
   );
-  transform: skewX(-20deg);
+  transform: skewX(-45deg);
   animation: shiny-move 6s infinite;
   z-index: 1;
   pointer-events: none;
