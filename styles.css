@@ -836,9 +836,9 @@ td.totalone {
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.18) 50%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 230, 230, 0) 0%,
+    rgba(255, 230, 230, 0.18) 50%,
+    rgba(255, 230, 230, 0) 100%
   );
   transform: skewX(-45deg);
   animation: shiny-move 6s infinite;
