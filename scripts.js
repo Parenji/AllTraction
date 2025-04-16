@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th class="totale hidden">Gara 3</th>
                             <th class="totale hidden">Gara 4</th>
                             <th class="totale hidden">Gara 5</th>
-                            <th class="totale hidden">Semifinali</th>
+                            <th class="totale hidden">Semi</th>
                             <th class="totale hidden">Finale</th>
 
                         </tr></thead><tbody>`;
@@ -736,7 +736,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // });
 
 // Data del prossimo evento
-const nextEventDate = new Date("April 29, 2025 21:00:00").getTime();
+const nextEventDate = new Date("April 24, 2025 21:30:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
