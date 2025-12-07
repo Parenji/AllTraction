@@ -4,25 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Traction</title>
+    <title>Granturismo TV</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Favicon standard -->
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
 
-    <!-- Icona per la schermata home di Android (Firefox e iOS usano questa) -->
-    <link rel="apple-touch-icon" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GTV" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
 
     <!-- Colore della barra dell'interfaccia mobile -->
     <meta name="theme-color" content="#FFFFFF">
     <meta name="background-color" content="#FFFFFF">
 
     <!-- Nome e descrizione per l'icona della schermata home -->
-    <meta name="apple-mobile-web-app-title" content="All Traction">
-    <meta name="application-name" content="All Traction">
+    <!-- <meta name="apple-mobile-web-app-title" content="Granturismo TV">
+    <meta name="application-name" content="Granturismo TV">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes"> -->
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -30,12 +31,16 @@
 
     <header>
         <div class="title-container">
-            <!-- <img src="Logotlm.png" alt="Logo" class="logo" />
+            <!-- <img src="gtvwhite.png" alt="Logo" class="logo" />
             <h1>World Tour</h1> -->
             <div>
-                <img src="images/Logotlm.png" alt="Logo" class="logohead" />
-                <img src="images/alltraction.svg" alt="Logo" class="faceo" />
+                <a href="index.html">
+                    <img src="images/gtvwhite.png" alt="Logo" class="logohead" />
+                    <!-- <img src="images/alltraction.svg" alt="Logo" class="faceo" />  -->
+
+                </a>
             </div>
+
 
 
         </div>
@@ -54,20 +59,20 @@
                     Home
                 </a>
                 <a href="#page2" class="menu-link">
-                    <img src="images/icons/risultati.svg" alt="home" class="home" />
-                    Risultati
+                    <img src="images/icons/piloti.svg" alt="home" class="home" />
+                    Piloti
                 </a>
                 <a href="#page3" class="menu-link">
-                    <img src="images/icons/classifica.svg" alt="home" class="home" />
-                    Classifiche
+                    <img src="images/icons/report.svg" alt="home" class="home" />
+                    Admin
                 </a>
                 <a href="#page4" class="menu-link">
-                    <img src="images/icons/report.svg" alt="home" class="home" />
-                    Penalità
+                    <img src="images/icons/social.svg" alt="home" class="home" />
+                    Social
                 </a>
                 <a href="#page5" class="menu-link">
-                    <img src="images/icons/info.svg" alt="home" class="home" />
-                    Info
+                    <img src="images/icons/coppa.svg" alt="home" class="home" />
+                    Campionati
                 </a>
 
                 <!-- <a href="#page4" class="menu-link">Info e opzioni stanza</a> -->
@@ -114,231 +119,118 @@
             </div> -->
 
             <div class="antibox">
-                <div class="titolino-sx">Prossima gara</div>
-                <div class="titolino-dx">La Finale</div>
+                <div class="titolino-sx">Comunicato ufficiale</div>
+                <div class="titolino-dx">News</div>
             </div>
             <div class="glow-box">
-                <!-- <div class="glow-box-content"> -->
-                <div class="titoletto">
-                    <img src="images/scroix.png" alt="Logo" class="logotrackfinale" />
-                </div>
-                <div class="titolettounderlogo">
-                    C
-                </div>
-                <!-- <div class="centered-text">
-                    <span style="color: #c20000; font-weight: bold; font-size: calc(0.5vw + 11px)">Semifinale</span>
-                    <span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> A</span>
-                </div> -->
-                <div class="orarilobby">Giovedì 24 Aprile, ore 21.30</div>
-                <div class="countdown"><span id="countdown"></span></div>
-                <!-- <div class="centered-text">Orari e Host</div> -->
 
-                <button class="accordion">I Finalisti<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="finale"></div>
-                </div>
-                <div class="titolettohost">
-                    Host:
-                    <img class="ps-icon" src="images/psn.png" alt="PSN">
-                    <a id="host1" href="#" target="_blank"></a>
-                </div>
-
-                <!-- <button class="accordion">Semifinale B<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-
-                    <div class="orarilobby">Giovedì 10 ore 21:30</div>
+                <div>In data odierna, il nostro capo ha comunicato che, al termine del <strong>GTEC</strong>, si ritirerà
+                    ufficialmente da <strong>GT7</strong>. All'interno dell'amministrazione eravamo già stati informati
+                    nei giorni precedenti e, proprio per questo, abbiamo svolto una riunione dedicata alla
+                    riorganizzazione interna, così da garantire continuità ed efficienza al team.</div>
 
 
-                    <div class="titolettohost">
-                        Host:
-                        <img class="ps-icon" src="images/psn.png" alt="PSN">
-                        <a id="host2" href="#" target="_blank"></a>
-                    </div>
-                    <div class="panel-content table-container" id="semi2"></div>
+                <h2>📌 NUOVO ORGANIGRAMMA AMMINISTRATIVO</h2>
 
-                </div> -->
-                <!-- </div> -->
+                <p><strong>LEGENDA FLUO / SNAKE-ASR88</strong>
+                    <br>Capi Team GTV / JGTV</br>
+                </p>
 
+
+                <p><strong>GTS-CODEBREAKER / PARENJI</strong><br>
+                    Internet<br>
+                    Ricerca Campionati<br>
+                    Creazione Campionati</p>
+
+
+                <p><strong>ANTONOWSKI98 / ROXY_VENOM111</strong><br>
+                    Social<br>
+                    Locandine</p>
+
+
+                <p><strong>HAWK_MAVENICH</strong><br>
+                    Liverista</p>
+
+
+                <p><strong>ZAZZOMAN</strong><br>
+                    Multiforma: Assetto Corsa, Assetto Corsa Competizione, Le Mans Ultimate, iRacing</p>
+
+
+
+                <h2>🏎️ RITIRO DEL NUMERO 77</h2>
+                <p>Il numero <strong>77</strong> sarà ufficialmente ritirato dal team, così che rimanga disponibile
+                    qualora un giorno dovesse tornare la voglia di correre.</p>
+
+
+                <h2>🎗️ TRIBUTO PER LA PRIMA GARA DEL FEDERATION</h2>
+                <p>Per la prima gara del <em>Federation</em> è in valutazione l'idea di utilizzare uno sticker
+                    celebrativo per ringraziarlo di tutto ciò che ha fatto.</p>
+
+
+                <h2>🎮 ESPANSIONE DEL PROGETTO GTV</h2>
+                <p>Come anticipato durante il GTEC, l'obiettivo è quello di portare GTV anche su altri titoli come
+                    <strong>Battlefield</strong>, <strong>Call of Duty</strong>, <strong>Rocket League</strong> e
+                    molti
+                    altri, così da diffondere lo spirito GTV su più piattaforme e raggiungere nuovi giocatori al di
+                    fuori di GT7.
+                </p>
+
+
+                <p>🤝 Uniti per far crescere ancora GTV / JGTV</p>
+                <p>Continuiamo insieme a dare il massimo.<br>Grazie a tutti.</p>
 
 
             </div>
-
-            <!-- <div class="antibox">
-                <div class="titolino-sx" style="   text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 20px #ff8c00">Campioni di Categoria</div>
-            </div>
-            <div class="box-oro">
-                <div class="titolettowinlobby">
-                    Trazione<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> FWD</span>
-                </div>
-                <div class="containerwintraz" id="prova5">
-                </div>
-                <div class="titolettowinlobby">
-                    Trazione<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> RWD</span>
-                </div>
-                <div class="containerwintraz" id="prova6">
-                </div>
-                <div class="titolettowinlobby">
-                    Trazione<span style="color: white; font-weight: bold; font-size: calc(0.5vw + 11px)"> 4WD</span>
-                </div>
-                <div class="containerwintraz" id="prova7">
-                </div>
-
-
-            </div> -->
-
-            <div class="antibox">
-                <div class="titolino-sx">Ultima gara</div>
-                <div class="titolino-dx">Semifinali</div>
-            </div>
-            <div class="box">
-                <div class="logotrackfinalediv">
-                    <img src="images/spa.svg" alt="Logo" class="logotrackfinale" />
-                </div>
-                <!-- <div class="titoletto">
-                    <div class="coppa">
-                        <img src="images/icons/coppa.svg" alt="Logo" class="coppaimg" />
-                    </div>
-                </div> -->
-
-
-
-                <div class="containerwin" id="vincitore1">
-                </div>
-                <div class="containerwin" id="vincitore2">
-                </div>
-
-            </div>
-
-            <!-- <div class="antibox">
-                <div class="titolino-sx">Calendario</div>
-            </div>
-            <div class="boxinacont">
-                <div class="boxina boxina-darkened">
-
-                    <img src="images/watkins.svg" alt="Logo" class="logotrackpiccoli" />
-                    <div class="captions"> 28-30/01</div>
-                </div>
-                <div class="boxina boxina-darkened">
-
-                    <img src="images/fuji.svg" alt="Logo" class="logotrackpiccoli" />
-                    <div class="captions"> 11-13/02</div>
-                </div>
-                <div class="boxina boxina-darkened">
-
-                    <img src="images/monza.png" alt="Logo" class="logotrackpiccoli" />
-                    <div class="captions"> 25-27/02</div>
-                </div>
-                <div class="boxina boxina-darkened">
-
-                    <img src="images/dragon.png" alt="Logo" class="logotrackpiccoli" />
-                    <div class="captions"> 11-13/03</div>
-                </div>
-                <div class="boxina">
-
-                    <img src="images/tokyo.png" alt="Logo" class="logotrackpiccoli" />
-                    <div class="captions"> 25-27/03</div>
-                </div>
-            </div> -->
-
-
-            <!-- <div class="antibox">
-                <div class="titolino-sx">Semifinali</div>
-                <div class="titolino-dx">Finale</div>
-            </div>
-            <div class="boxinacont">
-                <div class="boxina boxina-darkened">
-
-                    <img src="images/spa.svg" alt="Logo" class="logotrackpiccoli" />
-                    <div class="captions"> 8-10/04</div>
-                </div>
-                <div class="boxina">
-
-                    <img src="images/scroix.png" alt="Logo" class="logotrackpiccoli" />
-                    <div class="captions"> 29(?)/04</div>
-                </div>
-            </div> -->
-
-            
-
-            <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
-                Lobby e Host
-            </button> -->
-            <!-- <div class="titolozzo">Classifiche</div> -->
-            <!-- Sezioni delle tendine per le lobby -->
-            <!-- Sezioni delle tendine per le lobby -->
-            <!-- <div class="accordion-container">
-
-                <button class="accordion">Lobby Gr. 3<i><svg class="icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="lobby1"></div>
-                </div>
-
-                <button class="accordion">Lobby Gr. 4<i><svg class="icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="lobby2"></div>
-                </div>
-            </div> -->
 
         </section>
 
         <section id="page2" class="section">
-            <!-- Sezioni delle tendine per le lobby -->
-            <div class="accordion-container">
-                <div class="titoletto">
-                    Semifinali
-                </div>
-                <button class="accordion">Semifinale A<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="risultato1"></div>
+    <main class="content-wrapper">
+        <section class="budget-section">
 
-                    <div class="titolino-sx-classifiche">* Ritirato (DNF)</div>
-                    <div class="titolino-sx-classifiche">** Squalificato (DSQ)</div>
 
-                </div>
+            <div class="table-container">
+                <table class="responsive-table simple-budget">
+                    <thead>
+                        <tr>
+                            <th>Id PSN Pilota</th>
+                            <th>Numero</th>
+                            <th>Info</th>
 
-                <button class="accordion">Semifinale B<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="risultato2"></div>
 
-                    <div class="titolino-sx-classifiche">* Ritirato (DNF)</div>
-                    <div class="titolino-sx-classifiche">** Squalificato (DSQ)</div>
-                </div>
-
+                        </tr>
+                    </thead>
+                    <tbody id="budget-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot id="budget-footer">
+                    </tfoot>
+                </table>
             </div>
 
+            <p class="note-text">
+                *Dati aggiornati automaticamente dal Foglio Google.
+            </p>
+        </section>
+    </main>
+
+    <script src="budget.js"></script>
         </section>
 
         <section id="page5" class="section">
             <!-- Pulsante per scaricare il PDF -->
-            <div class="pdf-button-container">
+            <!-- <div class="pdf-button-container"> -->
                 <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
             PDF Lobby e Host Gara 3
         </button> -->
-                <button class="pdf-button" onclick="window.open('pdf/info.pdf', '_blank')">
+                <!-- <button class="pdf-button" onclick="window.open('pdf/info.pdf', '_blank')">
                     PDF Info e opzioni stanza
                 </button>
-            </div>
+            </div> -->
             <!-- <div class="titolino-sx">Nota:</div>
             <div class="titolino-sx">Anche se non esplicitamente dichiarato nel regolamento in pdf, è severamente
                 vietato fare il pit all' ultimo giro così poi da tagliare subito il traguardo.
@@ -354,87 +246,36 @@
             <!-- Sezioni delle tendine per le lobby -->
             <!-- Sezioni delle tendine per le lobby -->
             <div class="accordion-container">
-                <!-- <div class="titoletto">
-                    Classifiche di Lobby
-                </div> -->
 
-                <!-- <button class="accordion">Classifica aggregata<i><svg class="icon"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                            </svg></i></button>
-                    <div class="panel">
-                        <div class="panel-content table-container" id="classifica5"></div>
-                    </div> -->
 
-                <!-- <button class="accordion">Lobby 1<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i>
-                </button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica1"></div>
-                    <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
-                </div>
+                <h2>ORGANIGRAMMA AMMINISTRATIVO</h2>
 
-                <button class="accordion">Lobby 2<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica2"></div>
-                    <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
+                <p><strong>LEGENDA FLUO / SNAKE-ASR88</strong>
+                    <br>Capi Team GTV / JGTV</br>
+                </p>
 
-                </div> -->
 
-                <!-- <button class="accordion">Lobby 3<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica3"></div>
-                    <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
-                </div>
+                <p><strong>GTS-CODEBREAKER / PARENJI</strong><br>
+                    Internet<br>
+                    Ricerca Campionati<br>
+                    Creazione Campionati</p>
 
-                <button class="accordion">Lobby 4<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica4"></div>
-                    <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
-                </div> -->
 
-                <div class="titoletto">
-                    Classifiche di Categoria
-                </div>
+                <p><strong>ANTONOWSKI98 / ROXY_VENOM111</strong><br>
+                    Social<br>
+                    Locandine</p>
 
-                <button class="accordion">FWD<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica5"></div>
-                    <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
 
-                </div>
+                <p><strong>HAWK_MAVENICH</strong><br>
+                    Liverista</p>
 
-                <button class="accordion">RWD<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica6"></div>
-                    <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
-                </div>
 
-                <button class="accordion">4WD<i><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24">
-                            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" fill="#FFFFFF" />
-                        </svg></i></button>
-                <div class="panel">
-                    <div class="panel-content table-container" id="classifica7"></div>
-                    <div class="titolino-sx-classifiche">* Ritirato dal campionato</div>
-                </div>
+                <p><strong>ZAZZOMAN</strong><br>
+                    Multiforma: Assetto Corsa, Assetto Corsa Competizione, Le Mans Ultimate, iRacing</p>
+
+
+
+
 
 
             </div>
@@ -442,47 +283,27 @@
         </section>
 
         <section id="page4" class="section">
-            <div class="titolozzo">
-                Semifinali
-            </div>
-            <table id="penaltiesTable" class="panel-content">
-                <thead>
-                    <tr>
-                        <th>L</th>
-                        <th>ID GT7</th>
-                        <th>Pen</th>
-                        <th>PP</th>
-                        <th>Motivazione</th>
-                    </tr>
-
-                </thead>
-                <tbody>
-                    <!-- I dati saranno inseriti qui tramite JavaScript -->
-                </tbody>
-            </table>
-            <!-- <div class="titolino-sx"> 
-                Legenda:
-            </div>
-            <div class="titolino-sx"> 
-                L = Lobby
-            </div>
-            <div class="titolino-sx"> 
-                Pen = Penalità
-            </div>
-            <div class="titolino-sx"> 
-                PP = Posizioni perse
-            </div> -->
-
-            <div class="titoletto">
-                Nessuna penalità
+                        <div class="social-page">
+                <a href="https://www.instagram.com/granturismotv" target="_blank">
+                    <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
+                    <div>GTV</div>
+                </a>
+                                <a href="https://www.instagram.com/juniorgtvcorse" target="_blank">
+                    <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
+                    <div>JGTV</div>
+                </a>
+                <!-- <a href="https://www.facebook.com/profile.php?id=100063705602323" target="_blank">
+                    <img src="https://www.svgrepo.com/show/512120/facebook-176.svg" alt="Facebook">
+                </a> -->
+                <a href="https://www.twitch.tv/eventidigranturismotv" target="_blank">
+                    <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch">
+                                        <div>JGTV</div>
+                </a>
+                <!-- <a href="https://www.youtube.com/@TEAMLIONMOTORSPORT" target="_blank">
+                    <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="YouTube">
+                </a> -->
             </div>
 
-            <!-- <div class="pdf-button-container">
-            <button class="pen-button" onclick="window.open('pdf/penalita.pdf', '_blank')">
-                PDF Provvedimenti Gara 4
-            </button>
-
-        </div>-->
         </section>
 
 
@@ -494,25 +315,31 @@
         <div class="footer-section">
             <!-- <div class="tlm">Team Lion Motorsport</div> -->
             <div class="social-icons">
-                <a href="https://www.instagram.com/teamlionmotorsport/" target="_blank">
+                <a href="https://www.instagram.com/granturismotv" target="_blank">
                     <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=100063705602323" target="_blank">
+                <!-- <a href="https://www.facebook.com/profile.php?id=100063705602323" target="_blank">
                     <img src="https://www.svgrepo.com/show/512120/facebook-176.svg" alt="Facebook">
-                </a>
-                <a href="https://www.twitch.tv/team_lion_motorsport_live" target="_blank">
+                </a> -->
+                <a href="https://www.twitch.tv/eventidigranturismotv" target="_blank">
                     <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch">
                 </a>
-                <a href="https://www.youtube.com/@TEAMLIONMOTORSPORT" target="_blank">
+                <!-- <a href="https://www.youtube.com/@TEAMLIONMOTORSPORT" target="_blank">
                     <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="YouTube">
-                </a>
+                </a> -->
             </div>
             <!-- <h2>Sponsored by</h2> -->
             <div class="sponsor-logos">
-                <img src="images/Abem Line.png" alt="Score Sponsor">
-                <img src="images/Cafè Tre Archi Logo Wt.png" alt="Abem Sponsor">
+                <div>
+                                    <a href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m" target="_blank">
+                    <img src="images/vitastrong.png" alt="Score Sponsor">
+                </a>
+                <div>VITASTRONG codice GTVCORSE per 20% di sconto sul tuo ordine</div>
+                
+</div>
+                <!-- <img src="images/Cafè Tre Archi Logo Wt.png" alt="Abem Sponsor">
                 <img src="images/Logo SCoRe.png" alt="3 Archi Sponsor">
-            </div>
+            </div> -->
         </div>
     </div>
 
