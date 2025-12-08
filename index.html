@@ -19,11 +19,6 @@
     <meta name="theme-color" content="#FFFFFF">
     <meta name="background-color" content="#FFFFFF">
 
-    <!-- Nome e descrizione per l'icona della schermata home -->
-    <!-- <meta name="apple-mobile-web-app-title" content="Granturismo TV">
-    <meta name="application-name" content="Granturismo TV">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes"> -->
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -31,22 +26,11 @@
 
     <header>
         <div class="title-container">
-            <!-- <img src="gtvwhite.png" alt="Logo" class="logo" />
-            <h1>World Tour</h1> -->
-            <div>
-                <a href="index.html">
-                    <img src="images/gtvwhite.png" alt="Logo" class="logohead" />
-                    <!-- <img src="images/alltraction.svg" alt="Logo" class="faceo" />  -->
-
-                </a>
-            </div>
-
-
-
+            <a href="index.html">
+                <img src="images/gtvwhite.png" alt="Logo" class="logohead" />
+            </a>
         </div>
     </header>
-
-
 
 
 
@@ -63,7 +47,7 @@
                     Piloti
                 </a>
                 <a href="#page3" class="menu-link">
-                    <img src="images/icons/report.svg" alt="home" class="home" />
+                    <img src="images/icons/admin.svg" alt="home" class="home" />
                     Admin
                 </a>
                 <a href="#page4" class="menu-link">
@@ -74,9 +58,6 @@
                     <img src="images/icons/coppa.svg" alt="home" class="home" />
                     Campionati
                 </a>
-
-                <!-- <a href="#page4" class="menu-link">Info e opzioni stanza</a> -->
-                <!-- <a href="#page5" class="menu-link">Wall of Fame</a> -->
                 <!-- <a href="#page6" class="menu-link">LA FINALE</a> -->
                 <!-- Aggiungi altre pagine secondo necessità -->
             </div>
@@ -124,7 +105,8 @@
             </div>
             <div class="glow-box">
 
-                <div>In data odierna, il nostro capo ha comunicato che, al termine del <strong>GTEC</strong>, si ritirerà
+                <div>In data odierna, il nostro capo ha comunicato che, al termine del <strong>GTEC</strong>, si
+                    ritirerà
                     ufficialmente da <strong>GT7</strong>. All'interno dell'amministrazione eravamo già stati informati
                     nei giorni precedenti e, proprio per questo, abbiamo svolto una riunione dedicata alla
                     riorganizzazione interna, così da garantire continuità ed efficienza al team.</div>
@@ -185,12 +167,10 @@
         </section>
 
         <section id="page2" class="section">
-    <main class="content-wrapper">
-        <section class="budget-section">
 
 
             <div class="table-container">
-                <table class="responsive-table simple-budget">
+                <table class="responsive-table simple-piloti">
                     <thead>
                         <tr>
                             <th>Id PSN Pilota</th>
@@ -200,14 +180,14 @@
 
                         </tr>
                     </thead>
-                    <tbody id="budget-body">
+                    <tbody id="piloti-body">
                         <tr>
                             <td colspan="4" style="text-align: center; padding: 20px;">
                                 Caricamento dati in corso...
                             </td>
                         </tr>
                     </tbody>
-                    <tfoot id="budget-footer">
+                    <tfoot id="piloti-footer">
                     </tfoot>
                 </table>
             </div>
@@ -216,29 +196,8 @@
                 *Dati aggiornati automaticamente dal Foglio Google.
             </p>
         </section>
-    </main>
 
-    <script src="budget.js"></script>
-        </section>
 
-        <section id="page5" class="section">
-            <!-- Pulsante per scaricare il PDF -->
-            <!-- <div class="pdf-button-container"> -->
-                <!-- <button class="pdf-button" onclick="window.open('lobby.pdf', '_blank')">
-            PDF Lobby e Host Gara 3
-        </button> -->
-                <!-- <button class="pdf-button" onclick="window.open('pdf/info.pdf', '_blank')">
-                    PDF Info e opzioni stanza
-                </button>
-            </div> -->
-            <!-- <div class="titolino-sx">Nota:</div>
-            <div class="titolino-sx">Anche se non esplicitamente dichiarato nel regolamento in pdf, è severamente
-                vietato fare il pit all' ultimo giro così poi da tagliare subito il traguardo.
-                L'unica cosa consentita è fare pit e non sostituire gomme e/o non fare rifornimento.
-                La libertà di scegliere quando è vincolata al fatto che poi si percorra anche tutta la pitlane in
-                uscita.</div> -->
-
-        </section>
 
 
         <section id="page3" class="section">
@@ -273,22 +232,17 @@
                 <p><strong>ZAZZOMAN</strong><br>
                     Multiforma: Assetto Corsa, Assetto Corsa Competizione, Le Mans Ultimate, iRacing</p>
 
-
-
-
-
-
             </div>
 
         </section>
 
         <section id="page4" class="section">
-                        <div class="social-page">
+            <div class="social-page">
                 <a href="https://www.instagram.com/granturismotv" target="_blank">
                     <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
                     <div>GTV</div>
                 </a>
-                                <a href="https://www.instagram.com/juniorgtvcorse" target="_blank">
+                <a href="https://www.instagram.com/juniorgtvcorse" target="_blank">
                     <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
                     <div>JGTV</div>
                 </a>
@@ -297,7 +251,7 @@
                 </a> -->
                 <a href="https://www.twitch.tv/eventidigranturismotv" target="_blank">
                     <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch">
-                                        <div>JGTV</div>
+                    <div>JGTV</div>
                 </a>
                 <!-- <a href="https://www.youtube.com/@TEAMLIONMOTORSPORT" target="_blank">
                     <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="YouTube">
@@ -306,6 +260,9 @@
 
         </section>
 
+
+        <section id="page5" class="section">
+        </section>
 
 
 
@@ -331,17 +288,18 @@
             <!-- <h2>Sponsored by</h2> -->
             <div class="sponsor-logos">
                 <div>
-                                    <a href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m" target="_blank">
-                    <img src="images/vitastrong.png" alt="Score Sponsor">
-                </a>
-                <div>VITASTRONG codice GTVCORSE per 20% di sconto sul tuo ordine</div>
-                
-</div>
+                    <a href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m"
+                        target="_blank">
+                        <img src="images/vitastrong.png" alt="Score Sponsor">
+                    </a>
+                    <div>VITASTRONG codice GTVCORSE per 20% di sconto sul tuo ordine</div>
+
+                </div>
                 <!-- <img src="images/Cafè Tre Archi Logo Wt.png" alt="Abem Sponsor">
                 <img src="images/Logo SCoRe.png" alt="3 Archi Sponsor">
             </div> -->
+            </div>
         </div>
-    </div>
 
 
 </body>
