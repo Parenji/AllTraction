@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", LoadPiloti);
 
 
 
-// FUNZIONE ORMAI INUTILIZZATA, serviva a far scorrere la barra in alto con le sezioni home piloti admin eccetera
+// FUNZIONE ORMAI INUTILIZZATA (la lascio solo perchè non sono sicuro al 100% che sia totalmente inutlizzata), serviva a far scorrere la barra in alto con le sezioni home piloti admin eccetera
 document.addEventListener("DOMContentLoaded", function () {
   const menu = document.querySelector(".navbar-scroll");
 
