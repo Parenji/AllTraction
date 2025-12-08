@@ -1,5 +1,3 @@
-// questo js ha tutte le funzioni che servono al sito tranne quella che genera la tabella piloti tramite google sheets
-
 
 
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
