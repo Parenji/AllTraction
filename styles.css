@@ -1,5 +1,7 @@
 /* UNA BUONA PARTE DI TUTTE QUESTE CLASSI è INUTILIZZATA  */
 
+/* l'ho notato fratm*/
+
 :root {
   --brdr-color: #3c3c3c;
   --grigio-captions: #cacaca;
@@ -388,7 +390,7 @@ td.totalone {
 }
 .navbar-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: auto;
   margin-bottom: 30px;
   text-align: center;
