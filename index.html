@@ -15,6 +15,9 @@
     <meta name="apple-mobile-web-app-title" content="GTV" />
     <link rel="manifest" href="favicon/site.webmanifest" />
 
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+
+
     <!-- Colore della barra dell'interfaccia mobile -->
     <meta name="theme-color" content="#FFFFFF">
     <meta name="background-color" content="#FFFFFF">
@@ -69,10 +72,21 @@
 
 
             <div class="antibox">
+                <div class="titolino-sx">GTEC</div>
+                <div class="titolino-dx">Campionati</div>
+            </div>
+            <div class="main-campionato-container">
+                <a href="#" class="campionati-button shiny-box gtec">
+
+                </a>
+            </div>
+
+
+            <div class="antibox">
                 <div class="titolino-sx">Comunicato ufficiale</div>
                 <div class="titolino-dx">News</div>
             </div>
-            <div class="glow-box">
+            <div class="box comunicato">
 
                 <div>In data odierna, il nostro capo ha comunicato che, al termine del <strong>GTEC</strong>, si
                     ritirerà
@@ -136,14 +150,14 @@
         </section>
 
         <section id="page2" class="section">
-<!-- metterei nella tabella non info ma se è GTV/JGTV, i ruoli nostri sono nell'altra pagina-->
+            <!-- metterei nella tabella non info ma se è GTV/JGTV, i ruoli nostri sono nell'altra pagina-->
 
             <div class="table-container">
                 <table class="responsive-table simple-piloti">
                     <thead>
                         <tr>
                             <th>Id PSN Pilota</th>
-                            <th>Numero</th>
+                            <th>Num.</th>
                             <th>Info</th>
 
 
@@ -161,9 +175,7 @@
                 </table>
             </div>
 
-            <p class="note-text">
-                *Dati aggiornati automaticamente dal Foglio Google.
-            </p>
+
         </section>
 
 
@@ -171,34 +183,29 @@
 
         <section id="page3" class="section">
 
-            <div class="accordion-container">
 
-<!-- metteri ad ogni admin il link psn-->
-                <h2>ORGANIGRAMMA AMMINISTRATIVO</h2>
+            <h2>Organigramma amministrativo</h2>
 
-                <p><strong>LEGENDA FLUO / SNAKE-ASR88</strong>
-                    <br>Capi Team GTV / JGTV</br>
-                </p>
-
-
-                <p><strong>GTS-CODEBREAKER / PARENJI</strong><br>
-                    Internet<br>
-                    Ricerca Campionati<br>
-                    Creazione Campionati</p>
+            <div class="table-container">
+                <table class="responsive-table admin-table simple-admin">
+                    <thead>
+                        <tr>
+                            <th>Ruolo</th>
+                            <th>Membri del Team</th>
 
 
-                <p><strong>ANTONOWSKI98 / ROXY_VENOM111</strong><br>
-                    Social<br>
-                    Locandine</p>
-
-
-                <p><strong>HAWK_MAVENICH</strong><br>
-                    Liverista</p>
-
-
-                <p><strong>ZAZZOMAN</strong><br>
-                    Multiforma: Assetto Corsa, Assetto Corsa Competizione, Le Mans Ultimate, iRacing</p>
-
+                        </tr>
+                    </thead>
+                    <tbody id="admin-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot id="admin-footer">
+                    </tfoot>
+                </table>
             </div>
 
         </section>
@@ -229,6 +236,30 @@
 
 
         <section id="page5" class="section">
+            <div class="main-campionato-container">
+                <a href="#" class="campionati-button shiny-box gtec">
+
+                </a>
+            </div>
+            <h2>Altri campionati</h2>
+            <div class="buttons-secondary-group">
+
+                <a href="#" class="campionati-button box federation">
+
+                </a>
+
+                <a href="#" class="campionati-button box">
+                    altri
+                </a>
+
+                <a href="#" class="campionati-button box">
+                    altri
+                </a>
+
+                <a href="#" class="campionati-button box">
+                    altri
+                </a>
+            </div>
         </section>
 
 
