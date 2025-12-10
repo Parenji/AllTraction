@@ -45,171 +45,122 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+/**
+ * Carica i dati CSV da un URL di Foglio Google e li visualizza in una tabella HTML.
+ *
+ * @param {string} spreadsheetUrl L'URL pubblico del Foglio Google in formato CSV.
+ * @param {string} tbodyId L'ID dell'elemento <tbody> dove inserire i dati.
+ * @param {number[]} [columnIndices] Gli indici delle colonne (base 0) da visualizzare.
+ * Se non specificato, vengono visualizzate TUTTE le colonne.
+ */
+async function loadAndCreateHtmlTable(spreadsheetUrl, tbodyId, columnIndices) {
+    const tbody = document.getElementById(tbodyId);
 
+    if (!tbody) {
+        console.error(`Elemento <tbody> con ID "${tbodyId}" non trovato.`);
+        return;
+    }
 
-
-// FUNZIONE PER per creare la tabella dei piloti da un foglio google
-// 1. URL PUBBLICATO DEL FOGLIO GOOGLE (deve finire con &output=csv)
-const SPREADSHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0hWQI6bqzVdr38OpcUlsNHcvuXnjzqdte1skzC8A9KAUFExFzXWqA7MCLbFiL0k1Gw1GMHBAJghCn/pub?gid=0&single=true&output=csv";
-const tbody = document.getElementById("piloti-body");
-const tfoot = document.getElementById("piloti-footer");
-// Funzione principale per caricare e visualizzare i dati
-async function LoadPiloti() {
-  try {
+    // Pulisci il contenitore prima di iniziare
     tbody.innerHTML = "";
-    tfoot.innerHTML = "";
 
-    const response = await fetch(SPREADSHEET_URL);
-    const csvText = await response.text();
+    try {
+        const response = await fetch(spreadsheetUrl);
+        
+        if (!response.ok) {
+            throw new Error(`Errore HTTP: ${response.status} (${response.statusText})`);
+        }
+        
+        const csvText = await response.text();
 
-    // Analizza il CSV e lo trasforma in array di righe
-    const rows = csvText
-      .trim()
-      .split("\n")
-      .map((row) =>
-        row.split(",").map((cell) => cell.trim().replace(/"/g, ""))
-      );
+        // Funzione di parsing più robusta per CSV (anche se semplificata)
+        const rows = csvText
+            .trim()
+            .split("\n")
+            .map((row) =>
+                // Suddivide le celle, gestendo le virgolette
+                row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
+                .map((cell) => cell.trim().replace(/^"|"$/g, "").replace(/""/g, '"'))
+            );
 
-    const header = rows[0];
-    const dataRows = rows.slice(1);
+        if (!rows || rows.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="100%">Nessun dato trovato.</td></tr>`;
+            return;
+        }
+        
+        // La prima riga è l'intestazione
+        const header = rows[0];
+        // Le righe successive sono i dati
+        const dataRows = rows.slice(1);
+        
+        // 1. Definiamo quali colonne visualizzare
+        let indicesToUse = columnIndices;
+        if (!indicesToUse || indicesToUse.length === 0) {
+            // Se non specificato, usiamo tutte le colonne disponibili nell'header
+            indicesToUse = Array.from({ length: header.length }, (_, i) => i);
+        }
 
-    const COL_PILOTI = 0;
-    const COL_NUMERO = 1;
-    const COL_INFO = 2;
+        // 2. Creazione delle righe di dati (<tbody>)
+        for (const rowData of dataRows) {
+            // Se la prima cella della riga di dati è vuota, salta la riga
+            if (rowData.length === 0 || !rowData[indicesToUse[0]]) continue;
 
-    // Le altre righe sono le normali voci
-    // const itemRows = dataRows.slice(0, -1);
+            const tr = document.createElement("tr");
+            let innerHTML = '';
 
-    // Crea le righe del corpo tabella
-    for (const rowData of dataRows) {
-      if (!rowData[COL_PILOTI]) continue;
+            // 3. Iteriamo solo sugli indici di colonna che vogliamo visualizzare
+            for (const colIndex of indicesToUse) {
+                // Prende il valore della cella, o una stringa vuota se la cella non esiste
+                const cellValue = rowData[colIndex] || '';
+                // Prende il nome della colonna dall'header, o un nome generico
+                const columnName = header[colIndex] || `Col ${colIndex + 1}`;
+                
+                innerHTML += `<td data-label="${columnName}">${cellValue}</td>`;
+            }
 
-      const piloti = rowData[COL_PILOTI];
-      const numero = rowData[COL_NUMERO];
-      const info = rowData[COL_INFO];
+            tr.innerHTML = innerHTML;
+            tbody.appendChild(tr);
+        }
 
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-                <td data-label="Piloti">${piloti}</td>
-                <td data-label="Num.">${numero}</td>
-                <td data-label="Info">${info}</td>
-            `;
-      tbody.appendChild(tr);
-    }
-
-
-  } catch (error) {
-    console.error("Errore nel caricamento dei piloti:", error);
-    tbody.innerHTML = `
+    } catch (error) {
+        console.error("Errore nel caricamento dei dati:", error);
+        // Calcola colspan in base al numero di colonne che si dovevano usare
+        const colspan = columnIndices ? columnIndices.length : 1; 
+        
+        tbody.innerHTML = `
             <tr>
-                <td colspan="4" style="text-align: center; color: red; padding: 20px;">
-                    ❌ Errore nel caricamento dei dati. Controlla la connessione o l'URL del foglio.
+                <td colspan="${colspan}" style="text-align: center; color: red; padding: 20px;">
+                    ❌ Errore nel caricamento dei dati.
                 </td>
             </tr>
         `;
-  }
-}
-// Avvia il caricamento quando la pagina è pronta
-document.addEventListener("DOMContentLoaded", LoadPiloti);
-
-
-
-// FUNZIONE PER per creare la tabella degli admin da un foglio google
-// 1. URL PUBBLICATO DEL FOGLIO GOOGLE (deve finire con &output=csv)
-const SPREADSHEET_URL_ADMIN =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx7dbRJV9vs3dkCo3zycLGxybjzItCLU6NizJLgzdlJXhgErb_HBugUN7wmeEYmilVVUS6nzmoHbhP/pub?gid=1215200164&single=true&output=csv";
-const tbodyadmin = document.getElementById("admin-body");
-const tfootadmin = document.getElementById("admin-footer");
-// Funzione principale per caricare e visualizzare i dati
-async function LoadAdmin() {
-  try {
-    tbodyadmin.innerHTML = "";
-    tfootadmin.innerHTML = "";
-
-    const response = await fetch(SPREADSHEET_URL_ADMIN);
-    const csvText = await response.text();
-
-    // Analizza il CSV e lo trasforma in array di righe
-    const rows = csvText
-      .trim()
-      .split("\n")
-      .map((row) =>
-        row.split(",").map((cell) => cell.trim().replace(/"/g, ""))
-      );
-
-    const header = rows[0];
-    const dataRows = rows.slice(1);
-
-    const COL_RUOLO = 0;
-    const COL_ADMIN = 1;
-
-    // Le altre righe sono le normali voci
-    // const itemRows = dataRows.slice(0, -1);
-
-    // Crea le righe del corpo tabella
-    for (const rowData of dataRows) {
-      if (!rowData[COL_ADMIN]) continue;
-
-      const ruolo = rowData[COL_RUOLO];
-      const admin = rowData[COL_ADMIN];
-
-
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-                <td data-label="Ruolo">${ruolo}</td>
-                <td data-label="Admin">${admin}</td>
-
-            `;
-      tbodyadmin.appendChild(tr);
     }
-
-    // Mostra la riga del totale (ultima riga del CSV)
-  } catch (error) {
-    console.error("Errore nel caricamento degli admin:", error);
-    tbody.innerHTML = `
-            <tr>
-                <td colspan="4" style="text-align: center; color: red; padding: 20px;">
-                    ❌ Errore nel caricamento dei dati. Controlla la connessione o l'URL del foglio.
-                </td>
-            </tr>
-        `;
-  }
 }
-// Avvia il caricamento quando la pagina è pronta
-document.addEventListener("DOMContentLoaded", LoadAdmin);
 
-
-
-// FUNZIONE ORMAI INUTILIZZATA (la lascio solo perchè non sono sicuro al 100% che sia totalmente inutlizzata), serviva a far scorrere la barra in alto con le sezioni home piloti admin eccetera
-document.addEventListener("DOMContentLoaded", function () {
-  const menu = document.querySelector(".navbar-scroll");
-
-  menu.addEventListener("click", function (e) {
-    if (e.target.classList.contains("menu-link")) {
-      const clickedItem = e.target;
-      const itemRect = clickedItem.getBoundingClientRect();
-      const menuRect = menu.getBoundingClientRect();
-      const menuContainer = document.querySelector(".navbar-container");
-      const containerRect = menuContainer.getBoundingClientRect();
-
-      // Calcolo delle posizioni
-      const scrollLeft = menuContainer.scrollLeft;
-      const containerCenter = containerRect.width / 2;
-      const itemCenter =
-        itemRect.left + itemRect.width / 2 - containerRect.left;
-
-      // Nuova posizione di scroll
-      const scrollTo = scrollLeft + (itemCenter - containerCenter);
-
-      // Scroll dell'elemento nel menu
-      menuContainer.scroll({
-        left: scrollTo,
-        behavior: "smooth",
-      });
-    }
-  });
+document.addEventListener("DOMContentLoaded", () => {
+    const URL_PILOTI = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0hWQI6bqzVdr38OpcUlsNHcvuXnjzqdte1skzC8A9KAUFExFzXWqA7MCLbFiL0k1Gw1GMHBAJghCn/pub?gid=0&single=true&output=csv";
+    
+    loadAndCreateHtmlTable(
+        URL_PILOTI, 
+        'piloti-body', 
+        [0, 1, 2] // Mostra la colonna 0 (Piloti), 1 (Numero), e 2 (Info)
+    );
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
+    const URL_ADMIN =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx7dbRJV9vs3dkCo3zycLGxybjzItCLU6NizJLgzdlJXhgErb_HBugUN7wmeEYmilVVUS6nzmoHbhP/pub?gid=1215200164&single=true&output=csv";
+    
+    loadAndCreateHtmlTable(
+        URL_ADMIN, 
+        'admin-body', 
+        [0, 1] // Mostra la colonna 0 (Piloti), 1 (Numero), e 2 (Info)
+    );
+});
+
+
+
+
 
 
 
