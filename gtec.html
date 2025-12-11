@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- deve essere in it visto che il sito è italiano-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Granturismo TV - GTEC</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GTV" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+
+
+    <!-- Colore della barra dell'interfaccia mobile -->
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="background-color" content="#FFFFFF">
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<body>
+
+    <header>
+        <div class="title-container">
+            <a href="index.html">
+                <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
+            </a>
+            <a href="gtec.html">
+                <img src="images/Campionati/GTEC.png" alt="Logo" class="logocamp" />
+            </a>
+        </div>
+                <div class="navbar-container" id="navbar">
+            <div class="navbar-scroll">
+                <a href="#page1" class="menu-link">
+                    <img src="images/icons/home.svg" alt="home" class="home" />
+                    Home
+                </a>
+                <a href="#page2" class="menu-link">
+                    <img src="images/icons/piloti.svg" alt="home" class="home" />
+                    Lobby
+                </a>
+                <a href="#page3" class="menu-link">
+                    <img src="images/icons/risultati.svg" alt="home" class="home" />
+                    Risultati
+                </a>
+                <a href="#page4" class="menu-link">
+                    <img src="images/icons/admin.svg" alt="home" class="home" />
+                    Direzione gara
+                </a>
+                <a href="#page5" class="menu-link">
+                    <img src="images/icons/coppa.svg" alt="home" class="home" />
+                    Classifica
+                </a>
+                <!-- <a href="#page6" class="menu-link">LA FINALE</a> -->
+                <!-- Aggiungi altre pagine secondo necessità -->
+
+                <!-- farei una pagina web a parte del campionato GTEC; invece dovremo decidere se fare pagine separate dei nostri campionati simil gtec oppure fare una lista-->
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="main-container">
+
+
+
+        <section id="page1" class="section">
+
+
+
+            <div class="main-campionato-container">
+                <a href="#" class="campionati-button shiny-box gtec">
+
+                </a>
+            </div>
+
+            <div class="pdf-button-container">
+
+                <button class="pdf-button" onclick="window.open('pdf/GTEC SEASON 3 REGOLAMENTO V4.pdf', '_blank')">
+                    PDF Info e opzioni stanza
+                </button>
+            </div>
+
+
+
+        </section>
+
+        <section id="page2" class="section">
+            <div class="table-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Promozioni</th>
+                            <th>Retrocessioni</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="proret-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <table class="responsive-table alwaysmobile-table lobby">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Ora</th>
+                            <th>Cat.</th>
+                            <th>Cat.</th>
+                            <th>Piloti</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="lobby-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </section>
+
+
+
+
+        <section id="page3" class="section">
+
+
+
+        </section>
+
+        <section id="page4" class="section">
+            <h1>Penalità gara 6</h1>
+
+            <div>
+                <div>Hawk_mavenich:</div> -8 punti gara 1 giro 7 curva 10b punti patente -4
+            </div>
+
+            <div>
+                <div>Marse9191:</div> -6 punti gara 1 giro 1 curva 2/3/4 punti patente -2
+            </div>
+
+            <div>
+                <div>KappaoneGT:</div> -10 punti gara 2 giro 8 curva 6 punti patente -6
+            </div>
+
+            <div>
+                <div>GTRC_Seawolf:</div> -6 punti gara 2 giro 5 curva 7 punti patente -2
+            </div>
+
+        </section>
+
+
+        <section id="page5" class="section">
+            <div class="table-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Id Pilota</th>
+                            <th>Pti</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="classifica-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+    </div>
+    <div class="footer-container">
+        <div></div>
+        <div class="footer-section">
+            <!-- <div class="tlm">Team Lion Motorsport</div> -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/granturismotv" target="_blank">
+                    <img src="https://www.svgrepo.com/show/30539/instagram-logo.svg" alt="Instagram">
+                </a>
+                <!-- <a href="https://www.facebook.com/profile.php?id=100063705602323" target="_blank">
+                    <img src="https://www.svgrepo.com/show/512120/facebook-176.svg" alt="Facebook">
+                </a> -->
+                <a href="https://www.twitch.tv/eventidigranturismotv" target="_blank">
+                    <img src="https://www.svgrepo.com/show/513005/twitch-182.svg" alt="Twitch">
+                </a>
+                <!-- <a href="https://www.youtube.com/@TEAMLIONMOTORSPORT" target="_blank">
+                    <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="YouTube">
+                </a> -->
+            </div>
+            <!-- <h2>Sponsored by</h2> -->
+            <div class="sponsor-logos">
+                <div>
+                    <a href="https://vitastrong.it/it/?campaignid=22047083448&adgroupid=178144541448&keyword=vitastrong&device=m"
+                        target="_blank">
+                        <img src="images/vitastrong.png" alt="Score Sponsor">
+                    </a>
+                    <div>VITASTRONG codice GTVCORSE per 20% di sconto sul tuo ordine</div>
+
+                </div>
+            </div>
+        </div>
+
+
+</body>
+<script src="scripts.js" defer></script>
+
+</html>

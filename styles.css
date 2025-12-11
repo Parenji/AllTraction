@@ -27,6 +27,12 @@ body {
 }
 header {
   background-image: url("images/carbon.jpg");
+  position: sticky;
+  top: 0;
+
+  /* Assicurati che l'header sia sopra gli altri contenuti */
+  z-index: 1000;
+  margin-bottom: 20px;
 }
 @font-face {
   font-family: f1;
@@ -53,7 +59,7 @@ button {
   font-size: 30px;
   font-weight: 700;
 }
-.title-container .logohead {
+.logohead {
   width: auto;
   height: 70px;
   margin: auto;
@@ -62,6 +68,24 @@ button {
   display: block;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
 }
+
+.logoheadcamp {
+  width: auto;
+  height: 30px;
+  margin: auto;
+  margin-top: 20px;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
+.logocamp {
+  width: auto;
+  height: 100px;
+  margin: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
+}
+
 .title-container .faceo {
   max-width: 600px;
   height: auto;
@@ -71,18 +95,26 @@ button {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
 }
 @media (max-width: 768px) {
-  .title-container .faceo {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    display: block;
-  }
-  .title-container .logohead {
+  .logohead {
     width: 35%;
     height: auto;
     max-width: 100%;
     margin: 25px auto 25px;
     display: block;
+  }
+  .logoheadcamp {
+    width: 28%;
+    height: auto;
+    max-width: 100%;
+    margin: 10px auto 0px;
+    display: block;
+  }
+  .logocamp {
+    width: auto;
+    height: 100px;
+    margin: auto;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
   }
 }
 .section {
@@ -354,12 +386,7 @@ td.totalone {
   opacity: 1;
   border-radius: 15px;
 }
-.lobbyx {
-  font-size: 17px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: #fff;
-}
+
 .timer {
   font-weight: lighter;
 }
@@ -390,7 +417,6 @@ td.totalone {
   display: flex;
   justify-content: space-evenly;
   margin: auto;
-  margin-bottom: 30px;
   text-align: center;
   flex-wrap: wrap;
 }
@@ -744,17 +770,7 @@ td.totalone {
   font-weight: 700;
   width: 48%;
 }
-.titolettowinlobby {
-  padding: 0;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  font-size: calc(0.2vw + 10px);
-  font-weight: 700;
-  width: 50%;
-  color: #c20000;
-  margin-top: 10px;
-}
+
 .minitesto {
   font-size: 9px;
   color: silver;
@@ -814,15 +830,7 @@ td.totalone {
   gap: 20px;
   color: #cacaca;
 }
-.orarilobby {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: calc(0.3vw + 11px);
-  gap: 20px;
-  color: #ffffff;
-  width: 100%;
-  margin-bottom: 5px;
-}
+
 .caption {
   width: 100%;
   text-align: center;
@@ -959,17 +967,22 @@ td.totalone {
   border: none;
   background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;  /* NON si ripete */
+  background-repeat: no-repeat; /* NON si ripete */
 }
-.gtec{
+.gtec {
   background-image: url("images/Campionati/GTEC.png");
 
   background-color: #000000;
 }
 
-.federation{
+.federation {
   background-image: url("images/Campionati/Federation.jpeg");
-    background-color: #ffffff;
+  background-color: #ffffff;
+}
+.interno {
+  background-image: url("images/Campionati/interno.png");
+  background-color: #000000;
+  align-items: end;
 }
 
 /* Effetto al passaggio del mouse */
@@ -989,12 +1002,12 @@ td.totalone {
   ); 2 colonne per default (desktop/tablet) */
 }
 
-  .buttons-secondary-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonne per mobile */
-    gap: 20px;
-    margin-top: 20px; /* Spazio dopo il primo pulsante */
-  }
+.buttons-secondary-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonne per mobile */
+  gap: 20px;
+  margin-top: 20px; /* Spazio dopo il primo pulsante */
+}
 
 /* --- MEDIA QUERY per Mobile --- */
 @media (max-width: 768px) {
@@ -1029,7 +1042,7 @@ td.totalone {
   .buttons-secondary-group .campionati-button {
     grid-column: span 1; /* Ognuno occupa una colonna */
     font-size: 1.2rem;
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
 
   /* Il contenitore principale torna a una sola colonna */
@@ -1046,24 +1059,24 @@ td.totalone {
 /* --- MOBILE SPECIFIC TABLE STYLES --- */
 @media (max-width: 600px) {
   /* Applica questi stili su schermi più piccoli di 600px */
-  .admin-table thead {
+  .mobile-table thead {
     display: none; /* Nasconde l'intestazione della tabella */
   }
 
-  .admin-table,
-  .admin-table tbody,
-  .admin-table tr,
-  .admin-table td {
+  .mobile-table,
+  .mobile-table tbody,
+  .mobile-table tr,
+  .mobile-table td {
     display: block; /* Rende gli elementi della tabella blocchi */
   }
 
-  .admin-table tr {
+  .mobile-table tr {
     margin-bottom: 15px;
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   }
 
-  .admin-table td {
+  .mobile-table td {
     text-align: right; /* Il valore a destra */
     padding-left: 50%; /* Spazio per la label */
     position: relative;
@@ -1076,7 +1089,7 @@ td.totalone {
     justify-content: flex-end; /* Allinea il contenuto a destra */
   }
 
-  .admin-table td::before {
+  .mobile-table td::before {
     /* Aggiunge l'etichetta (Voce, Spesa, ecc.) prima di ogni dato */
     content: attr(data-label);
     position: absolute; /* Posizione assoluta per la label */
@@ -1091,12 +1104,12 @@ td.totalone {
   }
 
   /* Stili per il footer della tabella su mobile */
-  .admin-table tfoot {
+  .mobile-table tfoot {
     display: block;
     margin-top: 20px;
   }
 
-  .admin-table tfoot tr {
+  .mobile-table tfoot tr {
     background-color: #e0e0e0;
     border-radius: 15px;
     border: none;
@@ -1104,7 +1117,7 @@ td.totalone {
     margin-bottom: 0;
   }
 
-  .admin-table tfoot td {
+  .mobile-table tfoot td {
     font-weight: 700;
     color: var(--giallogtv);
     font-size: 1.1em;
@@ -1114,7 +1127,7 @@ td.totalone {
     justify-content: flex-end;
   }
 
-  .admin-table tfoot td::before {
+  .mobile-table tfoot td::before {
     content: attr(data-label);
     position: absolute; /* Rende la label statica per il footer */
     width: auto;
@@ -1122,20 +1135,82 @@ td.totalone {
     font-size: 1.1em;
     color: var(--giallogtv);
   }
+}
 
-  /* Regolazione del bottone indietro per schermi piccoli */
-  header .back-button {
-    top: 20px;
-    left: 15px;
-    font-size: 1em;
-    padding: 8px 12px;
-  }
-  header h1 {
-    font-size: 2em;
-    padding-top: 40px; /* Sposta il titolo per fare spazio al bottone */
-  }
-  .home-icon {
-    width: 20px; /* Dimensione dell'icona */
-    height: 20px;
-  }
+/* Applica questi stili su schermi più piccoli di 600px */
+.alwaysmobile-table thead {
+  display: none; /* Nasconde l'intestazione della tabella */
+}
+
+.alwaysmobile-table,
+.alwaysmobile-table tbody,
+.alwaysmobile-table tr,
+.alwaysmobile-table td {
+  display: block; /* Rende gli elementi della tabella blocchi */
+}
+
+.alwaysmobile-table tr {
+  margin-bottom: 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.alwaysmobile-table td {
+  text-align: right; /* Il valore a destra */
+  padding-left: 50%; /* Spazio per la label */
+  position: relative;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  min-height: 10px; /* Altezza minima per la cella */
+  display: flex; /* Usa flexbox per allineare label e valore */
+  align-items: center; /* Centra verticalmente */
+  justify-content: flex-end; /* Allinea il contenuto a destra */
+}
+
+.alwaysmobile-table td::before {
+  /* Aggiunge l'etichetta (Voce, Spesa, ecc.) prima di ogni dato */
+  content: attr(data-label);
+  position: absolute; /* Posizione assoluta per la label */
+  left: 15px;
+  width: calc(50% - 30px); /* Larghezza della label */
+  /* padding-right: 10px; */ /* Non necessario con flexbox */
+  white-space: normal; /* Permette alla label di andare a capo */
+  text-align: left;
+  font-weight: 600;
+  color: var(--giallogtv); /* Colore label */
+  font-size: 0.95em; /* Leggermente più piccola */
+}
+
+/* Stili per il footer della tabella su alwaysmobile */
+.alwaysmobile-table tfoot {
+  display: block;
+  margin-top: 20px;
+}
+
+.alwaysmobile-table tfoot tr {
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.alwaysmobile-table tfoot td {
+  font-weight: 700;
+  color: var(--giallogtv);
+  font-size: 1.1em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: right; /* Allinea a destra per il totale */
+  justify-content: flex-end;
+}
+
+.alwaysmobile-table tfoot td::before {
+  content: attr(data-label);
+  position: absolute; /* Rende la label statica per il footer */
+  width: auto;
+  padding-right: 10px;
+  font-size: 1.1em;
+  color: var(--giallogtv);
 }

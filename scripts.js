@@ -113,7 +113,7 @@ async function loadAndCreateHtmlTable(spreadsheetUrl, tbodyId, columnIndices) {
                 // Prende il valore della cella, o una stringa vuota se la cella non esiste
                 const cellValue = rowData[colIndex] || '';
                 // Prende il nome della colonna dall'header, o un nome generico
-                const columnName = header[colIndex] || `Col ${colIndex + 1}`;
+                const columnName = header[colIndex] || '';
                 
                 innerHTML += `<td data-label="${columnName}">${cellValue}</td>`;
             }
@@ -138,24 +138,65 @@ async function loadAndCreateHtmlTable(spreadsheetUrl, tbodyId, columnIndices) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const URL_PILOTI = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0hWQI6bqzVdr38OpcUlsNHcvuXnjzqdte1skzC8A9KAUFExFzXWqA7MCLbFiL0k1Gw1GMHBAJghCn/pub?gid=0&single=true&output=csv";
+    // --- 1. Logica per index.html ---
     
-    loadAndCreateHtmlTable(
-        URL_PILOTI, 
-        'piloti-body', 
-        [0, 1, 2] // Mostra la colonna 0 (Piloti), 1 (Numero), e 2 (Info)
-    );
-});
+    // Controlla se la pagina ha l'ID 'piloti-body' (il che indica che siamo in index.html)
+    const pilotiBody = document.getElementById('piloti-body');
 
-document.addEventListener("DOMContentLoaded", () => {
- 
-    const URL_ADMIN =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx7dbRJV9vs3dkCo3zycLGxybjzItCLU6NizJLgzdlJXhgErb_HBugUN7wmeEYmilVVUS6nzmoHbhP/pub?gid=1215200164&single=true&output=csv";
-    
-    loadAndCreateHtmlTable(
-        URL_ADMIN, 
-        'admin-body', 
-        [0, 1] // Mostra la colonna 0 (Piloti), 1 (Numero), e 2 (Info)
-    );
+    if (pilotiBody) {
+        console.log("Inizializzazione di index.html: Caricamento Piloti e Admin.");
+        
+        // --- Tabella Piloti ---
+        const URL_PILOTI = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0hWQI6bqzVdr38OpcUlsNHcvuXnjzqdte1skzC8A9KAUFExFzXWqA7MCLbFiL0k1Gw1GMHBAJghCn/pub?gid=0&single=true&output=csv";
+        loadAndCreateHtmlTable(
+            URL_PILOTI, 
+            'piloti-body', 
+            [0, 1, 2] 
+        );
+
+        // --- Tabella Admin ---
+        const URL_ADMIN =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRx7dbRJV9vs3dkCo3zycLGxybjzItCLU6NizJLgzdlJXhgErb_HBugUN7wmeEYmilVVUS6nzmoHbhP/pub?gid=1215200164&single=true&output=csv";
+        loadAndCreateHtmlTable(
+            URL_ADMIN, 
+            'admin-body', 
+            [0, 1] 
+        );
+    }
+
+
+    // --- 2. Logica per campionato.html ---
+
+    // Controlla se la pagina ha l'ID 'lobby-body' (il che indica che siamo in campionato.html)
+    const lobbyBody = document.getElementById('lobby-body');
+
+    if (lobbyBody) {
+        console.log("Inizializzazione di campionato.html: Caricamento Lobby.");
+
+        // --- Tabella Lobby ---
+        const URL_LOBBY =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=0&single=true&output=csv";
+        loadAndCreateHtmlTable(
+            URL_LOBBY, 
+            'lobby-body', 
+            // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne, 
+            // altrimenti specificare quelle che vuoi mostrare)
+        );
+        // --- Tabella Lobby Promo e retro ---
+        const URL_PROMRETR =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1228545593&single=true&output=csv";
+        loadAndCreateHtmlTable(
+            URL_PROMRETR, 
+            'proret-body', 
+            // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne, 
+            // altrimenti specificare quelle che vuoi mostrare)
+        );
+        // --- Tabella classifica ---
+        const URL_CLASS =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=126395538&single=true&output=csv";
+        loadAndCreateHtmlTable(
+            URL_CLASS, 
+            'classifica-body', 
+            // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne, 
+            // altrimenti specificare quelle che vuoi mostrare)
+        );
+    }
 });
 
 
