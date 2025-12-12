@@ -497,11 +497,14 @@ td.totalone {
   padding: 10px;
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
+
 }
 .social-page a {
-  display: inline-block;
+  display: grid;
   width: 60px;
   height: auto;
+    text-decoration: none;
+    text-align: center;
 }
 .social-page img {
   width: 100%;
@@ -1270,4 +1273,10 @@ td.totalone {
 }
 .calendar td[data-label="Nazione"]::before{
     display: none;
+}
+
+.instagram-post {
+  margin-top: 20px;
+  justify-content: center;
+  display: flex;
 }
