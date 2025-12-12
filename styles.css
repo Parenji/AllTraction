@@ -542,6 +542,12 @@ td.totalone {
 .social-icons img:hover {
   transform: scale(1.1);
 }
+
+
+.social-label {
+    font-size: 0.75rem; /* Rendi l'etichetta più piccola */
+    margin-top: 4px;
+}
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
