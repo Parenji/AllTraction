@@ -514,8 +514,19 @@ td.totalone {
   filter: grayscale(1) invert(1);
 
 }
+
+
+/* 2. Stile FONDAMENTALE per i singoli link (li rende verticali) */
 .social-page a {
-  display: grid;
+    display: flex;
+    flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
+    align-items: center;    /* Centra icona e etichetta rispetto al loro contenitore */
+    text-decoration: none;  /* Rimuove sottolineature indesiderate */
+    color: #333;            /* Imposta il colore del testo per l'etichetta (adatta al tuo design) */
+}
+.social-page a {
+    display: flex;
+    flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
   width: 60px;
   height: auto;
     text-decoration: none;
