@@ -34,6 +34,18 @@ header {
   z-index: 1000;
   margin-bottom: 20px;
 }
+/* Selettore che copre tutti i link nell'header */
+header a {
+    text-decoration: none; /* Rimuove la sottolineatura nello stato normale */
+    color: inherit;        /* Assicura che il colore del testo sia ereditato se necessario */
+}
+
+/* 🛑 Fondamentale: Rimuovere la sottolineatura anche negli stati di interazione */
+header a:hover,
+header a:focus,
+header a:active {
+    text-decoration: none;
+}
 @font-face {
   font-family: f1;
   src: url("Formula1-Regular.otf");
@@ -60,7 +72,7 @@ button {
   font-weight: 500;
   margin-top: 50px;
   margin-bottom: 30px;
-
+text-decoration: none;
 }
 
 .sottotitolo{
