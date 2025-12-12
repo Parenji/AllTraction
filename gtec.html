@@ -25,7 +25,7 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<body>
+<body id="gtec">
 
     <header>
         <div class="title-container">
@@ -47,8 +47,8 @@
                     Lobby
                 </a>
                 <a href="#page3" class="menu-link">
-                    <img src="images/icons/risultati.svg" alt="home" class="home" />
-                    Risultati
+                    <img src="images/icons/info.svg" alt="home" class="home" />
+                    Info
                 </a>
                 <a href="#page4" class="menu-link">
                     <img src="images/icons/admin.svg" alt="home" class="home" />
@@ -75,18 +75,50 @@
         <section id="page1" class="section">
 
 
-
-            <div class="main-campionato-container">
-                <a href="#" class="campionati-button shiny-box gtec">
-
-                </a>
+                                    <div class="antibox">
+                <div class="titolino-sx">Calendario</div>
+                <div class="titolino-dx">Prossima gara</div>
+            </div>
+            <div class="table-container">
+                <table class="responsive-table alwaysmobile-table calendar">
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="pdf-button-container">
 
-                <button class="pdf-button" onclick="window.open('pdf/GTEC SEASON 3 REGOLAMENTO V4.pdf', '_blank')">
-                    PDF Info e opzioni stanza
-                </button>
+                        <div class="antibox">
+                <div class="titolino-sx">Classifica</div>
+                <div class="titolino-dx">Top 10</div>
+            </div>
+            <div class="table-container">
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Id Pilota</th>
+                            <th>Pti</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="classifica-short-body">
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
 
@@ -147,7 +179,12 @@
 
         <section id="page3" class="section">
 
+            <div class="pdf-button-container">
 
+                <button class="pdf-button" onclick="window.open('pdf/GTEC SEASON 3 REGOLAMENTO V4.pdf', '_blank')">
+                    PDF Info e opzioni stanza
+                </button>
+            </div>
 
         </section>
 

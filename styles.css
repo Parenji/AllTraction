@@ -4,7 +4,7 @@
 
 :root {
   --brdr-color: #3c3c3c;
-  --grigio-captions: #cacaca;
+  --grigio-captions: #393939;
   --grigio-box: #222;
   --bordigrigi: rgb(170, 170, 170);
   --rossotlm: #810101;
@@ -1083,6 +1083,7 @@ td.totalone {
     border: none;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-right: 10px;
     min-height: 40px; /* Altezza minima per la cella */
     display: flex; /* Usa flexbox per allineare label e valore */
     align-items: center; /* Centra verticalmente */
@@ -1093,7 +1094,7 @@ td.totalone {
     /* Aggiunge l'etichetta (Voce, Spesa, ecc.) prima di ogni dato */
     content: attr(data-label);
     position: absolute; /* Posizione assoluta per la label */
-    left: 15px;
+    left: 10px;
     width: calc(50% - 30px); /* Larghezza della label */
     /* padding-right: 10px; */ /* Non necessario con flexbox */
     white-space: normal; /* Permette alla label di andare a capo */
@@ -1162,6 +1163,7 @@ td.totalone {
   border: none;
   padding-top: 5px;
   padding-bottom: 5px;
+  padding-right: 10px;
   min-height: 10px; /* Altezza minima per la cella */
   display: flex; /* Usa flexbox per allineare label e valore */
   align-items: center; /* Centra verticalmente */
@@ -1172,14 +1174,14 @@ td.totalone {
   /* Aggiunge l'etichetta (Voce, Spesa, ecc.) prima di ogni dato */
   content: attr(data-label);
   position: absolute; /* Posizione assoluta per la label */
-  left: 15px;
-  width: calc(50% - 30px); /* Larghezza della label */
+  left: 10px;
+  width: calc(50%); /* Larghezza della label */
   /* padding-right: 10px; */ /* Non necessario con flexbox */
   white-space: normal; /* Permette alla label di andare a capo */
   text-align: left;
   font-weight: 600;
   color: var(--giallogtv); /* Colore label */
-  font-size: 0.95em; /* Leggermente più piccola */
+  font-size: 0.90em; /* Leggermente più piccola */
 }
 
 /* Stili per il footer della tabella su alwaysmobile */
@@ -1213,4 +1215,59 @@ td.totalone {
   padding-right: 10px;
   font-size: 1.1em;
   color: var(--giallogtv);
+}
+/* Stile per l'icona del circuito (PNG/SVG) */
+.circuit-icon {
+    width: auto; /* Larghezza fissa */
+    max-width: 300px;
+    height: 70px; /* Altezza fissa */
+    object-fit: contain; /* Assicura che l'immagine si adatti senza distorcere */
+    vertical-align: middle;
+}
+
+/* Stile per l'icona della nazione (Bandiera) */
+.nation-flag {
+    width: auto; /* Larghezza più piccola per la bandiera */
+    height: 30px; 
+
+    vertical-align: middle;
+}
+
+.calendar td {
+  height: 30px;
+  font-size: 18px;
+  padding-left: calc(50% + 15px);
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+
+.calendar td[data-label="Gara"]{
+    font-weight: bolder;
+    justify-content: left;
+    background-color: var(--grigio-captions);
+    /* color: rgb(255, 255, 255); */
+    
+}
+.calendar td[data-label="Gara"]::before{
+    font-weight: bolder;
+    justify-content: right;
+    display: flex;
+    /* color: #000; */
+}
+.calendar td[data-label="Circuito"]{
+    padding-left: 0px;
+    justify-content: center;
+    height: 70px;
+    margin-top: 2px;
+}
+.calendar td[data-label="Circuito"]::before{
+    display: none;
+}
+.calendar td[data-label="Nazione"]{
+    padding-left: 0px;
+    justify-content: center;
+    
+}
+.calendar td[data-label="Nazione"]::before{
+    display: none;
 }
