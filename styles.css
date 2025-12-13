@@ -154,21 +154,7 @@ h1 {
 h2 {
   text-align: center;
 }
-.classifica {
-  margin: 20px 0;
-  padding: 10px;
-}
-.classifica h2 {
-  margin-top: 0;
-}
-.classifica ul {
-  list-style-type: none;
-  padding: 0;
-}
-.classifica li {
-  padding: 5px 0;
-  border-bottom: 1px solid #eee;
-}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -188,8 +174,8 @@ th {
   text-align: center;
 }
 th {
-  background-color: var(--giallogtv);
-  color: #000;
+    background-color: var(--grigio-captions);
+    color: var(--giallogtv);
 }
 td.totale {
   font-weight: 700;
@@ -517,13 +503,7 @@ td.totalone {
 
 
 /* 2. Stile FONDAMENTALE per i singoli link (li rende verticali) */
-.social-page a {
-    display: flex;
-    flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
-    align-items: center;    /* Centra icona e etichetta rispetto al loro contenitore */
-    text-decoration: none;  /* Rimuove sottolineature indesiderate */
-    color: #333;            /* Imposta il colore del testo per l'etichetta (adatta al tuo design) */
-}
+
 .social-page a {
     display: flex;
     flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
@@ -531,6 +511,7 @@ td.totalone {
   height: auto;
     text-decoration: none;
     text-align: center;
+        color: #333;  
 }
 .social-page img {
   width: 100%;
@@ -571,75 +552,8 @@ td.totalone {
     font-size: 0.75rem; /* Rendi l'etichetta più piccola */
     margin-top: 4px;
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  padding: 15px;
-  background-color: #292929;
-  border-top: 10px solid;
-  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="black"/><rect x="10" width="10" height="10" fill="white"/><rect x="20" width="10" height="10" fill="black"/><rect x="30" width="10" height="10" fill="white"/></svg>')
-    10 repeat;
-}
-.grid-container2 {
-  background-image: linear-gradient(black, #333);
-  background-color: #333;
-  border-bottom: 10px solid;
-  border-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="10" viewBox="0 0 40 10"><rect width="10" height="10" fill="white"/><rect x="10" width="10" height="10" fill="black"/><rect x="20" width="10" height="10" fill="white"/><rect x="30" width="10" height="10" fill="black"/></svg>')
-    10 repeat;
-  padding: 20px;
-  text-align: center;
-  font-size: 30px;
-  position: relative;
-  z-index: 2;
-}
-.grid-item {
-  color: #fff;
-  padding-top: 5px;
-  text-align: center;
-  font-size: 2vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 5px solid #fff;
-  border-left: 5px solid #fff;
-  border-right: 5px solid #fff;
-  margin-bottom: 20px;
-  min-height: 70px;
-  flex-flow: column;
-}
-@media (max-width: 768px) {
-  .grid-item {
-    font-size: 4vw;
-  }
-}
-.grid-index {
-  text-align: center;
-}
-.grid-item-container:nth-child(odd) {
-  margin-right: 10px;
-}
-.grid-item-container:nth-child(2n) {
-  margin-left: 10px;
-  margin-top: 20px;
-}
-.infofinale {
-  font-size: larger;
-  padding: 5px;
-  text-align: center;
-}
-.team-icon {
-  height: 55px;
-  margin-top: 5px;
-}
-.table-img {
-  max-width: 100%;
-  width: 35px;
-  height: 25px;
-  display: block;
-  object-fit: contain;
-  margin: 0 auto;
-}
+
+
 .box {
   background: linear-gradient(125deg, #333, #111);
   padding: 15px 10px 20px;
@@ -677,48 +591,7 @@ td.totalone {
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
 } */
 
-#countdown {
-  display: flex;
-  gap: 15px;
-  font-size: 2rem;
-  text-align: center;
-  font-size: calc(1vw + 18px);
-  min-width: 100px;
-  margin-bottom: 10px;
-  padding: 12px 18px;
-  background-color: #0f0f0f;
-  border-radius: 45px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--bordigrigi);
-}
-.time-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-}
-.time-box span {
-  font-size: calc(0.4vw + 8px);
-  color: var(--grigio-captions);
-}
-.logotorneofinale {
-  height: calc(3vw + 30px);
-  margin-top: 0;
-  margin-bottom: 10px;
-  justify-content: center;
-}
-.logotrackfinale {
-  max-width: 300px;
-  width: calc(20vw + 80px);
-  min-height: 60px;
-  margin-top: 0;
-  margin-bottom: 0;
-  justify-content: center;
-}
-.logotrackfinalediv {
-  width: 100%;
-}
+
 .titolino-sx {
   text-align: left;
   padding: 4px 10px;
@@ -729,152 +602,14 @@ td.totalone {
   padding: 4px 11px;
   font-size: calc(0.5vw + 10px);
 }
-.titolino-sx-classifiche {
-  text-align: left;
-  padding: 4px 10px;
-  font-size: 10px;
-}
+
 .antibox {
   display: flex;
   justify-content: space-between;
 }
-.boxinacont {
-  background: linear-gradient(145deg, #333, #111);
-  display: flex;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border-radius: 15px;
-  justify-content: space-between;
-  overflow: hidden;
-  margin-bottom: 5px;
-  border: 1px solid var(--bordigrigi);
-  box-shadow: 0 0 15px rgba(170, 170, 170, 0.3);
-}
-.boxina {
-  padding: 1% 1%;
-  text-align: center;
-  align-items: center;
-  flex: 1;
-  max-width: 25%;
-  align-content: center;
-}
-.logotrackpiccoli {
-  margin-top: 0;
-  margin-bottom: 0;
-  justify-content: center;
-  width: 100%;
-  height: 62.04px;
-  object-fit: contain;
-}
-.boxina-darkened {
-  background-color: #000;
-  opacity: 0.25;
-  filter: grayscale(100%);
-}
-.coppa {
-  margin-top: 10px;
-  width: 100%;
-}
-.coppaimg {
-  width: 30px;
-  filter: invert(100%);
-}
-.titolettohost {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  font-size: calc(0.3vw + 11px);
-  font-weight: 700;
-  width: 100%;
-  justify-content: center;
-  color: #cacaca;
-}
-.titolettohost a {
-  color: #fff;
-}
-.titolettowin {
-  padding: 2px;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  font-size: calc(0.5vw + 10px);
-  font-weight: 700;
-  width: 48%;
-}
 
-.minitesto {
-  font-size: 9px;
-  color: silver;
-}
-.containerwin {
-  padding: 0;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  font-size: calc(0.5vw + 12px);
-  font-weight: 700;
-  width: 48%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  gap: 2px;
-}
 
-.containerwintraz {
-  padding: 0;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  font-size: calc(0.5vw + 12px);
-  font-weight: 700;
-  width: 96%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  gap: 2px;
-}
-.loghihome {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  border-radius: 50px;
-  background-color: #0f0f0f;
-  padding: 10px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--bordigrigi);
-}
-.logohome {
-  width: 50px;
-  height: 40px;
-  object-fit: contain;
-}
-.captions {
-  display: flex;
-  justify-content: space-evenly;
-  font-size: calc(0.3vw + 9px);
-  gap: 20px;
-  color: #cacaca;
-}
 
-.caption {
-  width: 100%;
-  text-align: center;
-}
-.centered-text {
-  text-align: center;
-  width: 100%;
-  font-size: calc(0.5vw + 10px);
-}
 .ps-icon {
   width: 16px;
   height: 16px;
@@ -1269,8 +1004,7 @@ td.totalone {
 }
 
 .calendar td {
-  height: 30px;
-  font-size: 18px;
+  font-size: larger;
   padding-left: calc(50% + 15px);
   padding-top: 1px;
   padding-bottom: 0px;
