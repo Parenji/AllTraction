@@ -1,5 +1,3 @@
-let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
-document.getElementById("pen-ult-gara").innerText = `Penalità Gara ${ultimaGara}`;
 
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
 document.addEventListener("DOMContentLoaded", function () {
@@ -196,6 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Controlla se la pagina ha l'ID 'gtec' (il che indica che siamo in gtec.html)
   const gtec = document.getElementById("gtec");
+  let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
+document.getElementById("pen-ult-gara").innerText = `Penalità Gara ${ultimaGara}`;
+
 
   if (gtec) {
     console.log("Inizializzazione di gtec.html: Caricamento...");
