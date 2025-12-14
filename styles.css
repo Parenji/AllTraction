@@ -48,7 +48,7 @@ header a:active {
 }
 @font-face {
   font-family: f1;
-  src: url("Formula1-Regular.otf");
+  src: url("font/Formula1-Regular.otf");
 }
 button {
   font-family: inherit;
