@@ -1,3 +1,4 @@
+
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(".navbar-scroll a");
@@ -193,6 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Controlla se la pagina ha l'ID 'gtec' (il che indica che siamo in gtec.html)
   const gtec = document.getElementById("gtec");
+  let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
+document.getElementById("pen-ult-gara").innerText = `Penalità Gara ${ultimaGara}`;
+
 
   if (gtec) {
     console.log("Inizializzazione di gtec.html: Caricamento...");
@@ -233,6 +237,18 @@ document.addEventListener("DOMContentLoaded", () => {
     //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       // altrimenti specificare quelle che vuoi mostrare)
     );
+    // Penalità
+   const URL_PEN =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1753268594&single=true&output=csv";
+        loadAndCreateHtmlTable(
+      URL_PEN,
+      "penalita-body",
+
+    //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      // altrimenti specificare quelle che vuoi mostrare)
+    );
+
+
         const URL_CALENDAR =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=912348639&single=true&output=csv";
     loadAndCreateHtmlTable(
