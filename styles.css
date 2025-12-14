@@ -122,13 +122,13 @@ text-decoration: none;
   }
   .logocamp {
     width: auto;
-    height: 100px;
+    height: 70px;
     margin: auto;
     display: block;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
   }
   .title-container {
-    margin: 20px auto 20px;
+    margin: 15px auto 10px;
 
 }
 }
@@ -847,17 +847,17 @@ td.totalone {
   }
 
   .mobile-table td {
-    text-align: right; /* Il valore a destra */
-    padding-left: 50%; /* Spazio per la label */
-    position: relative;
-    border: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    min-height: 40px; /* Altezza minima per la cella */
-    display: flex; /* Usa flexbox per allineare label e valore */
-    align-items: center; /* Centra verticalmente */
-    justify-content: flex-end; /* Allinea il contenuto a destra */
+  text-align: right; /* Il valore a destra */
+  padding-left: 50%; /* Spazio per la label */
+  position: relative;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  min-height: 10px; /* Altezza minima per la cella */
+  display: flex; /* Usa flexbox per allineare label e valore */
+  align-items: center; /* Centra verticalmente */
+  justify-content: flex-end; /* Allinea il contenuto a destra */
   }
 
   .mobile-table td::before {
@@ -908,7 +908,7 @@ td.totalone {
   }
 }
 
-/* Applica questi stili su schermi più piccoli di 600px */
+/* Applica questi stili NON SOLO su schermi più piccoli di 600px */
 .alwaysmobile-table thead {
   display: none; /* Nasconde l'intestazione della tabella */
 }
