@@ -1,6 +1,46 @@
+//MENU HAMBURGER
+// Seleziona gli elementi del DOM
+const menuToggle = document.getElementById("menu-toggle");
+const closeMenu = document.getElementById("close-menu");
+const sidebar = document.getElementById("sidebar");
+const sidebarcontent = document.getElementById("sidebar-content");
+
+/**
+ * Funzione per aprire il menu
+ */
+function openSidebar() {
+  sidebar.classList.add("open");
+  // Opzionale: Disabilita lo scroll della pagina mentre il menu è aperto
+  document.body.style.overflow = "hidden";
+}
+
+/**
+ * Funzione per chiudere il menu
+ */
+function closeSidebar() {
+  sidebar.classList.remove("open");
+  // Opzionale: Riabilita lo scroll
+  document.body.style.overflow = "auto";
+}
+
+// Collega gli eventi click ai pulsanti
+menuToggle.addEventListener("click", openSidebar);
+closeMenu.addEventListener("click", closeSidebar);
+
+// Opzionale: Chiudi il menu cliccando fuori da esso (overlay)
+/* document.addEventListener('click', (event) => {
+    // Chiudi solo se l'elemento cliccato non è il menu, non è il pulsante, e il menu è aperto
+    if (!sidebar.contains(event.target) && !menuToggle.contains(event.target) && sidebar.classList.contains('open')) {
+        closeSidebar();
+    }
+});
+*/
+
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
 document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".navbar-scroll a");
+  const links = document.querySelectorAll(
+    ".navbar-scroll a, .sidebar-content a"
+  );
   const sections = document.querySelectorAll(".section");
 
   function hideAllSections() {
@@ -20,27 +60,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
   links.forEach((link) => {
     link.addEventListener("click", function (event) {
-      event.preventDefault();
+      // event.preventDefault();
       const targetId = this.getAttribute("href").substring(1);
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
         hideAllSections();
         targetElement.style.display = "block";
+        sidebarcontent.addEventListener("click", closeSidebar);
         // targetElement.scrollIntoView({ behavior: "smooth" });
 
         // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
         removeActiveClass();
         this.classList.add("active");
+        const linksToActivate = document.querySelectorAll(`a[href="#${targetId}"]`);
+            
+            // Applica la classe 'active' a OGNUNO di essi
+            linksToActivate.forEach(linkToActivate => {
+                linkToActivate.classList.add("active");
+            });
       }
     });
   });
 
+  // menus.forEach((menu) => {
+  //   menu.addEventListener("click", function (event) {
+  //     event.preventDefault();
+  //     const targetId = this.getAttribute("href").substring(1);
+  //     const targetElement = document.getElementById(targetId);
+
+  //     if (targetElement) {
+  //       hideAllSections();
+  //       targetElement.style.display = "block";
+  //       sidebarcontent.addEventListener("click", closeSidebar);
+
+  //       // Rimuovi la classe 'active' da tutti i link e aggiungila al link cliccato
+  //       removeActiveClass();
+  //       this.classList.add("active");
+  //     }
+  //   });
+  // });
+
   ///Mostra la prima sezione per impostazione predefinita e evidenzia il primo link
-  if (sections.length > 0 && links.length > 0) {
-    sections[0].style.display = "block"; // Mostra la prima sezione
-    links[0].classList.add("active"); // Aggiungi la classe 'active' al primo link
-  }
+///Mostra la prima sezione per impostazione predefinita e evidenzia i link "Home"
+if (sections.length > 0) {
+    
+    // 1. Mostra la prima sezione (Logica invariata)
+    sections[0].style.display = "block"; 
+    
+    // 2. Seleziona TUTTI i link che puntano alla Home.
+    // Usiamo 'a[href="#home"]' come selettore, indipendentemente dal contenitore.
+    const homeLinks = document.querySelectorAll('a[href="#page1"]');
+    
+    // 3. Applica la classe 'active' a tutti i link trovati.
+    if (homeLinks.length > 0) {
+        homeLinks.forEach(link => {
+            link.classList.add("active");
+        });
+    }
+}
 });
 
 /**
@@ -285,19 +363,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Controlla se la pagina ha l'ID 'gtec' (il che indica che siamo in gtec.html)
   const gtec = document.getElementById("gtec");
-  let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
-  document.getElementById(
-    "pen-ult-gara"
-  ).innerText = `Penalità Gara ${ultimaGara}`;
-  document.getElementById("lobby-next-gara").innerText = `Gara ${
-    ultimaGara + 1
-  }`;
-  document.getElementById("info-next-gara").innerText = `Opzioni Lobby Gara ${
-    ultimaGara + 1
-  }`;
 
   if (gtec) {
     console.log("Inizializzazione di gtec.html: Caricamento...");
+    let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
+    document.getElementById(
+      "pen-ult-gara"
+    ).innerText = `Penalità Gara ${ultimaGara}`;
+    document.getElementById("lobby-next-gara").innerText = `Gara ${
+      ultimaGara + 1
+    }`;
+    document.getElementById("info-next-gara").innerText = `Opzioni Lobby Gara ${
+      ultimaGara + 1
+    }`;
 
     // --- Tabella Lobby ---
     const URL_LOBBY =
@@ -358,9 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Avvia il processo al caricamento della pagina
     const URL_OPZIONI =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1285111450&single=true&output=csv";
-    loadDataAndGenerateCards(
-      URL_OPZIONI
-    );
+    loadDataAndGenerateCards(URL_OPZIONI);
   }
   // --- 3. Logica per interno.html ---
 

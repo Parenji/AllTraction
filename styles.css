@@ -24,7 +24,14 @@
   font-family: f1;
   src: url("font/Formula1-Regular.otf");
 }
-
+/* Sostituisci 60px con l'altezza TOTALE della tua navbar/header fisso */
+html {
+    /* Questo è il trucco: dice al browser dove deve finire la scrollata */
+    scroll-padding-top: 800px; 
+    
+    /* Opzionale, per un'animazione fluida */
+    scroll-behavior: smooth; 
+}
 body {
   background-color: #0f0f0f;
   color: #fff;
@@ -56,7 +63,7 @@ header a,
 header a:hover,
 header a:focus,
 header a:active {
-    text-decoration: none;
+  text-decoration: none;
 }
 @font-face {
   font-family: f1;
@@ -66,12 +73,13 @@ button {
   font-family: inherit;
 }
 .main-container {
-  display: block;
+  /* display: block; */
+  flex-grow: 1;
 }
 .footer-container {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0;
   justify-content: space-between;
 }
 .title-container {
@@ -84,13 +92,12 @@ button {
   font-weight: 500;
   margin-top: 50px;
   margin-bottom: 30px;
-text-decoration: none;
+  text-decoration: none;
 }
 
-.sottotitolo{
-    color: white;
+.sottotitolo {
+  color: white;
   text-decoration: none;
-
 }
 
 .logohead {
@@ -117,6 +124,101 @@ text-decoration: none;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
 }
 
+/* --- Stili Generali e Posizionamento Fisso --- */
+
+/* Posiziona il contenuto principale sotto il pulsante */
+#page-content {
+  padding-top: 100px; /* Spazio per il pulsante fisso in alto */
+}
+
+/* Pulsante Hamburger (Posizionato fisso in alto a sinistra) */
+.hamburger-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Deve stare sopra tutto */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Icona Hamburger (le tre linee) */
+.line {
+  display: block;
+  width: 50px;
+  height: 6px;
+  background-color: var(--bordigrigi);
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+/* --- Menu Laterale (Sidebar) --- */
+
+#sidebar {
+  /* Posizionamento fisso per coprire l'intera altezza dello schermo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px; /* Larghezza del menu */
+  background-color: #333; /* Sfondo scuro */
+  color: white;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+
+  /* NASCONDE IL MENU: Spostalo fuori dallo schermo a sinistra */
+  transform: translateX(-100%);
+
+  /* Animazione fluida (molto importante!) */
+  transition: transform 0.4s ease-out;
+}
+
+/* MOSTRA IL MENU: Classe aggiunta da JavaScript */
+#sidebar.open {
+  transform: translateX(0); /* Lo riporta in vista */
+}
+
+/* Contenuto del menu */
+.sidebar-content {
+  padding: 100px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+}
+.sidebar-content a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 0;
+  border-bottom: 1px solid #444;
+  font-size: 1.1em;
+}
+
+/* Pulsante di chiusura (la 'X') */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.menu-icon {
+  height: 18px;
+}
+
+.logo-menu {
+  margin-top: 50px;
+  display: block;
+  bottom: auto;
+
+}
 
 @media (max-width: 768px) {
   .logohead {
@@ -141,7 +243,28 @@ text-decoration: none;
   }
   .title-container {
     margin: 15px auto 10px;
-
+  }
+  /* Icona Hamburger (le tre linee) */
+  .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--bordigrigi);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  /* Contenuto del menu */
+  .sidebar-content {
+    padding: 70px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Posiziona il contenuto principale sotto il pulsante */
+  #page-content {
+    padding-top: 70px; /* Spazio per il pulsante fisso in alto */
+  }
+  .logo-menu {
+  margin-top: 35px;
 }
 }
 .section {
@@ -484,8 +607,11 @@ td.totalone {
   padding: 5px 0 7px;
   font-size: calc(0.5vw + 7px);
 }
+.menu-link {
+  justify-content: center;
+  display: flex;
+}
 .menu-link.active {
-  background-color: #484848;
   background-color: var(--giallogtvhover);
   font-weight: 700;
   color: #000000;
@@ -538,20 +664,24 @@ td.totalone {
   padding: 10px;
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
-
 }
+@media (max-width: 768px) {
+  .social-page {
 
+  gap: 20px;
+}
+}
 
 /* 2. Stile FONDAMENTALE per i singoli link (li rende verticali) */
 
 .social-page a {
-    display: flex;
-    flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
+  display: flex;
+  flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
   width: 60px;
   height: auto;
-    text-decoration: none;
-    text-align: center;
-        color: #333;  
+  text-decoration: none;
+  text-align: center;
+  color: #333;
 }
 .social-page img {
   width: 100%;
@@ -587,12 +717,10 @@ td.totalone {
   transform: scale(1.1);
 }
 
-
 .social-label {
-    font-size: 0.75rem; /* Rendi l'etichetta più piccola */
-    margin-top: 4px;
+  font-size: 0.75rem; /* Rendi l'etichetta più piccola */
+  margin-top: 4px;
 }
-
 
 .box {
   background: linear-gradient(125deg, #333, #111);
@@ -631,7 +759,6 @@ td.totalone {
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
 } */
 
-
 .titolino-sx {
   text-align: left;
   padding: 4px 10px;
@@ -647,8 +774,6 @@ td.totalone {
   display: flex;
   justify-content: space-between;
 }
-
-
 
 .ps-icon {
   width: 16px;
@@ -689,7 +814,7 @@ td.totalone {
   padding: 15px 10px 20px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   border-radius: 15px;
   min-height: 100px;
   text-align: center;
@@ -865,9 +990,10 @@ td.totalone {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   filter: grayscale(1) invert(1);
 }
+
 
 .social-page a {
   display: flex;
@@ -1097,17 +1223,17 @@ td.totalone {
   }
 
   .mobile-table td {
-  text-align: right; /* Il valore a destra */
-  padding-left: 50%; /* Spazio per la label */
-  position: relative;
-  border: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  min-height: 10px; /* Altezza minima per la cella */
-  display: flex; /* Usa flexbox per allineare label e valore */
-  align-items: center; /* Centra verticalmente */
-  justify-content: flex-end; /* Allinea il contenuto a destra */
+    text-align: right; /* Il valore a destra */
+    padding-left: 50%; /* Spazio per la label */
+    position: relative;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    min-height: 10px; /* Altezza minima per la cella */
+    display: flex; /* Usa flexbox per allineare label e valore */
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-end; /* Allinea il contenuto a destra */
   }
 
   .mobile-table td::before {
@@ -1196,7 +1322,7 @@ td.totalone {
   text-align: left;
   font-weight: 600;
   color: var(--giallogtv); /* Colore label */
-  font-size: 0.90em; /* Leggermente più piccola */
+  font-size: 0.9em; /* Leggermente più piccola */
 }
 
 .alwaysmobile-table tfoot {
@@ -1232,19 +1358,19 @@ td.totalone {
 }
 /* Stile per l'icona del circuito (PNG/SVG) */
 .circuit-icon {
-    width: auto; /* Larghezza fissa */
-    max-width: 300px;
-    height: 70px; /* Altezza fissa */
-    object-fit: contain; /* Assicura che l'immagine si adatti senza distorcere */
-    vertical-align: middle;
+  width: auto; /* Larghezza fissa */
+  max-width: 300px;
+  height: 70px; /* Altezza fissa */
+  object-fit: contain; /* Assicura che l'immagine si adatti senza distorcere */
+  vertical-align: middle;
 }
 
 /* Stile per l'icona della nazione (Bandiera) */
 .nation-flag {
-    width: auto; /* Larghezza più piccola per la bandiera */
-    height: 30px; 
+  width: auto; /* Larghezza più piccola per la bandiera */
+  height: 30px;
 
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .calendar td {
@@ -1254,29 +1380,26 @@ td.totalone {
   padding-bottom: 0px;
 }
 
-
-.calendar td[data-label="Circuito"]{
-    padding-left: 0px;
-    justify-content: center;
-    height: 70px;
-    margin-top: 2px;
+.calendar td[data-label="Circuito"] {
+  padding-left: 0px;
+  justify-content: center;
+  height: 70px;
+  margin-top: 2px;
 }
-.calendar td[data-label="Circuito"]::before{
-    display: none;
+.calendar td[data-label="Circuito"]::before {
+  display: none;
 }
-.calendar td[data-label="Nazione"]{
-    padding-left: 0px;
-    justify-content: center;
-    
+.calendar td[data-label="Nazione"] {
+  padding-left: 0px;
+  justify-content: center;
 }
-.calendar td[data-label="Nazione"]::before{
-    display: none;
+.calendar td[data-label="Nazione"]::before {
+  display: none;
 }
 
-  .instagram-post {
-    width: 100%;
-  }
-
+.instagram-post {
+  width: 100%;
+}
 
 .opzioni-card-container {
   display: flex;

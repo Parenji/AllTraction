@@ -28,6 +28,43 @@
 <body id="gtec">
 
     <header>
+        <button id="menu-toggle" class="hamburger-button">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+        <div id="sidebar">
+            <button id="close-menu" class="close-button">X</button>
+
+                <nav class="sidebar-content" id="sidebar-content">
+                    <a href="#page1" class="menu-link">
+                        Home 
+                        <img src="images/Campionati/GTEC.png" alt="Logo" class="menu-icon" style="height: 25px; margin-left: 5px;"/>
+                    </a>
+                    <a href="#page2" class="menu-link">
+                        Lobby
+                    </a>
+                    <a href="#page3" class="menu-link">
+                        Info e Regolamento
+                    </a>
+                    <a href="#page4" class="menu-link">
+                        Direzione Gara
+                    </a>
+                    <a href="#page5" class="menu-link">
+                        Classifica
+                    </a>
+                    <!-- <a href="#page6" class="menu-link">
+                        Risultati
+                    </a>
+                    <a href="#page7" class="menu-link">
+                        Calendario
+                    </a> -->
+                </nav>
+            <a href="index.html">
+                <img src="images/gtvwhite.png" alt="Logo" class="logo-menu logoheadcamp " />
+            </a>
+        </div>
         <div class="title-container">
             <a href="index.html">
                 <img src="images/gtvwhite.png" alt="Logo" class="logoheadcamp" />
@@ -36,10 +73,10 @@
                 <img src="images/Campionati/GTEC.png" alt="Logo" class="logocamp" />
             </a>
         </div>
-                <div class="navbar-container" id="navbar">
+        <div class="navbar-container" id="navbar">
             <div class="navbar-scroll">
                 <a href="#page1" class="menu-link">
-                    <img src="images/icons/home.svg" alt="home" class="home" />
+                    <img src="images/icons/home.svg" alt="home" class="home"  />
                     Home GTEC
                 </a>
                 <a href="#page2" class="menu-link">
@@ -74,7 +111,7 @@
         <section id="page1" class="section">
 
 
-                                    <div class="antibox">
+            <div class="antibox">
                 <div class="titolino-sx">Calendario</div>
                 <div class="titolino-dx">Prossima gara</div>
             </div>
@@ -95,7 +132,7 @@
             </div>
 
 
-                        <div class="antibox">
+            <div class="antibox">
                 <div class="titolino-sx">Classifica</div>
                 <div class="titolino-dx">Top 10</div>
             </div>
@@ -125,7 +162,7 @@
         </section>
 
         <section id="page2" class="section">
-                        <div class="titoletto" id="lobby-next-gara"></div>
+            <div class="titoletto" id="lobby-next-gara"></div>
             <div class="table-container">
                 <table class="responsive-table">
                     <thead>
@@ -187,7 +224,7 @@
             </div>
             <div class="titoletto" id="info-next-gara"></div>
             <div id="card-output" class="opzioni-card-container">
-        </div>
+            </div>
 
         </section>
 
@@ -248,7 +285,7 @@
 
     </div>
     <div class="footer-container">
-        <div></div>
+
         <div class="footer-section">
             <!-- <div class="tlm">Team Lion Motorsport</div> -->
             <div class="social-icons">
@@ -277,7 +314,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
 
 </body>
 <script src="scripts.js" defer></script>
