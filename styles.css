@@ -36,15 +36,15 @@ header {
 }
 /* Selettore che copre tutti i link nell'header */
 header a {
-    text-decoration: none; /* Rimuove la sottolineatura nello stato normale */
-    color: inherit;        /* Assicura che il colore del testo sia ereditato se necessario */
+  text-decoration: none; /* Rimuove la sottolineatura nello stato normale */
+  color: inherit; /* Assicura che il colore del testo sia ereditato se necessario */
 }
 
 /* 🛑 Fondamentale: Rimuovere la sottolineatura anche negli stati di interazione */
 header a:hover,
 header a:focus,
 header a:active {
-    text-decoration: none;
+  text-decoration: none;
 }
 @font-face {
   font-family: f1;
@@ -72,13 +72,12 @@ button {
   font-weight: 500;
   margin-top: 50px;
   margin-bottom: 30px;
-text-decoration: none;
+  text-decoration: none;
 }
 
-.sottotitolo{
-    color: white;
+.sottotitolo {
+  color: white;
   text-decoration: none;
-
 }
 .logohead {
   width: auto;
@@ -105,7 +104,6 @@ text-decoration: none;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.9));
 }
 
-
 @media (max-width: 768px) {
   .logohead {
     width: 35%;
@@ -129,8 +127,7 @@ text-decoration: none;
   }
   .title-container {
     margin: 15px auto 10px;
-
-}
+  }
 }
 .section {
   display: none;
@@ -174,8 +171,8 @@ th {
   text-align: center;
 }
 th {
-    background-color: var(--grigio-captions);
-    color: var(--giallogtv);
+  background-color: var(--grigio-captions);
+  color: var(--giallogtv);
 }
 td.totale {
   font-weight: 700;
@@ -498,20 +495,18 @@ td.totalone {
   padding: 10px;
   -webkit-filter: grayscale(1) invert(1);
   filter: grayscale(1) invert(1);
-
 }
-
 
 /* 2. Stile FONDAMENTALE per i singoli link (li rende verticali) */
 
 .social-page a {
-    display: flex;
-    flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
+  display: flex;
+  flex-direction: column; /* <-- QUESTA è la chiave: forza l'impilamento verticale */
   width: 60px;
   height: auto;
-    text-decoration: none;
-    text-align: center;
-        color: #333;  
+  text-decoration: none;
+  text-align: center;
+  color: #333;
 }
 .social-page img {
   width: 100%;
@@ -547,12 +542,10 @@ td.totalone {
   transform: scale(1.1);
 }
 
-
 .social-label {
-    font-size: 0.75rem; /* Rendi l'etichetta più piccola */
-    margin-top: 4px;
+  font-size: 0.75rem; /* Rendi l'etichetta più piccola */
+  margin-top: 4px;
 }
-
 
 .box {
   background: linear-gradient(125deg, #333, #111);
@@ -591,7 +584,6 @@ td.totalone {
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 215, 0, 0.6);
 } */
 
-
 .titolino-sx {
   text-align: left;
   padding: 4px 10px;
@@ -607,8 +599,6 @@ td.totalone {
   display: flex;
   justify-content: space-between;
 }
-
-
 
 .ps-icon {
   width: 16px;
@@ -847,17 +837,17 @@ td.totalone {
   }
 
   .mobile-table td {
-  text-align: right; /* Il valore a destra */
-  padding-left: 50%; /* Spazio per la label */
-  position: relative;
-  border: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  min-height: 10px; /* Altezza minima per la cella */
-  display: flex; /* Usa flexbox per allineare label e valore */
-  align-items: center; /* Centra verticalmente */
-  justify-content: flex-end; /* Allinea il contenuto a destra */
+    text-align: right; /* Il valore a destra */
+    padding-left: 50%; /* Spazio per la label */
+    position: relative;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    min-height: 10px; /* Altezza minima per la cella */
+    display: flex; /* Usa flexbox per allineare label e valore */
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-end; /* Allinea il contenuto a destra */
   }
 
   .mobile-table td::before {
@@ -951,7 +941,7 @@ td.totalone {
   text-align: left;
   font-weight: 600;
   color: var(--giallogtv); /* Colore label */
-  font-size: 0.90em; /* Leggermente più piccola */
+  font-size: 0.9em; /* Leggermente più piccola */
 }
 
 /* Stili per il footer della tabella su alwaysmobile */
@@ -988,61 +978,86 @@ td.totalone {
 }
 /* Stile per l'icona del circuito (PNG/SVG) */
 .circuit-icon {
-    width: auto; /* Larghezza fissa */
-    max-width: 300px;
-    height: 70px; /* Altezza fissa */
-    object-fit: contain; /* Assicura che l'immagine si adatti senza distorcere */
-    vertical-align: middle;
+  width: auto; /* Larghezza fissa */
+  max-width: 300px;
+  height: 70px; /* Altezza fissa */
+  object-fit: contain; /* Assicura che l'immagine si adatti senza distorcere */
+  vertical-align: middle;
 }
 
 /* Stile per l'icona della nazione (Bandiera) */
 .nation-flag {
-    width: auto; /* Larghezza più piccola per la bandiera */
-    height: 30px; 
+  width: auto; /* Larghezza più piccola per la bandiera */
+  height: 30px;
 
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .calendar td {
   font-size: larger;
-  padding-left: calc(50% + 15px);
+  padding-left: calc(51% + 16px);
   padding-top: 1px;
   padding-bottom: 0px;
 }
 
-.calendar td[data-label="Gara"]{
-    font-weight: bolder;
-    justify-content: left;
-    background-color: var(--grigio-captions);
-    /* color: rgb(255, 255, 255); */
-    
+.calendar td[data-label="Gara"] {
+  font-weight: bolder;
+  justify-content: left;
+  background-color: var(--grigio-captions);
+  /* color: rgb(255, 255, 255); */
 }
-.calendar td[data-label="Gara"]::before{
-    font-weight: bolder;
-    justify-content: right;
-    display: flex;
-    /* color: #000; */
+.calendar td[data-label="Gara"]::before {
+  font-weight: bolder;
+  justify-content: right;
+  display: flex;
+  /* color: #000; */
 }
-.calendar td[data-label="Circuito"]{
-    padding-left: 0px;
-    justify-content: center;
-    height: 70px;
-    margin-top: 2px;
+.calendar td[data-label="Circuito"] {
+  padding-left: 0px;
+  justify-content: center;
+  height: 70px;
+  margin-top: 2px;
 }
-.calendar td[data-label="Circuito"]::before{
-    display: none;
+.calendar td[data-label="Circuito"]::before {
+  display: none;
 }
-.calendar td[data-label="Nazione"]{
-    padding-left: 0px;
-    justify-content: center;
-    
+.calendar td[data-label="Nazione"] {
+  padding-left: 0px;
+  justify-content: center;
 }
-.calendar td[data-label="Nazione"]::before{
-    display: none;
+.calendar td[data-label="Nazione"]::before {
+  display: none;
 }
 
 .instagram-post {
   margin-top: 20px;
   justify-content: center;
   display: flex;
+}
+
+.opzioni-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  /* 1. Helvetica Neue è spesso preferito se disponibile */
+  font-family: "Helvetica Neue", /* 2. Helvetica (il font classico) */ Helvetica,
+    /* 3. Arial (un'alternativa comune di default sui sistemi Windows) */ Arial,
+    /* 4. sans-serif (il fallback generico per assicurare che venga usato un font senza grazie) */
+      sans-serif;
+}
+.opzioni-card {
+  flex: 1 1 300px;
+  border: 2px solid var(--brdr-color);
+  padding: 2%;
+  border-radius: 5px;
+}
+.opzioni-card-header {
+  padding: 1%;
+}
+.opzioni-card-body {
+  margin-bottom: 0;
+  color: var(--giallogtv);
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 1%;
 }

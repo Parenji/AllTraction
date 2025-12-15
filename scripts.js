@@ -1,4 +1,3 @@
-
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(".navbar-scroll a");
@@ -52,7 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
  * @param {number[]} [columnIndices] Gli indici delle colonne (base 0) da visualizzare.
  * Se non specificato, vengono visualizzate TUTTE le colonne.
  */
-async function loadAndCreateHtmlTable(spreadsheetUrl, tbodyId, columnIndices, maxRows = Infinity) {
+async function loadAndCreateHtmlTable(
+  spreadsheetUrl,
+  tbodyId,
+  columnIndices,
+  maxRows = Infinity
+) {
   const tbody = document.getElementById(tbodyId);
 
   if (!tbody) {
@@ -170,6 +174,93 @@ async function loadAndCreateHtmlTable(spreadsheetUrl, tbodyId, columnIndices, ma
   }
 }
 
+//Funzione per opzioni stanza
+// **!!! IMPORTANTE !!!** Sostituisci questo con il link CSV esportato da Google Fogli
+const CSV_URL = "YOUR_CSV_LINK_HERE";
+const container = document.getElementById("card-output");
+
+/**
+ * Funzione per convertire una riga CSV in un oggetto data.
+ * Assumiamo che la colonna 0 sia il Titolo (in alto) e la colonna 1 sia il Corpo (in basso).
+ * @param {string} line - La riga CSV come stringa.
+ * @returns {{header: string, body: string} | null} L'oggetto dati della card.
+ */
+function parseCsvLine(line) {
+  // Semplice suddivisione per virgola (adatta se i tuoi dati non contengono virgole interne)
+  const columns = line.split(",");
+
+  // Controlla se ci sono almeno due colonne
+  if (columns.length < 2) {
+    return null;
+  }
+
+  // Pulisce gli spazi bianchi all'inizio/fine
+  const header = columns[0].trim();
+  const body = columns[1].trim();
+
+  if (!header || !body) {
+    return null; // Salta righe vuote o incomplete
+  }
+
+  return { header: header, body: body };
+}
+
+/**
+ * Funzione per generare il markup HTML di una singola card.
+ * @param {{header: string, body: string}} data - I dati della card.
+ * @returns {string} Il codice HTML della card.
+ */
+function generateCardHtml(data) {
+  return `
+        <div class="opzioni-card">
+            <div class="opzioni-card-header">${data.header}</div>
+            <div class="opzioni-card-body">${data.body}</div>
+        </div>
+    `;
+}
+
+/**
+ * Funzione principale per caricare i dati e popolare il DOM.
+ */
+async function loadDataAndGenerateCards(spreadsheetUrl) {
+  try {
+    // 1. Fetch dei dati dal link CSV
+    const response = await fetch(spreadsheetUrl);
+
+    // Controlla se la risposta è ok (status 200)
+    if (!response.ok) {
+      throw new Error(`Errore HTTP: ${response.status}`);
+    }
+
+    const csvText = await response.text();
+
+    // 2. Analisi del CSV
+    // Divide il testo in righe e filtra le righe vuote
+    const lines = csvText.split("\n").filter((line) => line.trim() !== "");
+
+    // Salta la prima riga se contiene le intestazioni
+    const dataLines = lines.slice(1);
+
+    // 3. Generazione e iniezione delle card
+    let htmlCards = "";
+    dataLines.forEach((line) => {
+      const cardData = parseCsvLine(line);
+      if (cardData) {
+        htmlCards += generateCardHtml(cardData);
+      }
+    });
+
+    // Inietta tutte le card nel contenitore (ottimizzazione delle performance)
+    container.innerHTML = htmlCards;
+  } catch (error) {
+    console.error(
+      "Si è verificato un errore durante il caricamento o l'analisi dei dati:",
+      error
+    );
+    container.innerHTML = `<p style="color: red;">Impossibile caricare i dati. Controlla il link CSV o la console.</p>`;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // --- 1. Logica per index.html ---
 
@@ -195,8 +286,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Controlla se la pagina ha l'ID 'gtec' (il che indica che siamo in gtec.html)
   const gtec = document.getElementById("gtec");
   let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
-document.getElementById("pen-ult-gara").innerText = `Penalità Gara ${ultimaGara}`;
-
+  document.getElementById(
+    "pen-ult-gara"
+  ).innerText = `Penalità Gara ${ultimaGara}`;
+  document.getElementById("lobby-next-gara").innerText = `Gara ${
+    ultimaGara + 1
+  }`;
+  document.getElementById("info-next-gara").innerText = `Opzioni Lobby Gara ${
+    ultimaGara + 1
+  }`;
 
   if (gtec) {
     console.log("Inizializzazione di gtec.html: Caricamento...");
@@ -228,34 +326,40 @@ document.getElementById("pen-ult-gara").innerText = `Penalità Gara ${ultimaGara
       // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       // altrimenti specificare quelle che vuoi mostrare)
     );
-        loadAndCreateHtmlTable(
+    loadAndCreateHtmlTable(
       URL_CLASS,
       "classifica-short-body",
       [],
       10
 
-    //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       // altrimenti specificare quelle che vuoi mostrare)
     );
     // Penalità
-   const URL_PEN =
+    const URL_PEN =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1753268594&single=true&output=csv";
-        loadAndCreateHtmlTable(
+    loadAndCreateHtmlTable(
       URL_PEN,
-      "penalita-body",
+      "penalita-body"
 
-    //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       // altrimenti specificare quelle che vuoi mostrare)
     );
 
-
-        const URL_CALENDAR =
+    const URL_CALENDAR =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=912348639&single=true&output=csv";
     loadAndCreateHtmlTable(
       URL_CALENDAR,
       "calendar-body",
       [0, 2, 1, 4] //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       // altrimenti specificare quelle che vuoi mostrare)
+    );
+
+    // Avvia il processo al caricamento della pagina
+    const URL_OPZIONI =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=1285111450&single=true&output=csv";
+    loadDataAndGenerateCards(
+      URL_OPZIONI
     );
   }
   // --- 3. Logica per interno.html ---
