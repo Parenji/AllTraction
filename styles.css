@@ -819,7 +819,7 @@ td.totalone {
   flex-wrap: wrap;
   margin-bottom: 20px;
   border-radius: 15px;
-  min-height: 100px;
+  min-height: 500px;
   text-align: center;
   align-items: center;
   border: 1px solid var(--giallogtv);
@@ -923,6 +923,7 @@ td.totalone {
 .gtec {
   background-image: url("images/Campionati/GTEC.png");
   background-color: #000000;
+  min-height: 250px;
 }
 
 .federation {
