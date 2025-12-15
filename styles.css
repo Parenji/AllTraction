@@ -210,7 +210,8 @@ button {
   border-radius: 5px;
 }
 .menu-icon {
-  height: 18px;
+  height: 25px; 
+  margin-left: 5px;
 }
 
 .logo-menu {
@@ -612,6 +613,8 @@ td.totalone {
   display: flex;
 }
 .menu-link.active {
+    justify-content: center;
+  display: flex;
   background-color: var(--giallogtvhover);
   font-weight: 700;
   color: #000000;
