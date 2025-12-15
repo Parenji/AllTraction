@@ -975,13 +975,11 @@ td.totalone {
 
 .calendar td[data-label="Gara"] {
   font-weight: bolder;
-  justify-content: left;
   background-color: var(--grigio-captions);
 }
 
 .calendar td[data-label="Gara"]::before {
   font-weight: bolder;
-  justify-content: right;
   display: flex;
 }
 
@@ -1256,19 +1254,7 @@ td.totalone {
   padding-bottom: 0px;
 }
 
-.calendar td[data-label="Gara"]{
-    font-weight: bolder;
-    justify-content: left;
-    background-color: var(--grigio-captions);
-    /* color: rgb(255, 255, 255); */
-    
-}
-.calendar td[data-label="Gara"]::before{
-    font-weight: bolder;
-    justify-content: right;
-    display: flex;
-    /* color: #000; */
-}
+
 .calendar td[data-label="Circuito"]{
     padding-left: 0px;
     justify-content: center;
