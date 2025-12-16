@@ -39,7 +39,7 @@ closeMenu.addEventListener("click", closeSidebar);
 // FUNZIONE PER GESTIRE IL FUNZIONAMENTO DELLA BARRA ORIZZONTALE
 document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(
-    ".navbar-scroll a, .sidebar-content a"
+    ".navbar-scroll a, .sidebar-content a, .section-link a"
   );
   const sections = document.querySelectorAll(".section");
 
@@ -133,7 +133,7 @@ async function loadAndCreateHtmlTable(
   spreadsheetUrl,
   tbodyId,
   columnIndices,
-  maxRows = Infinity
+  options = { maxRows: Infinity }
 ) {
   const tbody = document.getElementById(tbodyId);
 
@@ -172,18 +172,44 @@ async function loadAndCreateHtmlTable(
       return;
     }
 
-    // La prima riga è l'intestazione
-    const header = rows[0];
-    // Le righe successive sono i dati
-    const dataRows = rows.slice(1, 1 + maxRows);
+// La prima riga è l'intestazione
+  const header = rows[0];
+  // Le righe successive sono i dati, senza intestazione
+  const allDataRows = rows.slice(1); 
+  
+  let dataRows = [];
+  
+  // *** INIZIO NUOVA LOGICA DI FILTRAGGIO ***
+  
+  if (typeof options === 'number' || options.maxRows) {
+      // Caso 1: È stata passata la vecchia sintassi (solo numero) o l'opzione maxRows
+      const limit = typeof options === 'number' ? options : options.maxRows;
+      dataRows = allDataRows.slice(0, limit);
+      
+  } else if (options.rowIndex) {
+      // Caso 2: Vuoi solo una riga specifica
+      // Ricorda: l'indice 'rowIndex' è 1-based (riga 1, riga 2, ecc.) e DEVE ignorare l'header.
+      // Esempio: se rowIndex è 1, vogliamo allDataRows[0]
+      const index0Based = options.rowIndex - 1;
 
-    // 1. Definiamo quali colonne visualizzare
+      if (index0Based >= 0 && index0Based < allDataRows.length) {
+          dataRows = [allDataRows[index0Based]]; // Inserisci la singola riga in un array
+      } else {
+          // Indice fuori dai limiti
+          console.warn(`Indice riga ${options.rowIndex} non valido.`);
+          dataRows = [];
+      }
+  } else {
+      // Caso di default: mostra tutte le righe
+      dataRows = allDataRows;
+  }
+  // 1. Definiamo quali colonne visualizzare (QUESTO BLOCCO ERA MANCANTE)
     let indicesToUse = columnIndices;
     if (!indicesToUse || indicesToUse.length === 0) {
       // Se non specificato, usiamo tutte le colonne disponibili nell'header
       indicesToUse = Array.from({ length: header.length }, (_, i) => i);
     }
-
+  // *** FINE NUOVA LOGICA DI FILTRAGGIO ***
     // 2. Creazione delle righe di dati (<tbody>)
     for (const rowData of dataRows) {
       // Se la prima cella della riga di dati è vuota, salta la riga
@@ -366,7 +392,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (gtec) {
     console.log("Inizializzazione di gtec.html: Caricamento...");
-    let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
+    let ultimaGara = 6; // Cambia questo numero quando vuoi aggiornare la gara
+    prossimaGara = ultimaGara + 1;
     document.getElementById(
       "pen-ult-gara"
     ).innerText = `Penalità Gara ${ultimaGara}`;
@@ -404,6 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // [0, 1,] - (Usare l'array vuoto o `null` se si vogliono tutte le colonne,
       // altrimenti specificare quelle che vuoi mostrare)
     );
+    // Tabella top10
     loadAndCreateHtmlTable(
       URL_CLASS,
       "classifica-short-body",
@@ -426,6 +454,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const URL_CALENDAR =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyncPYqAUjekbprRwnUdrOpqYvPDrsohSpmmwedX18L0cQxbiRca3YLfBdbqpg05zr9l92xpv1chrZ/pub?gid=912348639&single=true&output=csv";
+    loadAndCreateHtmlTable(
+      URL_CALENDAR,
+      "prossima-gara-body",
+      [0, 2, 1, 4], //(Usare l'array vuoto o `null` se si vogliono tutte le colonne,
+      { rowIndex: prossimaGara }
+      // altrimenti specificare quelle che vuoi mostrare)
+    );
+
     loadAndCreateHtmlTable(
       URL_CALENDAR,
       "calendar-body",

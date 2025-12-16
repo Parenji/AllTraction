@@ -37,30 +37,33 @@
         <div id="sidebar">
             <button id="close-menu" class="close-button">X</button>
 
-                <nav class="sidebar-content" id="sidebar-content">
-                    <a href="#page1" class="menu-link">
-                        Home 
-                        <img src="images/Campionati/GTEC.png" alt="Logo" class="menu-icon" />
-                    </a>
-                    <a href="#page2" class="menu-link">
-                        Lobby
-                    </a>
-                    <a href="#page3" class="menu-link">
-                        Info e Regolamento
-                    </a>
-                    <a href="#page4" class="menu-link">
-                        Direzione Gara
-                    </a>
-                    <a href="#page5" class="menu-link">
-                        Classifica
-                    </a>
-                    <!-- <a href="#page6" class="menu-link">
+            <nav class="sidebar-content" id="sidebar-content">
+                <a href="#page1" class="menu-link">
+                    Home
+                    <img src="images/Campionati/GTEC.png" alt="Logo" class="menu-icon" />
+                </a>
+                <a href="#page2" class="menu-link">
+                    Lobby
+                </a>
+                <a href="#page3" class="menu-link">
+                    Info e Regolamento
+                </a>
+                <a href="#page4" class="menu-link">
+                    Direzione Gara
+                </a>
+                <a href="#page5" class="menu-link">
+                    Classifica
+                </a>
+                <a href="#page6" class="menu-link">
+                    Calendario
+                </a>
+                <!-- <a href="#page6" class="menu-link">
                         Risultati
                     </a>
                     <a href="#page7" class="menu-link">
                         Calendario
                     </a> -->
-                </nav>
+            </nav>
             <a href="index.html">
                 <img src="images/gtvwhite.png" alt="Logo" class="logo-menu logoheadcamp " />
             </a>
@@ -76,7 +79,7 @@
         <div class="navbar-container" id="navbar">
             <div class="navbar-scroll">
                 <a href="#page1" class="menu-link">
-                    <img src="images/icons/home.svg" alt="home" class="home"  />
+                    <img src="images/icons/home.svg" alt="home" class="home" />
                     Home GTEC
                 </a>
                 <a href="#page2" class="menu-link">
@@ -85,7 +88,7 @@
                 </a>
                 <a href="#page3" class="menu-link">
                     <img src="images/icons/info.svg" alt="home" class="home" />
-                    Info
+                    Regolamento
                 </a>
                 <a href="#page4" class="menu-link">
                     <img src="images/icons/admin.svg" alt="home" class="home" />
@@ -121,13 +124,23 @@
                         <tr>
                         </tr>
                     </thead>
-                    <tbody id="calendar-body">
-                        <tr>
-                            <td colspan="4" style="text-align: center; padding: 20px;">
+                    <tbody id="prossima-gara-body">
+
+                        <tr">
+                            <td colspan="2" style="text-align: center; padding: 20px;">
                                 Caricamento dati in corso...
                             </td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" style="background-color: var(--grigio-captions); padding: 4px 10px 4px; margin-top: -13px; font-size: 1.2em;">
+                                <div class="section-link">
+                                    <a href="#page6" class="menu-link">Calendario completo 🔗</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
 
@@ -154,6 +167,16 @@
                             </td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="background-color: var(--grigio-captions);">
+                                <div class="section-link">
+                                    <a href="#page5" class="menu-link" style="color:white; text-decoration: none; font-weight: 700; font-size: 1.2em; justify-content: right;">
+                                        Classifica completa 🔗</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
 
@@ -219,7 +242,7 @@
             <div class="pdf-button-container">
 
                 <button class="pdf-button" onclick="window.open('pdf/GTEC SEASON 3 REGOLAMENTO V4.pdf', '_blank')">
-                    PDF Info e opzioni stanza
+                    PDF Regolamento
                 </button>
             </div>
             <div class="titoletto" id="info-next-gara"></div>
@@ -229,9 +252,10 @@
         </section>
 
         <section id="page4" class="section">
-                        <div class="pdf-button-container">
+            <div class="pdf-button-container">
 
-                <button class="pdf-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSc00_jd9wPGGkOTi7ma1-BnalLIsC8SBo2yH65M9BdhoyiLqg/viewform', '_blank')">
+                <button class="pdf-button"
+                    onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSc00_jd9wPGGkOTi7ma1-BnalLIsC8SBo2yH65M9BdhoyiLqg/viewform', '_blank')">
                     Modulo reclami gara 8
                 </button>
             </div>
@@ -279,6 +303,24 @@
                     <tbody id="classifica-body">
                         <tr>
                             <td colspan="4" style="text-align: center; padding: 20px;">
+                                Caricamento dati in corso...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+                <section id="page6" class="section">
+            <div class="table-container">
+                <table class="responsive-table alwaysmobile-table calendar">
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+
+                        <tr">
+                            <td colspan="2" style="text-align: center; padding: 20px;">
                                 Caricamento dati in corso...
                             </td>
                         </tr>

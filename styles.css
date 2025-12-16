@@ -505,7 +505,7 @@ td.totalone {
   }
   td,
   th {
-    padding: 4px 6px 4px;
+    padding: 4px 5px 4px;
     text-align: center;
   }
   table {
@@ -774,7 +774,7 @@ td.totalone {
 }
 .titolino-dx {
   text-align: right;
-  padding: 4px 11px;
+  padding: 4px 10px;
   font-size: calc(0.5vw + 10px);
 }
 
@@ -885,22 +885,8 @@ td.totalone {
   z-index: 2;
 }
 
-.antibox {
-  display: flex;
-  justify-content: space-between;
-}
 
-.titolino-sx {
-  text-align: left;
-  padding: 4px 10px;
-  font-size: calc(0.5vw + 10px);
-}
 
-.titolino-dx {
-  text-align: right;
-  padding: 4px 11px;
-  font-size: calc(0.5vw + 10px);
-}
 
 /* ========================================
    PULSANTI CAMPIONATI
@@ -1111,6 +1097,7 @@ td.totalone {
 .calendar td[data-label="Gara"] {
   font-weight: bolder;
   background-color: var(--grigio-captions);
+  padding: 4px 10px 4px;
 }
 
 .calendar td[data-label="Gara"]::before {
@@ -1336,7 +1323,7 @@ td.totalone {
 
 .alwaysmobile-table tfoot {
   display: block;
-  margin-top: 20px;
+  background-color: var(--grigio-captions);
 }
 
 .alwaysmobile-table tfoot tr {
@@ -1351,10 +1338,9 @@ td.totalone {
   font-weight: 700;
   color: var(--giallogtv);
   font-size: 1.1em;
-  padding-top: 15px;
-  padding-bottom: 15px;
   text-align: right;
   justify-content: flex-end;
+  text-decoration: none;
 }
 
 .alwaysmobile-table tfoot td::before {
@@ -1364,6 +1350,11 @@ td.totalone {
   padding-right: 10px;
   font-size: 1.1em;
   color: var(--giallogtv);
+}
+
+.alwaysmobile-table tfoot a {
+  text-decoration: none;
+  color: white;
 }
 /* Stile per l'icona del circuito (PNG/SVG) */
 .circuit-icon {
