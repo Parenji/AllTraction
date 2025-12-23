@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (gtec) {
     console.log("Inizializzazione di gtec.html: Caricamento...");
-    let ultimaGara = 6; // Cambia questo numero quando vuoi aggiornare la gara
+    let ultimaGara = 7; // Cambia questo numero quando vuoi aggiornare la gara
     prossimaGara = ultimaGara + 1;
     document.getElementById(
       "pen-ult-gara"

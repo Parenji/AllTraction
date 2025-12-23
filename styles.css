@@ -1427,3 +1427,11 @@ td.totalone {
   font-weight: bold;
   padding: 1%;
 }
+.coppaimg {
+  width: 30px;
+  filter: invert(100%);
+}
+.coppa {
+  margin-top: 10px;
+  width: 100%;
+}
